@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Checkout</title>
+<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <style>
+  #form1
+  {
+  display:none;
+  }
+  #form2
+  {
+  display:none;
+  }
+  #form3
+  {
+  display:none;
+  }
+  .form1
+  {
+  display:none;
+  }
+  </style>
+</head>
+
+<body>
+<!--<div id="header" style="background-image:url(images/header-background.jpg);" >-->
+<div class="container">
+<a href="index.html"><img src="images/mstor_logo.jpg"  class="logo"/></a>
+</div>
+<div class="navbar-header navbar-right date">
+               <p class="us-date" style="display: block;">Friday, 13 September 2019</p></div>
+						
+                       <div class="top-links">
+								            <ul class="links">
+                                
+					                	                     
+	                    	<li class="my-account-link firstItem"><a href="#">SIGN IN &nbsp;|</a></li>
+	                    	                    <li class="logout-link lastItem"><a href="register.html"> &nbsp;REGISTER</a></li>
+	                                			</ul>
+        							</div> 
+                                   <div class="search">
+                                   <img src="images/search.png" /> <a href="checkout.html"><img src="images/shopping-bag.png" /></a></div>
+            
+
+<div id="menu">
+
+<nav id='cssmenu'>
+<div id="head-mobile"></div>
+<div class="button"></div>
+<ul>
+<li class='active'><a href="index.html">HOME</a></li>
+
+
+   
+ 
+   
+    <li><a href='#'>ALL COURSE PACKAGE</a>
+     
+  
+<ul>
+      <li><a href='communication.html'>Communication skill series</a>
+         <ul>
+            <li><a href='sub.html'>Power Up your Presentation</a></li>
+            <li><a href='negotiation.html'>Negotiation Skills</a></li>
+         </ul>
+      </li>
+      <li><a href='#'>Worklife Balance Series</a>
+         <ul>
+            <li><a href='time management.html'>Time Management </a></li>
+            <li><a href='stress.html'>Stress Management</a></li>
+         </ul>
+      </li>
+        <li><a href='#'>Management Series</a>
+<ul>
+      <li><a href='strategic.html'>Strategic Planning</a>
+        
+      </li>
+   </ul>
+   </ul>
+   </li>
+     <li><a href='#'>FREE TRAINING RESOURSES</a>
+      
+   </li>
+     <li><a href='FAQ.html'>FAQ</a>
+       
+   </li>
+
+</ul>
+
+
+</nav>
+
+					
+</div>
+
+<div class="container">
+<h1>Checkout</h1>
+
+<div class="menu1">
+<p class="menup"><a href='index.html'>Home</a>/<a href="checkout.html">Checkout</a></p>
+</div>
+<script>$(document).ready(function() {
+  $("#formButton").click(function() {
+    $("#form1").toggle();
+  });
+});</script>
+<div class="box">
+<p >Returning customer?<a id="formButton">Click here to login</a></p>
+</div>
+
+<form id="form1">
+<p>If you have shopped with us before, please enter your details below. If you are a new customer, please proceed to the Billing & Shipping section.</p>
+
+  <input type="text" class="input-texta" name="username" id="username" placeholder="Username or email"><br />
+<input type="text" class="input-texta" name="username" id="username" placeholder="Password">
+<input type="submit" class="input-texta" value="Login" name="username" id="username" placeholder="Login">
+  
+</form>
+
+<script>$(document).ready(function() {
+  $("#formButton1").click(function() {
+    $("#form2").toggle();
+  });
+});</script>
+<div class="box1">
+<p>Have a coupon?<a id="formButton1"> Click here to enter your code</a></p></div>
+
+<form id="form2">
+<p>If you have a coupon code, please apply it below.</p>
+
+  <input type="text" class="input-textb" name="Coupon Code" id="Coupon Code" placeholder="Coupon Code"><br />
+
+<input type="submit" class="input-textb1" value="Apply Coupon" name="apply" id="username" placeholder="APPLY">
+  
+</form>
+<div class="row">
+<div class="col-md-7">
+ <h3 class="step-title"><span>Billing Details</span></h3>
+
+ <div class="form">
+ 
+<p class="form-row form-row-first validate-required" id="billing_first_name_field" data-priority="10">
+<label for="billing_first_name" class="">First name&nbsp;<abbr class="required" title="required">*</abbr></label>
+<span class="woocommerce-input-wrapper">
+
+
+
+<input type="text" class="input-textn " name="billing_first_name" id="billing_first_name" placeholder="" value="" autocomplete="given-name"></span></p>
+
+<p class="form-row form-row-last1 validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="">Last name&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 364px">Company name (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 634px">Country&nbsp;<abbr class="required" title="required">*</abbr></label>
+
+<select class="country" class="country" name="billing_last_name" id="billing_last_name" placeholder="India" value="" autocomplete="family-name">
+<option value="">Select a country…</option>
+<option value="PE">Peru</option>
+<option value="PH">PH</option>
+</select></p>
+
+
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 439px">Street address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="House Number and Street Name" value="" autocomplete="family-name"></span></p>
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right:229px">Apartment, suite, unit etc. (optional) (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Appartment,Suite,Unite ect" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 463px">Town / City&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 442px">State / County&nbsp;<abbr class="required" title="required">*</abbr></label>
+
+<select class="country" class="country" name="billing_last_name" id="billing_last_name" placeholder="India" value="" autocomplete="family-name">
+<option value="">Select an option…</option>
+<option value="PE">Peru</option>
+<option value="PH">PH</option>
+
+</select></p>
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 440px">Postcode / ZIP&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 426px">Phone (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 441px">Email address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<div id="check">
+				<input class="input-checkbox" id="createaccount" type="checkbox" name="createaccount" value="1"> Create an account?</div>
+			</div>
+            
+
+
+<script>$(document).ready(function() {
+  $("#check").click(function() {
+    $("#form3").show();
+  });
+});</script>
+<div id="form3">
+<p>Create an account by entering the information below. If you are a returning customer please login at the top of the page.</p>
+
+  <p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 0px">Create account password&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="password" value="" autocomplete="family-name"></span></p></div>
+  
+</div>
+
+<!--right content-->
+
+<div class="col-md-5">
+<div class="pay">
+<h3 class="step-title1"><span>YOUR ORDER</span></h3>
+  
+  <h5>PRODUCT </h5><h5 class="payright">TOTAL </h5>
+  
+  <h5>Power Up your Presentation  × 1</h5>
+  
+  <h5>SUBTOTAL</h5>
+  <h5>SHIPPING</h5>
+  
+  <h5>TOTAL</h5>
+  
+  <h5>PayPal Express Checkout &nbsp; &nbsp;<img src="images/pp-acceptance-small.png" /></h5>
+  
+  <p class="payright1">Pay via PayPal; you can pay with your credit card if you don’t have a PayPal account.</p>
+  
+  <a href="#">
+  <div class="buttpay">Coutinue To Payment</div></a></div></div>
+  
+
+<!--end-->
+</div>
+<!--shipping-->
+<div class="row">
+ <div class="col-md-7">
+ <!--content-->
+   <h3 class="step-title"><span>SHIPPING ADDRESS</span></h3>
+
+
+<div id="check1">
+				<input class="input-checkbox" id="createaccount" type="checkbox" name="createaccount" value="1"> Ship to a different address?</div>
+
+
+
+<div class="form1">
+ 
+<p class="form-row form-row-first validate-required" id="billing_first_name_field" data-priority="10">
+<label for="billing_first_name" class="">First name&nbsp;<abbr class="required" title="required">*</abbr></label>
+<span class="woocommerce-input-wrapper">
+
+
+
+<input type="text" class="input-textn " name="billing_first_name" id="billing_first_name" placeholder="" value="" autocomplete="given-name"></span></p>
+
+<p class="form-row form-row-last1 validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="">Last name&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 360px">Company name (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper">
+<input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span>
+</p>
+
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 634px">Country&nbsp;<abbr class="required" title="required">*</abbr></label>
+
+<select class="country" class="country" name="billing_last_name" id="billing_last_name" placeholder="India" value="" autocomplete="family-name">
+<option value="">Select a country…</option>
+<option value="PE">Peru</option>
+<option value="PH">PH</option>
+</select></p>
+
+
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 435px">Street address&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="House Number and Street Name" value="" autocomplete="family-name"></span></p>
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right:225px">Apartment, suite, unit etc. (optional) (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Appartment,Suite,Unite ect" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 459px">Town / City&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 438px">State / County&nbsp;<abbr class="required" title="required">*</abbr></label>
+
+<select class="country" class="country" name="billing_last_name" id="billing_last_name" placeholder="India" value="" autocomplete="family-name">
+<option value="">Select an option…</option>
+<option value="PE">Peru</option>
+<option value="PH">PH</option>
+
+</select></p>
+
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 436px">Postcode / ZIP&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><input type="text" class="input-text " name="billing_last_name" id="billing_last_name" placeholder="" value="" autocomplete="family-name"></span></p>
+
+
+<p class="form-row form-row-last validate-required" id="billing_last_name_field" data-priority="20">
+<label for="billing_last_name" class="" style="padding-right: 422px">Phone (optional)&nbsp;<abbr class="required" title="required">*</abbr></label><span class="woocommerce-input-wrapper"><textarea  class="input-text " name="billing_last_name" id="billing_last_name" placeholder="Note about your order,eg special note for delivery" value="" autocomplete="family-name"></textarea></span></p>
+
+
+  </div>
+     
+ <!--end-->
+ 
+ </div>
+</div>
+
+<!--end-->
+
+</div>
+            
+<script>$(document).ready(function() {
+  $("#check1").click(function() {
+    $(".form1").toggle();
+  });
+});</script>
+
+    
+  
+         
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+ <DIV id="footer">
+    <div class="container">
+    <div class="flogo">
+    <img src="images/trainers_logo.png" />
+    </div>
+    <div class="row ff">
+    <div class="col-sm-3">
+    <h4 class="fabout">ABOUT TRAINING MATERIAL</h4>
+    <p class="footer">TMO is the brain child of a team of professionals with deep understanding and on the floor experience in developing and delivering training modules, which has been widely accepted among corporate organisations. The team consists of committed certified trainers of international repute and professionals with industry and on the job experience, whose knowledge, wisdom, experience and expertise is crystallized into simple, effective training modules.</p>
+    </div>
+    <div class="col-sm-2 foot2">
+    <h4 class="f1">QUICK LINKS</h4>
+    <ul class="foot"><li>Home</li>
+    <li>Blog</li>
+    <li>FAQ</li>
+    <li>Terms And Condition</li>
+     <li>Privacy Policy</li></ul>
+    </div>
+    <div class="col-sm-4 foot3">
+    <h4 class="fget">GET IN TOUCH</h4>
+    <p>Training Material Online</p>
+Email : support@trainingmaterialonline.com</p>
+    </div>
+    <div class="col-sm-3">
+    <h4 class="fsecure">SECURE SHOPPING</h4>
+    <img src="images/payments (1).png" />
+    
+						<div class="social-icons">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-dribbble"></i></a>
+							<a href="#"><i class="fa fa-behance"></i></a>
+						</div>
+    </div>
+
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+ <script  src="assets/js/script.js"></script>
+</body>
+</html>
+
+
+
+

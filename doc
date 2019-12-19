@@ -1,0 +1,5 @@
+ALTER TABLE `courses` ADD `created_at` DATETIME NULL DEFAULT NULL AFTER `image`;
+ALTER TABLE `courses` ADD `updated_at` DATETIME NULL DEFAULT NULL AFTER `created_at`;
+
+ALTER TABLE `downloads` ADD `updated_at` DATETIME NULL DEFAULT NULL AFTER `priority`;
+ALTER TABLE `downloads` ADD `created_at` DATETIME NULL DEFAULT NULL AFTER `updated_at`;
