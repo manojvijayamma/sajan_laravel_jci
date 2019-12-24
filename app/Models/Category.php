@@ -27,11 +27,11 @@ class Category extends Model
     public function parent2()
     {
         return $this->belongsTo(self::class, 'parent_id','id');
-    }
+    } 
 
-    public function courses()
+    public function downloads()
     {
-        return $this->hasMany('App\Models\Course', 'parent_id','id');
+        return $this->hasMany('App\Models\Download', 'parent_id','id')->where('identifier','download');
     }
 
    

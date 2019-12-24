@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 
 
 use App\User;
-use App\Models\Course;
+use App\Models\Category;
 use App\Models\Download;
 use App\Models\Content;
 
@@ -30,9 +30,7 @@ class DownloadsController extends Controller
         $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
         
-        $this->data['listData']=Download::where('status','1')->get(); 
-
-        $this->data['leftSideCourses']=Course::where('parent_id','0')->where('status',1)->select('id','title','slug_url')->orderBy('title')->get();       
+        $this->data['listData']=Category::where('status','1')->get();       
         return view('fe.download.index',$this->data);
     }
    

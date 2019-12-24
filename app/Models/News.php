@@ -22,7 +22,8 @@ class News extends Authenticatable
         'details',
          'image'  ,
          'zone_id',
-         'identifier'    
+         'identifier' ,
+         'slug_url'   
              
     ];
 

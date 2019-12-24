@@ -34,6 +34,9 @@ class NewsController extends AdminBaseController
         if ($request->input('identifier')) {
             $query = $query->where('identifier','=', $request->input('identifier'));
         }
+        if ($request->input('title')) {
+            $query = $query->where('title','like', "%{$request->input('title')}%");
+        }
        
         $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
         
@@ -133,7 +136,7 @@ class NewsController extends AdminBaseController
         ]);
 
         
-            
+        $input['slug_url']=$this->formatSlug($input['title']);     
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = 'main_'.time().'.'.$image->getClientOriginalExtension();

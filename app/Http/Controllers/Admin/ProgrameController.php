@@ -132,7 +132,7 @@ class ProgrameController extends AdminBaseController
         ]);
 
         
-            
+        $input['slug_url']=$this->formatSlug($input['title']);    
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = 'main_'.time().'.'.$image->getClientOriginalExtension();

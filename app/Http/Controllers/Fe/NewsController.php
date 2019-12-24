@@ -33,6 +33,16 @@ class NewsController extends Controller
         $this->data['listData']=News::where('status',1)->orderBy('title')->get();       
         return view('fe.news.index',$this->data);
     }
+
+
+    public function view(Request $request, $id) { 
+        $this->data['content']=Content::where('slug_url',SECTION_SLUG_COURSE)->first(); 
+        $this->data['content']['image_path']="news";
+        $this->setMetaData($this->data['content']);  
+
+        $this->data['viewData']=News::where('slug_url',$id)->first();       
+        return view('fe.news.index',$this->data);
+    }
    
 
 

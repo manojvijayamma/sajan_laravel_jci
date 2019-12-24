@@ -117,7 +117,7 @@ class GalleryController extends AdminBaseController
             $this->data['content'] = new Gallery();
         }    
             
-        $this->data['category'] = Category::where('status',1)->get();
+        $this->data['category'] = Category::where('status',1)->where('identifier','gallery')->get();
         return view('admin.'.$request->input('controller').'.form', $this->data);
     }
 

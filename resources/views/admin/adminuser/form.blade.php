@@ -57,7 +57,7 @@
                     <select class="form-control" id="user_group_id" name="user_group_id" required  > 
                     <option value="">Select</option>
                     @foreach ($usergroups as $cat)                        
-                        <option value="{{$cat->id}}" {{ ( $cat->id==$content->user_group_id ) ? ' selected' : '' }} data-level="{{$cat->level}}">
+                        <option value="{{$cat->id}}" {{ ( $cat->id==$content->user_group_id ) ? ' selected' : '' }}   data-level="{{$cat->level}}">
                             {{$cat->title}}
                         </option>
                     @endforeach
@@ -66,7 +66,7 @@
 
 
 
-             <div class="form-group" id="panel_show" >
+             <div class="form-group" id="zone_panel" style="display:{{$content->zone_id>0 ? '' : 'none' }}">
                 <label for="inputLastname">Zone</label>
                     <select class="form-control" id="zone_id" name="zone_id" required  > 
                     <option value="">Select</option>
@@ -126,20 +126,22 @@ $(document).ready(function() {
     $('.summernote').summernote({disableResizeEditor: true,height: 250,});
 });
 
-function updatePanel(id){
-    switch(id){
-        case '0':           
-            $('#panel_sku').show();
-            $('#panel_category').show();
-            $('#panel_brand').show();
-        break;
-        default:
-            $('#panel_sku').hide();
-            $('#panel_category').hide();
-            $('#panel_brand').hide();
-        break;       
+
+
+$("#user_group_id").on('change', function(){
+    var level=$('option:selected', this).attr('data-level');
+    if(level=='A'){
+        $('#zone_panel').hide();
+        $('#zone_id').val('');
     }
-}
+    else{
+        $('#zone_panel').show();
+    }
+})
+
+
+
+
 
 </script>    
 

@@ -5,6 +5,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Models\Content;
+use App\Models\Team;
 
 
 use DB;
@@ -24,12 +25,16 @@ class TeamController extends Controller
         parent::__construct();
     }
  
-    public function index() { 
+    public function index(Request $request, $id) { 
         $this->data['content']=Content::where('slug_url',SECTION_SLUG_COURSE)->first(); 
         $this->data['content']['image_path']="faq";
         $this->setMetaData($this->data['content']);  
 
-        $this->data['listData']=Faq::where('status',1)->orderBy('title')->get();       
+        $query=Team::query();
+        if($id){
+            $query=$query->where('identifier',$id);
+        }
+        $this->data['listData']=$query->where('status',1)->orderBy('title')->get();       
         return view('fe.faq.index',$this->data);
     }
    

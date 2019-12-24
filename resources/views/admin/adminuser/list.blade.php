@@ -24,7 +24,7 @@
                                         
                                                                         <tr class="list-users">
                                                                             <td>{{ ++$i }}</td>
-                                                                            <td>{{ $row->title }}</td>
+                                                                            <td>{{ $row->name }}</td>
                                                                            
                                                                                                                                                 
                                                                             <td>

@@ -24,10 +24,10 @@
 
              <div class="form-group" id="panel_show" >
                 <label for="inputLastname">Category</label>
-                    <select class="form-control" id="category_id" name="category_id" required  > 
+                    <select class="form-control" id="category_id" name="parent_id" required  > 
                     <option value="">Select</option>
                     @foreach ($categories as $cat)                        
-                        <option value="{{$cat->id}}" {{ ( $cat->id==$content->category_id ) ? ' selected' : '' }}>
+                        <option value="{{$cat->id}}" {{ ( $cat->id==$content->parent_id ) ? ' selected' : '' }}>
                             {{$cat->title}}
                         </option>
                     @endforeach

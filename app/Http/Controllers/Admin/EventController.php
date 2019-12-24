@@ -132,7 +132,7 @@ class EventController extends AdminBaseController
             'title' => 'required', 
         ]);
 
-        
+        $input['slug_url']=$this->formatSlug($input['title']);
             
         if ($request->hasFile('image')) {
             $image = $request->file('image');

@@ -275,7 +275,7 @@ body {
                         
                         <?php if($adminMenuContent){
                             foreach($adminMenuContent as $val){?>
-                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', '<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
+                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
                             </li>
                             <li class="divider"></li>
                         <?php } }?> 
@@ -294,7 +294,7 @@ body {
                         
                         <?php if($adminMenuMaster){
                             foreach($adminMenuMaster as $val){?>
-                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', '<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
+                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
                             </li>
                             <li class="divider"></li>
                         <?php } }?> 

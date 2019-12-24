@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Models\Download;
-
+use App\Models\Category;
 
 
 use Excel;
@@ -109,7 +109,7 @@ class DownloadsController extends Controller
             $this->data['content'] = new Download();
         }        
        
-
+        $this->data['categories']=Category::where('status',1)->where('identifier','downloads')->get();
         return view('admin.'.$request->input('controller').'.form', $this->data);
     }
 

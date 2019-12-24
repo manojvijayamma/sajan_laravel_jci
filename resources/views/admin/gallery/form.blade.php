@@ -74,7 +74,7 @@
 
 
 
-             <div class="form-group" >
+             <div class="form-group" style="display:{{($content->identifier=='video' )  ? '' :'none'}}">
                  <label for="name">
                      Video Url:</label>
                      

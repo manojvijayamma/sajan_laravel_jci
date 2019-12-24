@@ -30,9 +30,11 @@ class GalleryController extends Controller
         $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
         
-        $this->data['listData']=Gallery::where('status','1')->get(); 
-
-       
+        $query=Gallery::query();
+        if($id){
+            $query=$query->where('identifier',$id);
+        }
+        $this->data['listData']=$query->where('status','1')->get();       
         return view('fe.gallery.index',$this->data);
     }
    
