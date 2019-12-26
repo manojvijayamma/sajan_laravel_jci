@@ -14,8 +14,8 @@ use DB;
 
 use App\Models\Content;
 use App\Models\Banner;
-use App\Models\Category;
-use App\Models\Course;
+use App\Models\News;
+
 
 
 class Controller extends BaseController
@@ -63,10 +63,31 @@ class Controller extends BaseController
 
 
         
-        
-        $this->data['mainMenu'] = DB::table('contents')
+        $this->data['topLevel1Menu'] = DB::table('contents')
         ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
         ->where('content_position_relations.position_id', '1')
+        ->where('contents.status', '1')
+        ->where('contents.parent_id',0)->where('contents.is_widget','0')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->orderBy('contents.priority','ASC')
+        ->orderBy('contents.title','ASC')
+        ->get();
+
+
+        $this->data['topLevel2Menu'] = DB::table('contents')
+        ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
+        ->where('content_position_relations.position_id', '2')
+        ->where('contents.status', '1')
+        ->where('contents.parent_id',0)->where('contents.is_widget','0')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->orderBy('contents.priority','ASC')
+        ->orderBy('contents.title','ASC')
+        ->get();
+
+
+        $this->data['mainMenu'] = DB::table('contents')
+        ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
+        ->where('content_position_relations.position_id', '3')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)->where('contents.is_widget','0')
         ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
@@ -77,7 +98,7 @@ class Controller extends BaseController
 
         $this->data['footerMenu'] = DB::table('contents')
         ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
-        ->where('content_position_relations.position_id', '2')
+        ->where('content_position_relations.position_id', '4')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)->where('contents.is_widget','0')
         ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
@@ -86,7 +107,7 @@ class Controller extends BaseController
         ->get(); 
 
       
-        
+        $this->data['newsUpdates'] = News::get();
        
     }
 

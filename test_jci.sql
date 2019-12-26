@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 19, 2019 at 05:26 PM
+-- Generation Time: Dec 26, 2019 at 01:48 PM
 -- Server version: 5.7.28-0ubuntu0.16.04.2
 -- PHP Version: 7.2.18-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -36,15 +36,16 @@ CREATE TABLE `admins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `zone_id` int(11) DEFAULT NULL,
-  `user_group_id` int(11) DEFAULT NULL
+  `user_group_id` int(11) DEFAULT NULL,
+  `image` varchar(222) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `admins`
 --
 
-INSERT INTO `admins` (`id`, `name`, `email`, `status`, `password`, `remember_token`, `created_at`, `updated_at`, `zone_id`, `user_group_id`) VALUES
-(2, 'Admin User', 'm@gmail.com', '1', '$2y$10$n4Lk7L8hyXsxk6Tz9WRFpOJxqqArU29d/RrhMO1JspOPwRZVI.cBO', '8stAmaiUPRIO6aZenAe5kgIcyy7jsVYqgNlRInRIqxYTXlQ2pxcIIyI9vMOc', '2018-11-26 23:05:46', '2019-05-19 02:51:12', NULL, NULL);
+INSERT INTO `admins` (`id`, `name`, `email`, `status`, `password`, `remember_token`, `created_at`, `updated_at`, `zone_id`, `user_group_id`, `image`) VALUES
+(2, 'Admin User1', 'm@gmail.com', '1', '$2y$10$YQKAcGlsX6Uf/okqKVkX.uIqNpje68vJys6xqkpHHJJvmAmRSAj52', '8stAmaiUPRIO6aZenAe5kgIcyy7jsVYqgNlRInRIqxYTXlQ2pxcIIyI9vMOc', '2018-11-26 23:05:46', '2019-12-23 22:01:31', NULL, 1, '1577157650.png');
 
 -- --------------------------------------------------------
 
@@ -118,7 +119,9 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`id`, `title`, `parent_id`, `priority`, `status`, `created_at`, `updated_at`, `identifier`) VALUES
 (1, '1', NULL, NULL, '1', '2019-09-03 04:51:19', '2019-09-03 04:51:19', NULL),
 (2, '3', NULL, NULL, '1', '2019-09-03 04:52:23', '2019-09-03 04:52:32', NULL),
-(3, 'Category1', NULL, NULL, '1', '2019-09-08 08:15:09', '2019-09-08 08:15:09', NULL);
+(3, 'Category1', NULL, NULL, '1', '2019-09-08 08:15:09', '2019-09-08 08:15:09', NULL),
+(4, 'g1', NULL, NULL, '1', '2019-12-23 22:14:53', '2019-12-23 22:14:53', 'gallery'),
+(5, 'd1', NULL, NULL, '1', '2019-12-23 22:15:03', '2019-12-23 22:15:03', 'downloads');
 
 -- --------------------------------------------------------
 
@@ -225,10 +228,10 @@ CREATE TABLE `content_positions` (
 --
 
 INSERT INTO `content_positions` (`id`, `title`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'Main Menu', '1', NULL, NULL),
-(2, 'Footer', '1', NULL, NULL),
-(3, 'Others', '1', NULL, NULL),
-(6, '', '1', NULL, NULL);
+(1, 'Top Menu', '1', NULL, NULL),
+(2, 'Top Sub Menu', '1', NULL, NULL),
+(3, 'Main Menu', '1', NULL, NULL),
+(6, 'Footer Menu', '1', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -308,7 +311,7 @@ CREATE TABLE `downloads` (
 
 INSERT INTO `downloads` (`id`, `title`, `image`, `status`, `priority`, `updated_at`, `created_at`, `parent_id`) VALUES
 (20, 'Protective And Marine Painting Course', 'image_20.pdf', '1', 0, NULL, NULL, NULL),
-(21, 'API Training Programe Prospectus1', 'image_21.pdf', '1', 0, '2019-09-08 04:50:30', NULL, NULL),
+(21, 'API Training Programe Prospectus1', 'image_21.pdf', '1', 0, '2019-12-24 03:49:58', NULL, 5),
 (22, 'BGAS Painting Inspector Grade 2 & Grade 1', 'image_22.pdf', '1', 0, NULL, NULL, NULL),
 (23, 'CSWIP Senior Welding Inspector - Level 3 & Level 2', 'image_23.pdf', '1', 0, NULL, NULL, NULL),
 (24, 'Protective & Marine Painter by PCSC', 'image_24.pdf', '1', 0, NULL, NULL, NULL),
@@ -348,22 +351,22 @@ CREATE TABLE `events` (
   `location` varchar(222) DEFAULT NULL,
   `priority` int(11) DEFAULT NULL,
   `status` enum('1','0') NOT NULL,
-  `details` text NOT NULL,
+  `details` text,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `featured` enum('1','0') NOT NULL DEFAULT '0',
   `zone_id` int(11) DEFAULT NULL,
   `image` varchar(222) DEFAULT NULL,
-  `identifier` varchar(100) DEFAULT NULL
+  `identifier` varchar(100) DEFAULT NULL,
+  `slug_url` varchar(222) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `events`
 --
 
-INSERT INTO `events` (`id`, `title`, `event_date`, `time`, `location`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `zone_id`, `image`, `identifier`) VALUES
-(1, 'test', NULL, NULL, NULL, 0, '1', '<p>testing</p>', NULL, NULL, '0', NULL, NULL, NULL),
-(2, 'd', NULL, NULL, NULL, NULL, '1', '<p>fdfsdf<br></p>', '2019-09-08 05:09:44', '2019-09-08 05:09:44', '0', NULL, NULL, NULL);
+INSERT INTO `events` (`id`, `title`, `event_date`, `time`, `location`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `zone_id`, `image`, `identifier`, `slug_url`) VALUES
+(1, '1', NULL, NULL, NULL, NULL, '1', NULL, '2019-12-24 03:37:04', '2019-12-24 03:37:04', '0', NULL, NULL, NULL, '1');
 
 -- --------------------------------------------------------
 
@@ -414,7 +417,8 @@ CREATE TABLE `galleries` (
 
 INSERT INTO `galleries` (`id`, `title`, `image`, `large_image`, `parent_id`, `status`, `created_at`, `updated_at`, `identifier`, `video_url`) VALUES
 (1, 'rerewr', NULL, NULL, 1, '1', '2019-09-08 09:18:52', '2019-09-08 09:21:30', 'I', NULL),
-(2, 'erew', 'gallery_1568308780.png', NULL, 1, '1', '2019-09-12 21:19:40', '2019-09-12 21:19:40', 'I', NULL);
+(2, 'erew', 'gallery_1568308780.png', NULL, 1, '1', '2019-09-12 21:19:40', '2019-09-12 21:19:40', 'I', NULL),
+(3, 'e', 'gallery_1577159415.png', NULL, 4, '1', '2019-12-23 22:20:16', '2019-12-23 22:20:16', 'gallery', NULL);
 
 -- --------------------------------------------------------
 
@@ -446,14 +450,14 @@ CREATE TABLE `menus` (
 --
 
 INSERT INTO `menus` (`id`, `title`, `parent_id`, `status`, `fe_url`, `admin_url`, `icon`, `quick_icon`, `created_at`, `updated_at`, `show_in_admin`, `show_in_fe`, `priority`, `query_string`, `need_sub_menu`, `category`) VALUES
-(1, 'Category', 0, '1', NULL, 'category', 'category.jpeg', NULL, '2018-11-26 23:05:46', '2018-11-26 23:05:46', '1', '0', 1, NULL, '0', 'A'),
-(3, 'Downloads ', NULL, '1', NULL, 'downloads', 'downloads.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'A'),
-(6, 'Banner', NULL, '1', NULL, 'banner', 'banner.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'A'),
+(1, 'Gallery Category', 0, '1', NULL, 'category', 'category.jpeg', NULL, '2018-11-26 23:05:46', '2018-11-26 23:05:46', '1', '0', 1, 'gallery', '0', 'M'),
+(3, 'Downloads ', NULL, '1', NULL, 'downloads', 'downloads.png', NULL, NULL, NULL, '1', '0', 1, 'downloads', '0', 'C'),
+(6, 'Banner', NULL, '1', NULL, 'banner', 'banner.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
 (9, 'Content', NULL, '1', NULL, 'content', 'content.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
 (10, 'News', NULL, '1', NULL, 'news', 'news.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
-(11, 'Events', NULL, '1', NULL, 'event', 'career.jpeg', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
-(12, 'Zone Events', NULL, '1', NULL, 'zoneevent', 'testimonial.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
-(14, 'Gallery', NULL, '1', NULL, 'gallery', 'gallery.png', NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
+(11, 'Events', NULL, '1', NULL, 'event', 'career.jpeg', NULL, NULL, NULL, '1', '0', 1, 'event', '0', 'C'),
+(12, 'Zone Events', NULL, '1', NULL, 'event', 'testimonial.png', NULL, NULL, NULL, '1', '0', 1, 'zoneevent', '0', 'C'),
+(14, 'Gallery', NULL, '1', NULL, 'gallery', 'gallery.png', NULL, NULL, NULL, '1', '0', 1, 'gallery', '0', 'C'),
 (15, 'Programe', NULL, '1', 'enquiry', 'programe', NULL, NULL, NULL, NULL, '1', '0', 1, NULL, '0', 'C'),
 (16, 'National Governing Board', 0, '1', NULL, 'team', NULL, NULL, NULL, NULL, '0', '0', 1, 'national-governing-board', '1', 'T'),
 (17, 'National Executive Committee', 16, '1', NULL, 'team', NULL, NULL, NULL, NULL, '1', '0', 1, 'national-executive-committee', '0', 'T'),
@@ -470,7 +474,8 @@ INSERT INTO `menus` (`id`, `title`, `parent_id`, `status`, `fe_url`, `admin_url`
 (28, 'Zone Governing Board', 0, '1', NULL, 'team', NULL, NULL, NULL, NULL, '1', '0', 1, 'zone-governing-board', '0', 'T'),
 (29, 'Past National Presidents', 0, '1', NULL, 'team', NULL, NULL, NULL, NULL, '1', '0', 1, 'past-national-presidents', '0', 'T'),
 (30, 'International Corner', 0, '1', NULL, 'team', NULL, NULL, NULL, NULL, '1', '0', 1, 'international-corner', '0', 'T'),
-(31, 'Admin User', 0, '1', NULL, 'adminuser', 'category.jpeg', NULL, '2018-11-26 17:35:46', '2018-11-26 17:35:46', '1', '0', 1, NULL, '0', 'M');
+(31, 'Admin User', 0, '1', NULL, 'adminuser', 'category.jpeg', NULL, '2018-11-26 17:35:46', '2018-11-26 17:35:46', '1', '0', 1, NULL, '0', 'M'),
+(32, 'Download Category', 0, '1', NULL, 'category', 'category.jpeg', NULL, '2018-11-26 17:35:46', '2018-11-26 17:35:46', '1', '0', 1, 'downloads', '0', 'M');
 
 -- --------------------------------------------------------
 
@@ -525,16 +530,17 @@ CREATE TABLE `news` (
   `featured` enum('1','0') NOT NULL DEFAULT '0',
   `image` varchar(222) DEFAULT NULL,
   `identifier` varchar(100) DEFAULT NULL,
-  `zone_id` int(11) DEFAULT NULL
+  `zone_id` int(11) DEFAULT NULL,
+  `slug_url` varchar(222) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `news`
 --
 
-INSERT INTO `news` (`id`, `title`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `image`, `identifier`, `zone_id`) VALUES
-(1, 'test', 0, '1', '<p>testing</p>', NULL, NULL, '0', NULL, NULL, NULL),
-(2, 'd', NULL, '1', '<p>fdfsdf<br></p>', '2019-09-08 05:09:44', '2019-09-08 05:09:44', '0', NULL, NULL, NULL);
+INSERT INTO `news` (`id`, `title`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `image`, `identifier`, `zone_id`, `slug_url`) VALUES
+(1, 'test', 0, '1', '<p>testing</p>', NULL, NULL, '0', NULL, NULL, NULL, NULL),
+(2, 'd', NULL, '1', '<p>fdfsdf<br></p>', '2019-09-08 05:09:44', '2019-12-24 03:33:27', '0', NULL, NULL, 3, 'd');
 
 -- --------------------------------------------------------
 
@@ -551,16 +557,17 @@ CREATE TABLE `programes` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   `featured` enum('1','0') NOT NULL DEFAULT '0',
-  `zone_id` int(11) DEFAULT NULL
+  `zone_id` int(11) DEFAULT NULL,
+  `slug_url` varchar(222) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `programes`
 --
 
-INSERT INTO `programes` (`id`, `title`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `zone_id`) VALUES
-(1, 'test', 0, '1', '<p>testing</p>', NULL, NULL, '0', NULL),
-(2, 'd', NULL, '1', '<p>fdfsdf<br></p>', '2019-09-08 05:09:44', '2019-09-08 05:09:44', '0', NULL);
+INSERT INTO `programes` (`id`, `title`, `priority`, `status`, `details`, `created_at`, `updated_at`, `featured`, `zone_id`, `slug_url`) VALUES
+(1, 'test', 0, '1', '<p>testing</p>', NULL, NULL, '0', NULL, NULL),
+(2, 'd', NULL, '1', '<p>fdfsdf<br></p>', '2019-09-08 05:09:44', '2019-12-24 03:37:50', '0', 3, 'd');
 
 -- --------------------------------------------------------
 
@@ -690,9 +697,8 @@ CREATE TABLE `user_groups` (
 --
 
 INSERT INTO `user_groups` (`id`, `title`, `priority`, `status`, `created_at`, `updated_at`, `level`) VALUES
-(1, '1', NULL, '1', '2019-09-03 04:51:19', '2019-09-03 04:51:19', 'A'),
-(2, '3', NULL, '1', '2019-09-03 04:52:23', '2019-09-03 04:52:32', 'A'),
-(3, 'Category1', NULL, '1', '2019-09-08 08:15:09', '2019-09-08 08:15:09', 'A');
+(1, 'Admin', NULL, '1', '2019-09-03 04:51:19', '2019-09-03 04:51:19', 'A'),
+(2, 'User', NULL, '1', '2019-09-03 04:52:23', '2019-09-03 04:52:32', 'Z');
 
 -- --------------------------------------------------------
 
@@ -872,7 +878,7 @@ ALTER TABLE `banner_positions`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `contents`
 --
@@ -907,7 +913,7 @@ ALTER TABLE `enquiries`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `faqs`
 --
@@ -917,12 +923,12 @@ ALTER TABLE `faqs`
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 --
 -- AUTO_INCREMENT for table `news`
 --
@@ -952,7 +958,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `user_groups`
 --
 ALTER TABLE `user_groups`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `zones`
 --
