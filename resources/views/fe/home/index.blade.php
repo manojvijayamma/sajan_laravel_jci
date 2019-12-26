@@ -160,45 +160,13 @@
                       
                       </div>
                 
-                
-                    <div class="col-lg-3 col-md-6 col-sm-6" align="center">
-                        <div class="single-categori mb-30">
-                            <img src="images/icons/c1.png" alt="" >
-                            <h3><a href="#">Why JCI India</a></h3>
-                            <p>Junior Chamber International (JCI) is a worldwide federation of
-                             young leaders and entrepreneurs.</p>
-                             <a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6"align="center">
-                        <div class="single-categori mb-30">
-                            <img src="images/icons/c2.png" alt="" >
-                            <h3><a href="#">Founder’s Perspective</a></h3>
-                            <p>From within the walls of the soul of this 
-                            organization wherein the foundation of
+                      @include('fe.includes.aboutus_box')  
 
-character and good citizenship are laid.</p>
-<a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6"align="center">
-                        <div class="single-categori mb-30">
-                            <img src="images/icons/c3.png" alt="" >
-                            <h3><a href="#">JCI Mission & Vision</a></h3>
-                            <p>To Provide Development  Opportunities that empower young
-                             people to create positive changes.</p>
-                            <a href="#"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 col-sm-6"align="center">
-                        <div class="single-categori mb-30">
-                            <img src="images/icons/c4.png" alt="" >
-                            <h3><a href="#">JCI Values</a></h3>
-                            <p>That economic justice can best be won by free men through free enterprise,
-                            I hope a message will come in the sometime.</p>
-                            <a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
+                
+             
+
+
+
                 </div>
             </div>
         </div>
@@ -206,36 +174,7 @@ character and good citizenship are laid.</p>
         
         <div class="countdown-area bg-1 ptb-110 bg-opacity bg-relative">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-7 col-xs-12 ">
-                        <div class="countdown-all">
-                        <img src="images/jci.png">
-                        <h4 align="center">JCI Sen. Anish C. Mathew</h4>
-                        <h5 align="center">National President, JCI India 2020</h5>
-                       
-                        
-                            
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-sm-5 col-xs-12">
-                        <div class="register-from">
-                            <div class="register-top">
-                                <h3>NATIONAL PRESIDENT CORNER</h3>
-                           
-                            </div>
-                            <p>
-                            Dear Leaders,<br>
-Love from your National President.<br>
-It gives me immense pleasure to reach you all through this message. Let me convey my gratitude and huge thanks for the immense love and affection that each one of you has showered upon me. As JCI Members, we have a lot of responsibilities to make active citizens and better communities in and around us. While the deal is not yet complete, this is the right time to utilize the opportunity bestowed upon our shoulders and create that impactful change in the world.
-<!--The immense prospects allow us to be the blessed ones who can harness the power of JCI India and empower multitudes of individuals and organizations in the true sense. We have an immaculate history in building platforms and ecosystems that created broader opportunities and spectrums. And, with continued focus, we need to scale to new heights this New Year. This does not mean that we need to do more things, but that the work we do empowers and influences the world to do more of what they care about — communicate, build teams, have lots of fun, perform efficiently and accomplish great things.-->
-                            </p>
-                        <div class="more"><a href="#">More</a></div>
-                            
-                        </div>
-                    </div>
-                    <div class="np">
-                    <img src="images/nplogo.jpg"></div>
-                </div>
+            @include('fe.includes.president_corner')  
             </div>
         </div>
         
@@ -256,66 +195,11 @@ It gives me immense pleasure to reach you all through this message. Let me conve
                 </div>
                 <div class="row">
                     <div class="all-courses">
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/1.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                    <h3><a href="#">ZONE I</a></h3>
-                                    
-                                    <!--<a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/2.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                     <h3><a href="#">ZONE II</a></h3>
-                                    
-                                  <!--  <a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/3.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                    <h3><a href="#">ZONE III</a></h3>
-                                    
-                                 <!--   <a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/4.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                     <h3><a href="#">ZONE IV</a></h3>
-                                    
-                                <!--    <a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/5.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                   <h3><a href="#">ZONE V</a></h3>
-                                    
-                                   <!-- <a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="single-course">
-                                <a href="#"><img src="images/6.jpg" alt="" ></a>
-                                <div class="single-coures-text">
-                                   <h3><a href="#">ZONE VI</a></h3>
-                                    
-                                   <!-- <a href="#">READ MORE</a>-->
-                                </div>
-                            </div>
-                        </div>
+                    @include('fe.includes.zone_event')                       
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -333,104 +217,13 @@ It gives me immense pleasure to reach you all through this message. Let me conve
                 </div>
                 <div class="row">
                     <div class="all-upcoming-event">
-                        <div class="col-md-6 col-sm-12">
-                            <div class="single-upcoming mb-40">
-                                <div class="upcoming-date text-center">
-                                    <div class="date-all">
-                                        <span>22</span>
-                                        <span class="month">October</span>
-                                    </div>
-                                </div>
-                                <div class="single-upcoming-text">
-                                    <!--<div class="blog-meta">
-                                        <span class="published3">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            08 am to 12 pm
-                                        </span>
-                                        <span class="published4">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            T House GOA
-                                        </span>
-                                    </div>-->
-                                    <h3><a href="#">
-BUSINESS CONFERENCE</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dot tempor incididunt ut labore et dolore </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="single-upcoming mb-40">
-                                <div class="upcoming-date text-center">
-                                    <div class="date-all">
-                                        <span>20</span>
-                                        <span class="month">October</span>
-                                    </div>
-                                </div>
-                                <div class="single-upcoming-text">
-                                   <!-- <div class="blog-meta">
-                                        <span class="published3">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            08 am to 12 pm
-                                        </span>
-                                        <span class="published4">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            T House GOA
-                                        </span>
-                                    </div>-->
-                                    <h3><a href="#">THE SECRETS OF ECONOMIC</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dot tempor incididunt ut labore et dolore </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="single-upcoming mb-40">
-                                <div class="upcoming-date text-center">
-                                  <div class="date-all">
-                                        <span>26</span>
-                                        <span class="month">October</span>
-                                    </div>
-                                </div>
-                                <div class="single-upcoming-text">
-                                    <!--  <div class="blog-meta">
-                                        <span class="published3">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            08 am to 12 pm
-                                        </span>
-                                        <span class="published4">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            T House GOA
-                                        </span>
-                                    </div>-->
-                                    <h3><a href="#">EMPOWERING YOUTH</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dot tempor incididunt ut labore et dolore </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                            <div class="single-upcoming mb-40">
-                                <div class="upcoming-date text-center">
-                                    <div class="date-all">
-                                        <span>27</span>
-                                        <span class="month">October</span>
-                                    </div>
-                                </div>
-                                <div class="single-upcoming-text">
-                                    <!--<div class="blog-meta">
-                                        <span class="published3">
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i>
-                                            08 am to 12 pm
-                                        </span>
-                                        <span class="published4">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                            T House GOA
-                                        </span>
-                                    </div>-->
-                                    <h3><a href="#">
-BUSINESS CONFERENCE</a></h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed dot tempor incididunt ut labore et dolore </p>
-                                </div>
-                            </div>
-                        </div>
+
+                    @include('fe.includes.upcoming_events')
+
+                        
+
+
+
                     </div>
                 </div>
             </div>
@@ -458,65 +251,8 @@ BUSINESS CONFERENCE</a></h3>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/11.png"></a>
-                                <div class="img-title">
-                                    <h3>NATCON 2018 PROMOTION</h3>
-                                   
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                                                         </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/22.png"></a>
-                                <div class="img-title">
-                                    <h3>ACHIEVEMENTS</h3>
-                                   
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-sm mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/3.png"></a>
-                                <div class="img-title">
-                                    <h3>SUSTAINABLE DEVELOPMENT</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                               
-                              
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-sm mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/4.png"></a>
-                                <div class="img-title">
-                                    <h3>ONLINE G&D AND MRF</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                                                          </div>
-                        </div>
-                    </div>
+                        @include('fe.includes.box_links')
+
                 </div>
             </div>
         </div>
@@ -527,54 +263,7 @@ BUSINESS CONFERENCE</a></h3>
                 <h2 align="center" style="color:#fff;padding-bottom:20px;">JCI PROGRAMS</h2>
                     <div class="col-md-12">
                         <div class="testimonial-all slider-active2">
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/1.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>JCI TRAINING PROGRAME</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/7.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                       
-                                        <p>FOOD GRAIN DISTRIBUTION</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/25.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>BLOOD DONATION</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/aug2.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>INDEPENDENCE DAY</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
+                         @include('fe.includes.jci_programe')
                         </div>
                     </div>
                 </div>
@@ -583,23 +272,10 @@ BUSINESS CONFERENCE</a></h3>
         
         
         <div id="fixed-social">
-  <div>
-    <a href="#" class="fixed-facebook" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
-  </div>
-  <div>
-    <a href="#" class="fixed-twitter" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
-  </div>
-  <div>
-    <a href="#" class="fixed-gplus" target="_blank"><i class="fa fa-google"></i> <span>Google+</span></a>
-  </div>
-  <div>
-    <!--<a href="#" class="fixed-linkedin" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a>
-  </div>
-  <div>-->
-   
-  <a href="#" class="fixed-instagrem" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
-  </div>
-</div>
+                @include('fe.includes.social_links')
+
+  
+        </div>
         <!--<div class="event-area ptb-110">
             <div class="container">
                 <div class="row">
@@ -720,118 +396,7 @@ BUSINESS CONFERENCE</a></h3>
             </div>
         </div>-->
         <!-- Start footer area -->
-        <footer class="footer-area">
-            <div class="footer-top ptb-110">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="footer-text footer-social">
-                                 <h3>Contact Us</h3>
-                                <p>JCI India<br>
-National Head Quarters<br>
-506 Windfall, Sahar Plaza, J.B. Nagar,<br>
-Andheri (EAST)
-Mumbai 400 059<br>
-Tel: (022)-71117112<br>
-Email: nhq@jciindia.in  </p>
-                                <ul>
-                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-tumblr"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="footer-text mrg-xs">
-                                <h3>Quick Links</h3>
-                                <ul class="footer-text-all">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Why JCI</a></li>
-                                    <li><a href="#">JCI India</a></li>
-                                    <li><a href="#">JCI Mission</a></li>
-                                    <li><a href="#">JCI Vision</a></li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">National Appointees</a></li>
-                                    <li><a href="#">International Corner</a></li>
-                                    <li><a href="#">Past National President</a></li>
-                                    <li><a href="#">National Head Quarter</a></li>
-                                    <li><a href="#">Team History</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6 sendl">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">International Events</a></li>
-                                    <li><a href="#">National Events</a></li>
-                                    <li><a href="#">Zone Events</a></li>
-                                    <li><a href="#">Past Events</a></li>
-                                    <li><a href="#">UpComming Events</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6 last">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">Management</a></li>
-                                    <li><a href="#">Training</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Community</a></li>
-                                    <li><a href="#">International</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        
-                        <!--<div class="col-md-5 col-sm-6">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                               <h3>Enquiry</h3>
-                               <form action="#">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input placeholder="Name*" type="text">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="in-mrg" placeholder="Email*" type="email">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <textarea placeholder="Massage*"></textarea>
-                                            <button class="submit" type="submit">send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="footer-bottom-text ptb-20">
-                                <p>
-                                    Copyrights © <a href="#" target="_blank"> 2020 jci india | Designed by Spiderline</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('fe.includes.footer')
         <!-- End footer area -->
         <!-- start scrollUp
         ============================================ -->
