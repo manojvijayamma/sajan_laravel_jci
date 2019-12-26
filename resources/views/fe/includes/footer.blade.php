@@ -23,55 +23,23 @@
                         <div class="col-md-2 col-sm-6">
                             <div class="footer-text mrg-xs">
                                 <h3>Quick Links</h3>
-                                <ul class="footer-text-all">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Why JCI</a></li>
-                                    <li><a href="#">JCI India</a></li>
-                                    <li><a href="#">JCI Mission</a></li>
-                                    <li><a href="#">JCI Vision</a></li>
-                                   
-                                </ul>
+                            
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-6">
+                        <div >
                             <div class="footer-text mrg-sm3 mrg-xs">
                                 <h3>&nbsp;</h3>
                                 <ul class="footer-text-all">
-                                 <li><a href="#">National Appointees</a></li>
-                                    <li><a href="#">International Corner</a></li>
-                                    <li><a href="#">Past National President</a></li>
-                                    <li><a href="#">National Head Quarter</a></li>
-                                    <li><a href="#">Team History</a></li>
+                                 <li class="col-md-2 col-sm-6"><a href="#">National Appointees</a></li>
+                                    <li class="col-md-2 col-sm-6"><a href="#">International Corner</a></li>
+                                    <li class="col-md-2 col-sm-6"><a href="#">Past National President</a></li>
+                                    <li class="col-md-2 col-sm-6"><a href="#">National Head Quarter</a></li>
+                                    <li class="col-md-2 col-sm-6"><a href="#">Team History</a></li>
                                     
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-md-2 col-sm-6 sendl">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">International Events</a></li>
-                                    <li><a href="#">National Events</a></li>
-                                    <li><a href="#">Zone Events</a></li>
-                                    <li><a href="#">Past Events</a></li>
-                                    <li><a href="#">UpComming Events</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6 last">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">Management</a></li>
-                                    <li><a href="#">Training</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Community</a></li>
-                                    <li><a href="#">International</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
+                    
                         
                         
                         <!--<div class="col-md-5 col-sm-6">

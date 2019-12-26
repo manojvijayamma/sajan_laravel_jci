@@ -1,1 +1,1 @@
-<a href="{{url('')}}"><img src="images/logo/logo.png" alt=""> </a>
+<a href="{{url('')}}"><img src="{{asset('fe_theme/images/logo/logo.png')}}" alt=""> </a>

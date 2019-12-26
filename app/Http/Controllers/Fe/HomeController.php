@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Fe;
 use Illuminate\Http\Request;
 
 use App\Models\Banner;
-use App\Models\Programme;
+use App\Models\Programe;
 use App\Models\Event;
 
 use DB;
@@ -32,7 +32,7 @@ class HomeController extends Controller
     {
          
         $this->data['mainBanners']=Banner::where('status',1)->where('position_id','1')->get();
-        $this->data['programme']=Programme::where('status',1)->get();
+        $this->data['programme']=Programe::where('status',1)->get();
         $this->data['upcomingEvents']=Event::where('status',1)->get();
         $this->data['zoneEvent']=Event::where('status',1)->get();
 
