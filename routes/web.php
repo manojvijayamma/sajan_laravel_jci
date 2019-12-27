@@ -198,14 +198,14 @@ Route::prefix('admin')->group(function () {
     Route::get('/event/{id}/show', 'Admin\EventController@show')->name('event.show');
 
 
-    Route::get('/zoneevent', 'Admin\ZoneEventController@index')->name('zoneevent.index');
-    Route::get('/zoneevent/create', 'Admin\ZoneEventController@create')->name('zoneevent.create');
-    Route::post('/zoneevent', 'Admin\ZoneEventController@store')->name('zoneevent.store');
-    Route::get('/zoneevent/{id}/edit', 'Admin\ZoneEventController@edit')->name('zoneevent.edit');
-    Route::put('/zoneevent/{id}', 'Admin\ZoneEventController@update')->name('zoneevent.update');
-    Route::delete('/zoneevent/{id}', 'Admin\ZoneEventController@destroy')->name('zoneevent.destroy');
-    Route::get('/zoneevent/{id}/status', 'Admin\ZoneEventController@status')->name('zoneevent.status');
-    Route::get('/zoneevent/{id}/show', 'Admin\ZoneEventController@show')->name('zoneevent.show');
+    // Route::get('/zoneevent', 'Admin\ZoneEventController@index')->name('zoneevent.index');
+    // Route::get('/zoneevent/create', 'Admin\ZoneEventController@create')->name('zoneevent.create');
+    // Route::post('/zoneevent', 'Admin\ZoneEventController@store')->name('zoneevent.store');
+    // Route::get('/zoneevent/{id}/edit', 'Admin\ZoneEventController@edit')->name('zoneevent.edit');
+    // Route::put('/zoneevent/{id}', 'Admin\ZoneEventController@update')->name('zoneevent.update');
+    // Route::delete('/zoneevent/{id}', 'Admin\ZoneEventController@destroy')->name('zoneevent.destroy');
+    // Route::get('/zoneevent/{id}/status', 'Admin\ZoneEventController@status')->name('zoneevent.status');
+    // Route::get('/zoneevent/{id}/show', 'Admin\ZoneEventController@show')->name('zoneevent.show');
 
 
 
@@ -228,7 +228,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/team/{id}/status', 'Admin\TeamController@status')->name('team.status');
     Route::get('/team/{id}/show', 'Admin\TeamController@show')->name('team.show');
     
-
+    
+    
+    
+    Route::get('/presidentcorner', 'Admin\PresidentCornerController@edit')->name('presidentcorner.edit');
+    Route::put('/presidentcorner/{id}', 'Admin\PresidentCornerController@update')->name('presidentcorner.update');
+    
 
    
 

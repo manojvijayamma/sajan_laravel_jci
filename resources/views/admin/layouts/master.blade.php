@@ -268,6 +268,25 @@ body {
 
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <i class="fa fa-user fa-fw"></i> Events <b class="caret"></b>
+                        </a>
+                        
+                        <ul class="dropdown-menu dropdown-user">
+                        
+                        <?php if($adminMenuEvents){
+                            foreach($adminMenuEvents as $val){?>
+                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
+                            </li>
+                            <li class="divider"></li>
+                        <?php } }?> 
+                           
+                        </ul>
+                        
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                             <i class="fa fa-user fa-fw"></i> Content <b class="caret"></b>
                         </a>
                         

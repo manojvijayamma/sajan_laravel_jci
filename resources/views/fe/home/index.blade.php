@@ -146,21 +146,28 @@
         <!-- start categoris area --> 
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
+                <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_ABOUT_JCI_INDIA])){?>
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase">ABOUT JCI INDIA</h1>
+                    <h1 class="uppercase"><?php echo $widgetContents[WIDGET_ABOUT_JCI_INDIA]->title?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
+                <?php } ?>
                 <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12">
-                      <p class="abt">The origin of Junior Chamber international (JCI) can be traced as far as almost a century  ago in 1915 to the city of St. Louis, Missouri, USA, <br>  where a young man named Henry Giessenbier together with 32 other young men, established the Young Men’s Progressive Civic Association (YMPCA), JCI’s first local organization.<br> YMPCA  grew to a membership of 750 in less than five months. The association went on to dedicate itself to bringing about civic improvements and giving young people a constructive approach to civic problems.</p>
-                       <div class="nxt"><a href="#">More</a></div>
-                      <br>
                       
+                    <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_ABOUT_JCI_INDIA])){
+                        $url=General::url($widgetContents[WIDGET_ABOUT_JCI_INDIA]->slug_url, $widgetContents[WIDGET_ABOUT_JCI_INDIA]->link_type);
+                        ?>
+                      <div class="col-lg-12 col-md-12 col-sm-12">
+                      <p class="abt">
+                      <?php echo $widgetContents[WIDGET_ABOUT_JCI_INDIA]->short_description?>
+                      </p>
+                       <div class="nxt"><a href="{{ url($url)}}">More</a></div>
+                      <br>                      
                       </div>
-                
-                      @include('fe.includes.aboutus_box')  
+                    <?php } ?>                
+                    @include('fe.includes.aboutus_box')  
 
                 
              

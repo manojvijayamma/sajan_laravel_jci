@@ -12,9 +12,9 @@ if($mainBanners){
                             <!-- <h2>BE BETTER</h2> -->
                             <p><?php echo $val['title']?> </p>
                             <?php if(isset($val['link_url'])){?>
-                            <a class="button extra-small mb-20" href="<?php echo $val['link_url']?>">
-                                <span>READ MORE</span>
-                            </a>
+                                <a class="button extra-small mb-20" href="<?php echo $val['link_url']?>">
+                                    <span>READ MORE</span>
+                                </a>
                             <?php } ?>
                         </div>
                     </div>

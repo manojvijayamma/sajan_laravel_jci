@@ -9,7 +9,7 @@ if($mainMenu){
                                         switch($mMenu->section_url){
                                         
                                                 case 'team':
-                                                    $teamData=DB::table('teams')->where('status', '1')->get();
+                                                    $teamData=DB::table('menus')->where('status', '1')->where('Category','T')->get();
                                                         if(isset($teamData) && count($teamData)>0){ 
                                             ?>   
                                                             <li><a href="javascript:void(0);"><?php echo $mMenu->title?> <i class="zmdi zmdi-caret-down"></i></a>
@@ -24,8 +24,8 @@ if($mainMenu){
                                             <?php      }  
                                                 break;
 
-                                                case 'news':
-                                                    $teamData=DB::table('news')->where('status', '1')->get();
+                                                case 'event':
+                                                    $teamData=DB::table('menus')->where('status', '1')->where('Category','E')->get();
                                                         if(isset($newsData) && count($teamData)>0){ 
 
                                                     ?>

@@ -1,44 +1,54 @@
+
+<?php if(isset($widgetContents) && isset($widgetContents[WIDGET_WHY_JCI_INDIA])){
+    $url=General::url($widgetContents[WIDGET_WHY_JCI_INDIA]->slug_url, $widgetContents[WIDGET_WHY_JCI_INDIA]->link_type);?>
 <div class="col-lg-3 col-md-6 col-sm-6" align="center">
                         <div class="single-categori mb-30">
-                            <img src="images/icons/c1.png" alt="" >
-                            <h3><a href="#">Why JCI India</a></h3>
-                            <p>Junior Chamber International (JCI) is a worldwide federation of
-                             young leaders and entrepreneurs.</p>
-                             <a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                            <img src="{{asset('fe_theme/images/icons/c1.png')}}" alt="" >
+                            <h3><a href="{{ url($url)}}"><?php echo $widgetContents[WIDGET_WHY_JCI_INDIA]->title?></a></h3>
+                            <p><?php echo $widgetContents[WIDGET_WHY_JCI_INDIA]->short_description?></p>
+                             <a href="{{ url($url)}}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <?php } ?>
 
 
+
+                    <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_FOUNDERS_PERSPECTIVE])){
+                        $url=General::url($widgetContents[WIDGET_FOUNDERS_PERSPECTIVE]->slug_url, $widgetContents[WIDGET_FOUNDERS_PERSPECTIVE]->link_type);?>
                     <div class="col-lg-3 col-md-6 col-sm-6"align="center">
                         <div class="single-categori mb-30">
-                            <img src="images/icons/c2.png" alt="" >
-                            <h3><a href="#">Founder’s Perspective</a></h3>
-                            <p>From within the walls of the soul of this 
-                            organization wherein the foundation of
-
-character and good citizenship are laid.</p>
-<a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                            <img src="{{asset('fe_theme/images/icons/c2.png')}}" alt="" >
+                            <h3><a href="{{ url($url)}}"><?php echo $widgetContents[WIDGET_FOUNDERS_PERSPECTIVE]->title?></a></h3>
+                            <p><?php echo $widgetContents[WIDGET_FOUNDERS_PERSPECTIVE]->short_description?></p>
+                            <a href="{{ url($url)}}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <?php } ?>
 
 
+
+                    <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_JCI_MISSION_VISION])){
+                        $url=General::url($widgetContents[WIDGET_JCI_MISSION_VISION]->slug_url, $widgetContents[WIDGET_JCI_MISSION_VISION]->link_type);?>
                     <div class="col-lg-3 col-md-6 col-sm-6"align="center">
                         <div class="single-categori mb-30">
-                            <img src="images/icons/c3.png" alt="" >
-                            <h3><a href="#">JCI Mission & Vision</a></h3>
-                            <p>To Provide Development  Opportunities that empower young
-                             people to create positive changes.</p>
-                            <a href="#"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                            <img src="{{asset('fe_theme/images/icons/c3.png')}}" alt="" >
+                            <h3><a href="{{ url($url)}}"><?php echo $widgetContents[WIDGET_JCI_MISSION_VISION]->title?></a></h3>
+                            <p><?php echo $widgetContents[WIDGET_JCI_MISSION_VISION]->short_description?></p>
+                            <a href="{{ url($url)}}"> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <?php } ?>
 
 
+
+                    <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_JCI_VALUES])){
+                        $url=General::url($widgetContents[WIDGET_JCI_VALUES]->slug_url, $widgetContents[WIDGET_JCI_VALUES]->link_type);?>
                     <div class="col-lg-3 col-md-6 col-sm-6"align="center">
                         <div class="single-categori mb-30">
-                            <img src="images/icons/c4.png" alt="" >
-                            <h3><a href="#">JCI Values</a></h3>
-                            <p>That economic justice can best be won by free men through free enterprise,
-                            I hope a message will come in the sometime.</p>
-                            <a href="#"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+                            <img src="{{asset('fe_theme/images/icons/c4.png')}}" alt="" >
+                            <h3><a href="{{ url($url)}}"><?php echo $widgetContents[WIDGET_JCI_VALUES]->title?></a></h3>
+                            <p><?php echo $widgetContents[WIDGET_JCI_VALUES]->short_description?></p>
+                            <a href="{{ url($url)}}"><i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
                         </div>
                     </div>
+                    <?php } ?>

@@ -19,6 +19,7 @@ class AdminBaseController extends Controller
     {
         
         $this->data['adminMenuTeam']=Menu::where('show_in_admin',1)->where('category','T')->orderBy('priority','ASC')->get(); 
+        $this->data['adminMenuEvents']=Menu::where('show_in_admin',1)->where('category','E')->orderBy('priority','ASC')->get(); 
         $this->data['adminMenuContent']=Menu::where('show_in_admin',1)->where('category','C')->orderBy('priority','ASC')->get(); 
         $this->data['adminMenuMaster']=Menu::where('show_in_admin',1)->where('category','M')->orderBy('priority','ASC')->get();      
         

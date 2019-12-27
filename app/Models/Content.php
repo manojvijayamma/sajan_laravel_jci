@@ -20,6 +20,7 @@ class Content extends Authenticatable
         'image',
         'status',
         'details',
+        'short_description',
         'parent_id' ,        
         'link_url' ,
         'link_type' ,

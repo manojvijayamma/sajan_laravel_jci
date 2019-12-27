@@ -5,8 +5,9 @@ namespace App\Http\Controllers\Fe;
 use Illuminate\Http\Request;
 
 use App\Models\Banner;
-use App\Models\Programe;
 use App\Models\Event;
+use App\Models\Zone;
+use App\Models\PresidentCorner;
 
 use DB;
 
@@ -30,11 +31,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-         
-        $this->data['mainBanners']=Banner::where('status',1)->where('position_id','1')->get();
-        $this->data['programme']=Programe::where('status',1)->get();
-        $this->data['upcomingEvents']=Event::where('status',1)->get();
-        $this->data['zoneEvent']=Event::where('status',1)->get();
+        $curDate=date("Y-m-d"); 
+        $this->data['mainBanners']=Banner::where('status',1)->where('position_id','1')->get();  
+
+        $this->data['upcomingEvents']=Event::where('status',1)->where('identifier','event')->where('event_date','>=',$curDate)->get();
+        $this->data['zoneData']=Zone::where('status',1)->get();
+        $this->data['presidentData']=PresidentCorner::find(1);
 
         $this->setMetaData();
  

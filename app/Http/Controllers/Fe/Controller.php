@@ -15,6 +15,7 @@ use DB;
 use App\Models\Content;
 use App\Models\Banner;
 use App\Models\News;
+use App\Models\Programe;
 
 
 
@@ -34,11 +35,11 @@ class Controller extends BaseController
         //check home page
         if (Route::getCurrentRoute()->uri() == '/')
         {
-            $ids=array(WIDGET_WHY_WANT_TO_CHOOSE, WIDGET_YOU_HAVE_TRAINING_NEEDS_WE_HAVE_SOLUTION, WIDGET_HOW_IT_WORKS, WIDGET_BENEFITS_OF_PURCHASING_OUR_PRODUCTS, WIDGET_FREE_RESOURCE, WIDGET_WHY_BUY_OUR_TRAINING_COURSE_MATERIAL_PACKAGES, WIDGET_OUR_UNIQUENESS, WIDGET_OUR_COURSE_KIT_CONTAINS, WIDGET_ABOUT_TRAINING_MATERIAL, WIDGET_HAVE_A_QUESTION);
+            $ids=array(WIDGET_ABOUT_JCI_INDIA,WIDGET_WHY_JCI_INDIA, WIDGET_FOUNDERS_PERSPECTIVE, WIDGET_JCI_MISSION_VISION, WIDGET_JCI_VALUES, WIDGET_CONTACT_US, WIDGET_NATCON_2018_PROMOTION, WIDGET_SUSTAINABLE_DEVELOPMENT, WIDGET_ONLINE_GD_MRF, WIDGET_FOOD_GRAIN_DISTRIBUTION );
                   
         }
         else{
-            $ids= array( WIDGET_ABOUT_TRAINING_MATERIAL);     
+            $ids= array( WIDGET_CONTACT_US, WIDGET_NATCON_2018_PROMOTION, WIDGET_SUSTAINABLE_DEVELOPMENT, WIDGET_ONLINE_GD_MRF, WIDGET_FOOD_GRAIN_DISTRIBUTION);     
         }
 
 
@@ -47,7 +48,7 @@ class Controller extends BaseController
                     ->whereIN('content_position_relations.position_id', $ids)
                     ->where('contents.status', '1')
                     ->where('contents.parent_id',0)->where('contents.is_widget','0')
-                    ->select('contents.id','contents.title','contents.link_type','contents.slug_url',DB::raw('substr(contents.details, 1, '.SUB_STRING_COUNT.') as details') ,'content_position_relations.position_id','contents.section_url','contents.image')
+                    ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.short_description','content_position_relations.position_id','contents.section_url','contents.image')
                     ->orderBy('contents.priority','ASC')
                     ->orderBy('contents.title','ASC')
                     ->get(); 
@@ -107,7 +108,8 @@ class Controller extends BaseController
         ->get(); 
 
       
-        $this->data['newsUpdates'] = News::get();
+        $this->data['newsUpdates'] = News::where('featured',1)->where('status',1)->get();
+        $this->data['programmeData']=Programe::where('featured',1)->where('status',1)->get();
        
     }
 

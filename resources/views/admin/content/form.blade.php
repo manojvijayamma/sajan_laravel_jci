@@ -93,6 +93,15 @@
                 <textarea id="details" name="details" style="display:none;" >{{$content->details}}</textarea>
              </div> 
 
+
+             <div class="form-group">
+                 <label for="name">
+                     Short Description (For showing in home page ):</label>
+                     <textarea class="form-control" type="text"  name="short_description" id="short_description"   >{{$content->short_description}}</textarea>
+
+             </div>        
+
+
              <div class="form-group" id="panel_E" style="display:{{$content->link_type=='E'  ? '' :'none'}}">
                 <label for="inputFirstname">External Url</label>
                 <input class="form-control" type="text"  name="link_url" id="title"  value="{{$content->link_url}}"  required autofocus>

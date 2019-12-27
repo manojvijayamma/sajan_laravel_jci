@@ -5,51 +5,22 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Models\Event;
-use App\Models\Zone;
-
-use App\Models\Menu;
-
-
+use App\Models\PresidentCorner;
+use App\Models\Category;
 use Excel;
 use File;
-use DB;
 use Image;
 
-class EventController extends AdminBaseController
-
-
+class PresidentCornerController extends AdminBaseController
 {
+
     public function __construct()
     {  
         parent::__construct();      
         $this->middleware('auth:admin');
     }
 
-    public function index(Request $request)
-    { 
-        $pageLimit=50; 
-        
-        $query = Event::query();  
-        if ($request->input('identifier')) {
-            $query = $query->where('identifier','=', $request->input('identifier'));
-        }
-       
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
-        
-        
-        if($request->input('ajax')){
-            return view('admin.'.$request->input('controller').'.'.$request->input('ajax'),$this->data)->with('i', ($request->input('page', 1) - 1) * $pageLimit); 
-        }
-        
-
-    }
-    public function create(Request $request)
-    {   
-        
-        return $this->_form($request);
-
-    }
+    
 
     public function store(Request $request)
     {        
@@ -62,16 +33,11 @@ class EventController extends AdminBaseController
 
     }
     
-    public function show($id)
-    {   
-        $user = Event::find($id);
-        return view('admin.'.$request->input('controller').'.show',compact('user'));        
+  
 
-    }
-
-    public function edit(Request $request, $id)
+    public function edit(Request $request)
     {  
-        
+        $id=1;
         return $this->_form($request, $id);       
 
     }
@@ -89,7 +55,7 @@ class EventController extends AdminBaseController
     public function destroy(Request $request ,$id)
     {
         
-        Event::find($id)->delete();         
+        PresidentCorner::find($id)->delete();         
         return redirect()->route($request->input('controller').'.index',['page'=>$request->input('page'),'ajax'=>$request->input('ajax'),'controller'=>$request->input('controller')])
             ->with('success','User status successfully');
 
@@ -98,7 +64,7 @@ class EventController extends AdminBaseController
 
     public function status(Request $request ,$id)
     {
-        $menu = Event::find($id);
+        $menu = PresidentCorner::find($id);
         $menu->status=$menu->status=='1' ? '0' : '1';
         $menu->save();
         
@@ -111,60 +77,69 @@ class EventController extends AdminBaseController
     private function _form($request,$id=0){  
        
         if($id>0){
-            $this->data['content'] = Event::find($id);            
+            $this->data['content'] = PresidentCorner::find($id);            
         }  
         else{
-            $this->data['content'] = new Event();
-        } 
-             
-       
-       
+            $this->data['content'] = new PresidentCorner();
+        }    
+            
         
-        $this->data['zones'] = Zone::where('status',1)->get(); 
         return view('admin.'.$request->input('controller').'.form', $this->data);
     }
 
-    private function _save($request,$id=0){ 
+    private function _save($request,$id=0){
         
-        $input = $request->all();        
+        
+
 
         $this->validate($request, [
-            'title' => 'required', 
+            'title' => 'required',                   
+                          
+                
+                      
         ]);
 
-        $input['event_date']=date("Y-m-d",strtotime($input['event_date']));
-        $input['slug_url']=$this->formatSlug($input['title']);
+        
+        $input = $request->all();
+       
             
         if ($request->hasFile('image')) {
             $image = $request->file('image');
-            $name = 'main_'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/Event');
+            $name = "PresidentCorner_".time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/president');
 
             $img = Image::make($image->getRealPath());
 
-            $img->resize(288, 190, function ($constraint) {    
+            $img->resize(100, 100, function ($constraint) {    
                 $constraint->aspectRatio();    
-            })->save($destinationPath.'/thumb_'.$name); 
+            })->save($destinationPath.'/thumb_'.$name);  
             
             $image->move($destinationPath, $name);
-            $input['image'] =$name;           
+            $input['image'] =$name;
+        }  
+        
+        if ($request->hasFile('logo')) {
+            $image = $request->file('logo');
+            $name = "PresidentCorner_".time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/president');
+            $image->move($destinationPath, $name);
+            $input['logo'] =$name;
+        }  
 
-        }    
+       
 
         if($id>0){
-            $menu = Event::find($id);        
+            $menu = PresidentCorner::find($id);        
             $menu->update($input);
         }    
         else{
             $input['status'] =1;
-            $menu = Event::create($input);
-        } 
-        
-        
+             $menu = PresidentCorner::create($input);
+        }  
 
     }
 
 
 
 
-} 
+}

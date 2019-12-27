@@ -4,14 +4,14 @@
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="footer-text footer-social">
-                                 <h3>Contact Us</h3>
-                                <p>JCI India<br>
-                National Head Quarters<br>
-                506 Windfall, Sahar Plaza, J.B. Nagar,<br>
-                Andheri (EAST)
-                Mumbai 400 059<br>
-                Tel: (022)-71117112<br>
-                Email: nhq@jciindia.in  </p>
+
+                            <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_CONTACT_US])){
+                            $url=General::url($widgetContents[WIDGET_CONTACT_US]->slug_url, $widgetContents[WIDGET_CONTACT_US]->link_type);?>
+                    
+                                 <h3><?php echo $widgetContents[WIDGET_CONTACT_US]->title?></h3>
+                                <p><?php echo $widgetContents[WIDGET_CONTACT_US]->short_description?></p>
+
+
                                 <ul>
                                     <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
                                     <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
@@ -30,11 +30,11 @@
                             <div class="footer-text mrg-sm3 mrg-xs">
                                 <h3>&nbsp;</h3>
                                 <ul class="footer-text-all">
-                                 <li class="col-md-2 col-sm-6"><a href="#">National Appointees</a></li>
-                                    <li class="col-md-2 col-sm-6"><a href="#">International Corner</a></li>
-                                    <li class="col-md-2 col-sm-6"><a href="#">Past National President</a></li>
-                                    <li class="col-md-2 col-sm-6"><a href="#">National Head Quarter</a></li>
-                                    <li class="col-md-2 col-sm-6"><a href="#">Team History</a></li>
+                                <?php if(isset($footerMenu)){
+					                foreach($footerMenu as $key=>$val){
+                                        $url=General::url($val->slug_url, $val->link_type);?>	
+                                        <li class="col-md-2 col-sm-6"><a href="{{ url($url)}}"><?php echo $val->title?></a></li>
+                                 <?php  }}?>
                                     
                                 </ul>
                             </div>
