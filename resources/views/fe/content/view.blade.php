@@ -139,15 +139,15 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase">NPs Corner</h1>
+                    <h1 class="uppercase"><?php echo $content['title']?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
                 <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12">
-                      <p class="abt">The origin of Junior Chamber international (JCI) can be traced as far as almost a century  ago in 1915 to the city of St. Louis, Missouri, USA, <br>  where a young man named Henry Giessenbier together with 32 other young men, established the Young Men’s Progressive Civic Association (YMPCA), JCI’s first local organization.<br> YMPCA  grew to a membership of 750 in less than five months. The association went on to dedicate itself to bringing about civic improvements and giving young people a constructive approach to civic problems.</p>
-                       <div class="nxt"><a href="#">More</a></div>
+                      <p class="abt"><?php echo $content['details']?></p>
+                       
                       <br>
                       
                       </div>
@@ -203,67 +203,12 @@
                         </div>-->
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/11.png"></a>
-                                <div class="img-title">
-                                    <h3>NATCON 2018 PROMOTION</h3>
-                                   
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                                                         </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/22.png"></a>
-                                <div class="img-title">
-                                    <h3>ACHIEVEMENTS</h3>
-                                   
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                            
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-sm mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/3.png"></a>
-                                <div class="img-title">
-                                    <h3>SUSTAINABLE DEVELOPMENT</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                               
-                              
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="single-lecturers mrg-sm mrg-xs4">
-                            <div class="lecturers-img">
-                                <a href="#"><img alt="" src="images/banner/4.png"></a>
-                                <div class="img-title">
-                                    <h3>ONLINE G&D AND MRF</h3>
-                                    
-                                </div>
-                            </div>
-                            <div class="lecturers-details">
-                                <h3>Details</h3>
-                                                          </div>
-                        </div>
-                    </div>
+                <div class="row"> 
+                    
+                @include('fe.includes.box_links')
                 </div>
+
+                
             </div>
         </div>
         <!-- End page content -->
@@ -273,54 +218,8 @@
                 <h2 align="center" style="color:#fff;padding-bottom:20px;">JCI PROGRAMS</h2>
                     <div class="col-md-12">
                         <div class="testimonial-all slider-active2">
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/1.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>JCI TRAINING PROGRAME</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/7.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                       
-                                        <p>FOOD GRAIN DISTRIBUTION</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/25.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>BLOOD DONATION</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
-                            <div class="single-testimonial">
-                                <div class="test-img-name">
-                                    <div class="test-img">
-                                        <img src="images/aug2.jpg" alt="">
-                                    </div>
-                                    <div class="test-name">
-                                        
-                                        <p>INDEPENDENCE DAY</p>
-                                    </div>
-                                </div>
-                               
-                            </div>
+                            
+                        @include('fe.includes.jci_programe')
                         </div>
                     </div>
                 </div>
@@ -329,22 +228,7 @@
         
         
         <div id="fixed-social">
-  <div>
-    <a href="#" class="fixed-facebook" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
-  </div>
-  <div>
-    <a href="#" class="fixed-twitter" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
-  </div>
-  <div>
-    <a href="#" class="fixed-gplus" target="_blank"><i class="fa fa-google"></i> <span>Google+</span></a>
-  </div>
-  <div>
-    <!--<a href="#" class="fixed-linkedin" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a>
-  </div>
-  <div>-->
-   
-  <a href="#" class="fixed-instagrem" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
-  </div>
+        @include('fe.includes.social_links')
 </div>
         <!--<div class="event-area ptb-110">
             <div class="container">
@@ -466,118 +350,7 @@
             </div>
         </div>-->
         <!-- Start footer area -->
-        <footer class="footer-area">
-            <div class="footer-top ptb-110">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-3 col-sm-6">
-                            <div class="footer-text footer-social">
-                                 <h3>Contact Us</h3>
-                                <p>JCI India<br>
-National Head Quarters<br>
-506 Windfall, Sahar Plaza, J.B. Nagar,<br>
-Andheri (EAST)
-Mumbai 400 059<br>
-Tel: (022)-71117112<br>
-Email: nhq@jciindia.in  </p>
-                                <ul>
-                                    <li><a href="#"><i class="zmdi zmdi-facebook"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-vimeo"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-tumblr"></i></a></li>
-                                    <li><a href="#"><i class="zmdi zmdi-pinterest"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="footer-text mrg-xs">
-                                <h3>Quick Links</h3>
-                                <ul class="footer-text-all">
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Why JCI</a></li>
-                                    <li><a href="#">JCI India</a></li>
-                                    <li><a href="#">JCI Mission</a></li>
-                                    <li><a href="#">JCI Vision</a></li>
-                                   
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">National Appointees</a></li>
-                                    <li><a href="#">International Corner</a></li>
-                                    <li><a href="#">Past National President</a></li>
-                                    <li><a href="#">National Head Quarter</a></li>
-                                    <li><a href="#">Team History</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6 sendl">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">International Events</a></li>
-                                    <li><a href="#">National Events</a></li>
-                                    <li><a href="#">Zone Events</a></li>
-                                    <li><a href="#">Past Events</a></li>
-                                    <li><a href="#">UpComming Events</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-2 col-sm-6 last">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                                <h3>&nbsp;</h3>
-                                <ul class="footer-text-all">
-                                 <li><a href="#">Management</a></li>
-                                    <li><a href="#">Training</a></li>
-                                    <li><a href="#">Business</a></li>
-                                    <li><a href="#">Community</a></li>
-                                    <li><a href="#">International</a></li>
-                                    
-                                </ul>
-                            </div>
-                        </div>
-                        
-                        
-                        <!--<div class="col-md-5 col-sm-6">
-                            <div class="footer-text mrg-sm3 mrg-xs">
-                               <h3>Enquiry</h3>
-                               <form action="#">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <input placeholder="Name*" type="text">
-                                        </div>
-                                        <div class="col-md-6">
-                                            <input class="in-mrg" placeholder="Email*" type="email">
-                                        </div>
-                                        <div class="col-md-12">
-                                            <textarea placeholder="Massage*"></textarea>
-                                            <button class="submit" type="submit">send</button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <div class="footer-bottom-text ptb-20">
-                                <p>
-                                    Copyrights © <a href="#" target="_blank"> 2020 jci india | Designed by Spiderline</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('fe.includes.footer')
         <!-- End footer area -->
         <!-- start scrollUp
         ============================================ -->

@@ -18,7 +18,7 @@ Route::get('/content/{id}', 'Fe\ContentController@view')->name('view');
 Route::get('/news', 'Fe\NewController@index')->name('index');
 Route::get('/news/{id}', 'Fe\NewController@view')->name('view');
 
-Route::get('/team/{id}', 'Fe\TeamController@view')->name('view');
+Route::get('/team/{id}', 'Fe\TeamController@view')->name('index');
 Route::get('/download', 'Fe\DownloadController@index')->name('index');
 
 Route::get('/faq', 'Fe\FaqController@index')->name('index');

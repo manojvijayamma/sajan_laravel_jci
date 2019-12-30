@@ -145,3 +145,112 @@ h3.tlt7 {
 .text-animation-1 .slider-text h1 {
     margin-bottom: 18px;
 }
+
+
+
+
+.president {
+    margin-left: 65%;
+    border: 1px solid gray;
+    width: 75%;
+    background: lavender;
+    padding: 1px 1px 0px 0px;
+}
+.president img {
+    margin-left: 35%;
+}
+.president h5 {
+    margin-top: 9px;
+    margin-left: 31%;
+}
+.president p {
+    margin-top: -8px;
+    margin-left: 29%;
+}
+
+.second {
+    margin-left: 8px;
+    margin-top: 4%;
+    margin-bottom: 5%;
+    width: 100%;
+}
+.thir2 {
+    border: 1px solid;
+    width: 21%;
+    padding: 10px;
+    margin-left: 35px;
+    background: lavenderblush;
+}
+.second img {
+    margin-left: 22%;
+}
+.second p {
+    margin-left: 16%;
+}
+
+.third h5 {
+    font-size: 13px;
+    margin-left: -15px;
+}
+.thir {
+    margin-left: 0%;
+}
+.third p {
+    font-size: 12px;
+    margin-bottom: 5%;
+    /* margin-top: 6px; */
+    /* padding: 3px; */
+}
+.thir3 {
+    margin-left: 3%;
+    border: 1px solid;
+    padding: -7px;
+    padding-left: 30px;
+    padding-top: 5px;
+    background: #673ab759;
+    margin-bottom: 4%;
+    border: groove;
+}
+.third img
+{
+	margin-left: 13%;
+}
+.second h5
+{
+	font-size: 15px;
+    margin-left: 25px;
+}
+
+
+.rightnews {
+    border: 1px solid;
+    width: 25%;
+    margin-left: 7%;
+    margin-bottom: 3%;
+}
+.rightn td a {
+    font-size: 22px;
+    color: #0096d5;
+}
+.rightn th
+
+{
+	font-size: 25px;
+    border-bottom: 1px solid;
+}
+.dot{
+	margin-right: 12px;
+}
+
+.news1 h5
+{
+	color: #673AB7;
+    margin-bottom: 10%;
+}
+
+
+
+
+
+
+
