@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 27, 2019 at 02:59 PM
+-- Generation Time: Dec 31, 2019 at 08:47 AM
 -- Server version: 5.7.28-0ubuntu0.16.04.2
 -- PHP Version: 7.2.18-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -820,7 +820,7 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT for table `president_corners`
 --
 ALTER TABLE `president_corners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `programes`
 --

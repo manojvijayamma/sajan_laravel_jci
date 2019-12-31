@@ -7,7 +7,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Training Material</title>
+        <title>JCI INDIA</title>
 
         <!-- Bootstrap Core CSS -->
         <link href="{{ asset('admin_theme/css/bootstrap.min.css') }}" rel="stylesheet">

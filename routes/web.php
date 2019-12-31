@@ -22,7 +22,8 @@ Route::get('/team/{id}', 'Fe\TeamController@view')->name('index');
 Route::get('/download', 'Fe\DownloadController@index')->name('index');
 
 Route::get('/faq', 'Fe\FaqController@index')->name('index');
-Route::get('/cart', 'Fe\OrderController@cart')->name('cart');
+Route::get('/presidentcorner', 'Fe\PresidentCornerController@index')->name('index');
+
 Route::get('register', 'Fe\UserController@registerForm');
 Route::get('login', 'Fe\UserController@loginForm');
 
