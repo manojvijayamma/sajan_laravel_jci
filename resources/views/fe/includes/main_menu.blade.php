@@ -15,7 +15,7 @@ if($mainMenu){
                                                             <li><a href="javascript:void(0);"><?php echo $mMenu->title?> <i class="zmdi zmdi-caret-down"></i></a>
                                                                 <ul>
                                                                     <?php foreach($teamData as $sMenu){?>
-                                                                            <li><a href="{{ url('team/'.$sMenu->slug_url)}}"> <?php echo $sMenu->title?></a></li>
+                                                                            <li><a href="{{ url('team/'.$sMenu->query_string)}}"> <?php echo $sMenu->title?></a></li>
                                                                     <?php } ?>
                                                                 </ul>
                                                 
@@ -32,7 +32,7 @@ if($mainMenu){
                                                     <li><a href="javascript:void(0);"><?php echo $mMenu->title?> <i class="zmdi zmdi-caret-down"></i></a>
                                                                 <ul>
                                                                     <?php foreach($newsData as $sMenu){?>
-                                                                            <li><a href="{{ url('team/'.$sMenu->slug_url)}}"> <?php echo $sMenu->title?></a></li>
+                                                                            <li><a href="{{ url('team/'.$sMenu->query_string)}}"> <?php echo $sMenu->title?></a></li>
                                                                     <?php } ?>
                                                                 </ul>
                                                 

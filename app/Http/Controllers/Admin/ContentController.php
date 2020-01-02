@@ -32,7 +32,7 @@ class ContentController extends AdminBaseController
         if ($request->input('position_id')) {
             $query = $query->where('position_id','=', "{$request->input('position_id')}");
         }
-        $this->data['content']= $query->orderBy('is_widget','DESC')->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('title','DESC')->orderBy('title','ASC')->paginate($pageLimit);
 
         
         

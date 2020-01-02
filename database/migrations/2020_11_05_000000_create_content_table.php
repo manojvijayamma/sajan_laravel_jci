@@ -23,7 +23,7 @@ class CreateContentTable extends Migration
             $table->string('link_url')->nullable();
             $table->string('section_url')->nullable();
             $table->enum('link_type', ['C', 'S', 'E'])->default('C'); 
-            $table->enum('is_widget', ['1', '0'])->default('0');           
+                      
             $table->timestamps();
         });
     }

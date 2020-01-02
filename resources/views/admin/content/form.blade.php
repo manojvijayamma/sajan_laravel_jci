@@ -51,7 +51,7 @@
                  </select>
              </div>             
 
-            <?php if($content->is_widget==0){?>
+            
              <div class="form-group" id="panel_show" style="display:{{($content->parent_id==0)  ? '' :'none'}}">
                 <label for="inputLastname">Shown on</label>
                     <select class="form-control" id="position_id" name="position_id[]" required multiple="true" style="height:200px;"> 
@@ -85,9 +85,9 @@
                 <label class="radio-inline"><input type="radio" name="link_type" value="S"  onclick="updatePanel('S')" {{($content->link_type=='S' ? 'checked' : '') }} >Link to internal sections</label> 
              </div>
 
-             <?php } ?>
+             
             
-             <div class="form-group" id="panel_C" style="display:{{($content->link_type=='C' || $content->is_widget==1)  ? '' :'none'}}">
+             <div class="form-group" id="panel_C" style="display:{{($content->link_type=='C' )  ? '' :'none'}}">
                 <label for="inputFirstname">Details</label>
                 <textarea name="details1" class="summernote">{{$content->details}}</textarea>
                 <textarea id="details" name="details" style="display:none;" >{{$content->details}}</textarea>

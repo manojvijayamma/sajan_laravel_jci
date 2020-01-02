@@ -26,7 +26,7 @@ class TeamController extends Controller
     }
  
     public function index(Request $request, $id) { 
-        $this->data['content']=Content::where('slug_url',SECTION_SLUG_COURSE)->first(); 
+        $this->data['content']=Content::where('slug_url','team')->first(); 
         $this->data['content']['image_path']="team";
         $this->setMetaData($this->data['content']);  
 
@@ -35,8 +35,8 @@ class TeamController extends Controller
         if($id){
             $query=$query->where('teams.identifier',$id);
         }
-        $this->data['listData']=$query->where('status',1)->orderBy('teams.title')->get();       
-        return view('fe.faq.index',$this->data);
+        $this->data['listData']=$query->where('teams.status',1)->orderBy('teams.title')->get();       
+        return view('fe.team.index',$this->data);
     }
    
 
