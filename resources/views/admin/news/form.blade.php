@@ -45,6 +45,14 @@
              </div> 
 
 
+             <div class="form-group">
+                    <label for="name">
+                        Is it featured:</label>
+                        <input style="width:30px" class="form-control" type="checkbox"  name="featured" id="featured"  value="1"  <?php echo $content->featured==1 ? 'checked' : '' ?> required autofocus>
+
+             </div>   
+
+
              <div class="form-group" >
                 <label for="inputFirstname">Details</label>
                 <textarea name="details1" class="summernote">{{$content->details}}</textarea>

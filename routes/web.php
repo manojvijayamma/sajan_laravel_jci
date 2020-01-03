@@ -228,6 +228,26 @@ Route::prefix('admin')->group(function () {
     Route::delete('/team/{id}', 'Admin\TeamController@destroy')->name('team.destroy');
     Route::get('/team/{id}/status', 'Admin\TeamController@status')->name('team.status');
     Route::get('/team/{id}/show', 'Admin\TeamController@show')->name('team.show');
+
+
+    Route::get('/zone', 'Admin\ZoneController@index')->name('zone.index');
+    Route::get('/zone/create', 'Admin\ZoneController@create')->name('zone.create');
+    Route::post('/zone', 'Admin\ZoneController@store')->name('zone.store');
+    Route::get('/zone/{id}/edit', 'Admin\ZoneController@edit')->name('zone.edit');
+    Route::put('/zone/{id}', 'Admin\ZoneController@update')->name('zone.update');
+    Route::delete('/zone/{id}', 'Admin\ZoneController@destroy')->name('zone.destroy');
+    Route::get('/zone/{id}/status', 'Admin\ZoneController@status')->name('zone.status');
+    Route::get('/zone/{id}/show', 'Admin\ZoneController@show')->name('zone.show');
+
+
+    Route::get('/designation', 'Admin\DesignationController@index')->name('designation.index');
+    Route::get('/designation/create', 'Admin\DesignationController@create')->name('designation.create');
+    Route::post('/designation', 'Admin\DesignationController@store')->name('designation.store');
+    Route::get('/designation/{id}/edit', 'Admin\DesignationController@edit')->name('designation.edit');
+    Route::put('/designation/{id}', 'Admin\DesignationController@update')->name('designation.update');
+    Route::delete('/designation/{id}', 'Admin\DesignationController@destroy')->name('designation.destroy');
+    Route::get('/designation/{id}/status', 'Admin\DesignationController@status')->name('designation.status');
+    Route::get('/designation/{id}/show', 'Admin\DesignationController@show')->name('designation.show');
     
     
     

@@ -135,7 +135,7 @@ class NewsController extends AdminBaseController
             'title' => 'required', 
         ]);
 
-        
+        $input['featured'] = isset($input['featured']) ? '1' : '0';
         $input['slug_url']=$this->formatSlug($input['title']);     
         if ($request->hasFile('image')) {
             $image = $request->file('image');
