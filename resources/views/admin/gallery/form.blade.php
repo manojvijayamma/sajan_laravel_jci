@@ -57,7 +57,7 @@
                 <label for="inputLastname"> Icon Image</label>
                 <input type="file" name="image"  id="image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/product/{{$content->image}}" style="width:70px;">
+                    <img src="{{asset('uploads/gallery/'.$content->image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>
@@ -67,7 +67,7 @@
                 <label for="inputLastname"> Large Image</label>
                 <input type="file" name="large_image"  id="large_image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/product/{{$content->large_image}}" style="width:70px;">
+                    <img src="{{asset('uploads/gallery/'.$content->large_image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>

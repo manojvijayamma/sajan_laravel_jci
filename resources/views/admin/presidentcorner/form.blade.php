@@ -1,5 +1,9 @@
 
-
+<style>
+body {
+    overflow:auto;
+}
+</style>
 <div class="row" id="page-header" >
         <div class="col-lg-12" style="padding:0px;">
             <h2 class="page-header" style="padding:0px;margin:39px 0px 8px 30px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;President Corner
@@ -44,7 +48,7 @@
                 <label for="inputLastname">  Photo</label>
                 <input type="file" name="image"  id="image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/president/{{$content->image}}" style="width:70px;">
+                    <img src="{{asset('uploads/president/'.$content->image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>
@@ -54,7 +58,7 @@
                 <label for="inputLastname">  Logo</label>
                 <input type="file" name="logo"  id="image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/president/{{$content->logo}}" style="width:70px;">
+                    <img src="{{asset('uploads/president/'.$content->logo)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>
@@ -72,8 +76,8 @@
 
 
              <div class="form-group" >
-                <label for="inputFirstname">Short Description (For showing in home page )</label>                
-                <textarea id="short_description" name="short_description"  >{{$content->short_description}}</textarea>
+                <label for="inputFirstname">Short Description (For showing in home page )</label>    <br>            
+                <textarea id="short_description" name="short_description"  class="form-control">{{$content->short_description}}</textarea>
              </div> 
 
 

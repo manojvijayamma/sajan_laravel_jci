@@ -18,7 +18,9 @@
                             <p>
                             <?php echo $presidentData->short_description ?>
                              </p>
-                        <div class="more"><a href="{{url('presidentcorner')}}">More</a></div>
+                             <?php if($presidentData->details){?>
+                                <div class="more"><a href="{{url('presidentcorner')}}">More</a></div>
+                             <?php } ?>   
                             
                         </div>
                     </div>

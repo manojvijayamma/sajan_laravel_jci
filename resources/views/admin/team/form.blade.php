@@ -25,7 +25,7 @@
                 <label for="inputLastname">  Image</label>
                 <input type="file" name="image"  id="image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/team/{{$content->image}}" style="width:70px;">
+                    <img src="{{asset('uploads/team/'.$content->image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>

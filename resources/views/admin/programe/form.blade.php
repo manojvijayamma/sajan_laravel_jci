@@ -24,7 +24,7 @@
                     <label for="inputLastname">Image</label>
                     <input type="file" name="image"  id="image" >
                     <?php if($content->image){?>
-                        <img src="{{asset('uploads/zoneevent/'.$content->image)}}" style="width:70px;">
+                        <img src="{{asset('uploads/programe/'.$content->image)}}" style="width:70px;">
                     <?php } ?>   
 
              </div> 
