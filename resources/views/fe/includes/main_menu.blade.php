@@ -9,13 +9,24 @@ if($mainMenu){
                                         switch($mMenu->section_url){
                                         
                                                 case 'team':
-                                                    $teamData=DB::table('menus')->where('status', '1')->where('Category','T')->get();
+                                                    $teamData=DB::table('menus')->where('status', '1')->where('Category','T')->where('parent_id', '0')->get();
                                                         if(isset($teamData) && count($teamData)>0){ 
                                             ?>   
                                                             <li><a href="javascript:void(0);"><?php echo $mMenu->title?> <i class="zmdi zmdi-caret-down"></i></a>
                                                                 <ul>
-                                                                    <?php foreach($teamData as $sMenu){?>
-                                                                            <li><a href="{{ url('team/'.$sMenu->query_string)}}"> <?php echo $sMenu->title?></a></li>
+                                                                    <?php foreach($teamData as $sMenu){
+                                                                            $subTeamData=DB::table('menus')->where('status', '1')->where('Category','T')->where('parent_id', $sMenu->id)->get();                                                                           
+                                                                            ?>
+                                                                            <li><a href="{{ url('team/'.$sMenu->query_string)}}"> <?php echo $sMenu->title?></a>
+                                                                            <?php if(isset($subTeamData) && count($subTeamData)>0){ ?>
+                                                                            <ul>
+                                                                            <?php 
+                                                                                foreach($subTeamData as $sMenu2){?>    
+                                                                                <li><a href="{{ url('team/'.$sMenu2->query_string)}}"> <?php echo $sMenu2->title?></a>
+                                                                            <?php } ?>
+                                                                            </ul>
+                                                                            <?php } ?>        
+                                                                        </li>
                                                                     <?php } ?>
                                                                 </ul>
                                                 

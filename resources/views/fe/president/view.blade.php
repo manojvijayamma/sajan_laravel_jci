@@ -59,8 +59,9 @@
                         </div>
                         <div class="col-md-6 col-sm-5 hidden-xs0">
                             <div class="header-top-right">
-                                <div class="header-top-social f-right">                                    
-                                        @include('fe.includes.top_menu')
+                                <div class="header-top-social f-right">
+                                    
+                                @include('fe.includes.top_menu')
                                 </div>
                             </div>
                         </div>
@@ -73,15 +74,16 @@
                     <div class="row">
                         <div class="col-md-2 col-sm-12 col-xs-12">
                             <div class="logo">
-                                    @include('fe.includes.logo')
+                            @include('fe.includes.logo')
                             </div>
                         </div> 
                         
                         
                         <div class="col-md-6 col-sm-5 hidden-xs1">
                             <div class="header-top-right">
-                                <div class="header-top-social f-right1">                                    
-                                        @include('fe.includes.sub_menu')
+                                <div class="header-top-social f-right1">
+                                    
+                                @include('fe.includes.sub_menu')
                                 </div>
                             </div>
                         </div>
@@ -92,7 +94,7 @@
                             <div class="menu-area f-right">
                                 <nav>
                                 @include('fe.includes.main_menu')
-                                </nav>		
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -120,7 +122,8 @@
         <!-- Start of slider area -->
         <div class="slider-area">
             <div class="slider-active">
-                    @include('fe.includes.sub_banner')                
+            @include('fe.includes.sub_banner')     
+                
                
             </div>
         </div>
@@ -144,13 +147,71 @@
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
-                <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12">
-                      <p class="abt"><?php echo $content['details']?></p>
-                       
-                      <br>
-                      
-                      </div>
+               
+               
+               <!--ajax -->
+               
+               <nav class="ajnav">
+<ul class="ajpage">
+  <li><a href="#page1">NP PROFILE</a>
+  <li><a href="#page2">NP MESSAGE</a>
+  <li><a href="#page3">NP ROUNDUP</a>
+  <li><a href="#page4">NP SCHEDULE</a>
+</ul>
+</nav>
+<div class="content">
+
+  <div id="page1"><!-- page 1 -->
+	<h3>PROFILE OF NATIONAL PRESIDENT</h3>
+  
+	<p>Welcome to this page.</p>
+
+	<p>It has no images, but it got style.
+		And it has links, to bring you somewhere else&hellip;</p>
+
+	
+  </div><!-- /page1 -->
+  
+  <div id="page2"><!-- page 2 -->
+	<h3>MESSAGE OF NATIONAL PRESIDENT 2019</h3>
+
+	<p>Welcome to this page!</p>
+
+  </div><!-- /page2 -->
+  
+  <div id="page3"><!-- page 3 -->
+	<h3>NP OFFICIAL VISITS</h3>
+
+	<p>Welcome to the third page.</p>
+
+	
+
+	
+  </div><!-- /page3 -->
+
+  <div id="page4"><!-- page 4 -->
+	<h1>Links</h1>
+
+	<p>Welcome to this page!</p>
+
+	
+
+	
+	
+  </div>
+
+  
+
+
+
+
+</div>
+               
+               
+               
+               
+               
+               <!--ajax end -->
                 
                 
                    
@@ -169,8 +230,6 @@
         <!-- End courses area -->   
         <!-- start courses area --> 
        
-<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit  sed do <br>eiumod tempor incididunt ut labore et.  </p>
--->                  
                                 </div>
                              
                       
@@ -186,31 +245,7 @@
         <!-- start courses area --> 
     
         <!-- End courses area --> 
-        <div class="lecturers-area ptb-110">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <!--<div class="section-title text-center mb-60">
-                            <h1 class="uppercase">Our Lecturers</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-                                <br>
-                                eiumod tempor incididunt ut labore et.
-                            </p>
-                            <div class="separator my mtb-15">
-                                <i class="icofont icofont-hat-alt"></i>
-                            </div>
-                        </div>-->
-                    </div>
-                </div>
-                <div class="row"> 
-                    
-                @include('fe.includes.box_links')
-                </div>
-
-                
-            </div>
-        </div>
+        
         <!-- End page content -->
         <div class="testimonial-area bg-10 bg-opacity bg-relative ptb-110">
             <div class="container">
@@ -220,6 +255,7 @@
                         <div class="testimonial-all slider-active2">
                             
                         @include('fe.includes.jci_programe')
+                            
                         </div>
                     </div>
                 </div>
@@ -230,125 +266,7 @@
         <div id="fixed-social">
         @include('fe.includes.social_links')
 </div>
-        <!--<div class="event-area ptb-110">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section-title text-center mb-55">
-                            <h1 class="uppercase">LATEST NEWS</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit  sed do <br> eiumod tempor incididunt ut labore et. </p>
-                            <div class="separator my mtb-15">
-                                <i class="icofont icofont-hat-alt"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 col-sm-6">
-                        <div class="news-are">
-                            <div class="news-img">
-                                <img src="images/blog/8.jpg" alt="" >
-                                <div class="news-date">
-                                    <div class="blog-meta-2">
-                                        <span class="published3">
-                                            <i class="icofont icofont-ui-calendar"></i>
-                                            14 Sep 2017
-                                        </span>
-                                    </div>
-                                    <div class="blog-meta for-news">
-                                        <span class="published3">
-                                            <a href="#">
-                                                <i class="icofont icofont-eye"></i> 34
-                                            </a>
-                                        </span>
-                                        <span class="published4">
-                                            <a href="#">
-                                                <i class="icofont icofont-comment"></i> 20
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="img-text gray-bg">
-                                <h3><a href="#">THE SECRETS OF ECONOMIC</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicin elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim  </p>
-                                <a class="button extra-small" href="#">
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-sm-6">
-                        <div class="news-are mrg-xs">
-                            <div class="news-img">
-                                <img src="images/blog/9.jpg" alt="" >
-                                <div class="news-date">
-                                    <div class="blog-meta-2">
-                                        <span class="published3">
-                                            <i class="icofont icofont-ui-calendar"></i>
-                                            14 Sep 2017
-                                        </span>
-                                    </div>
-                                    <div class="blog-meta for-news">
-                                        <span class="published3">
-                                            <a href="#">
-                                                <i class="icofont icofont-eye"></i> 34
-                                            </a>
-                                        </span>
-                                        <span class="published4">
-                                            <a href="#">
-                                                <i class="icofont icofont-comment"></i> 20
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="img-text gray-bg">
-                                <h3><a href="#">THE SECRETS OF ECONOMIC</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicin elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                                <a class="button extra-small" href="#">
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4 hidden-sm">
-                        <div class="news-are mrg-xs">
-                            <div class="news-img">
-                                <img src="images/blog/10.jpg" alt="" >
-                                <div class="news-date">
-                                    <div class="blog-meta-2">
-                                        <span class="published3">
-                                            <i class="icofont icofont-ui-calendar"></i>
-                                            14 Sep 2017
-                                        </span>
-                                    </div>
-                                    <div class="blog-meta for-news">
-                                        <span class="published3">
-                                            <a href="#">
-                                                <i class="icofont icofont-eye"></i> 34
-                                            </a>
-                                        </span>
-                                        <span class="published4">
-                                            <a href="#">
-                                                <i class="icofont icofont-comment"></i> 20
-                                            </a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="img-text gray-bg">
-                                <h3><a href="#">THE SECRETS OF ECONOMIC</a></h3>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicin elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim </p>
-                                <a class="button extra-small" href="#">
-                                    <span>Read More</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>-->
+     
         <!-- Start footer area -->
         @include('fe.includes.footer')
         <!-- End footer area -->

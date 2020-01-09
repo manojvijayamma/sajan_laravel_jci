@@ -208,6 +208,67 @@ NOTE: This is Header style file. All Header related style included in this file.
     transition: all 0.3s ease 0s;
 }
 /* mega menu*/
+/*submenu*/
+
+.menu-area nav > ul > li > ul > li > ul,
+.menu-area nav > ul > li > ul ul {
+    background-color: #fff;
+    margin-top: 30px;
+    opacity: 0;
+    padding: 15px 0;
+    position: absolute;
+    text-align: left;
+    top: 100%;
+    transition: all 0.3s ease 0s;
+    visibility: hidden;
+    z-index: -99;
+    border-top: 1px solid #0151b0;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+.menu-area nav > ul > li ul li ul {
+    width: 220px;
+}
+.menu-area nav > ul > li:hover > ul >li:hover > ul {
+    margin-top: 0;
+    margin-left: 1px;
+    opacity: 1;
+    margin-top: -46px;
+    visibility: visible;
+    z-index: 9999;
+    transition: all 0.3s ease 0s;
+}
+.menu-area nav > ul > li > ul > li > ul > li {
+    display: block;
+    padding: 0;
+    text-transform: capitalize;
+    position: relative;
+}
+.menu-area nav > ul > li ul li > li ul li a  {
+    color: #fff;
+    display: block;
+    line-height: 20px;
+    padding: 5px 20px;
+    text-transform: capitalize;
+}
+.menu-area nav > ul > li > ul li a > i {
+    float: right;
+    margin-top: 7px;
+}
+.menu-area nav > ul > li ul ul {
+    left: 100%;
+    margin-left: -10px;
+    top: 0;
+}
+.menu-area nav > ul > li > ul li:hover ul {
+    margin-top: 0;
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+    transition: all 0.3s ease 0s;
+}
+
+/*submenu*/
+
 
 .menu-area ul li.mega-parent {
     position: static;
@@ -548,3 +609,100 @@ margin-left: 6%;
     color: #141415;
     border-bottom: 1px solid #2196F3;
 }
+
+
+
+
+<!------ ajax----->
+ajnav ajpage {
+  list-style-type: none;
+  margin: 0;
+  padding: 0.5em;
+  width: 8em;
+	border-right: 1px dotted grey;
+  clear: both; /* clear space around (left and right side), this pushes other elements downward */   
+}
+
+div.content {
+	margin: 0;
+  padding: 0;
+  clear: both;
+}
+
+div.content div {
+  padding: 0 10px;
+}
+
+h1 {
+	font-family: Verdana, Geneva, sans-serif;
+  margin-top: 0;
+}
+
+ajnav ajpage li {
+  margin: 0.5em 0;
+  padding: 0.3em;
+  background: black;
+  color: #607D8B;
+  text-align: right;
+}
+
+ajnav li a { text-decoration: none; }
+ajnav li a:link {color:#607D8B;}      /* unvisited link */
+ajnav li a:visited {color:#607D8B;}  /* visited link */
+ajnav li a:hover {color:#FF0000;}  /* mouse over link */
+ajnav li a:active {color:#0000FF;}  /* selected link */
+
+ajnav li.current {
+	width: 16em;
+	text-align:left;
+}
+.ajpage li a {
+    outline: medium none;
+    color: #9C27B0;
+    font-size: 16px;
+}
+.ajpage {
+    display: inline-flex;
+    padding: 20px;
+    width: 60%;
+    margin-left: 25%;
+}
+.ajpage li
+{
+	width: 100%;
+    margin-left: 0%;
+    margin-right: 25px;
+}
+ajnav li.current a {
+	margin-left: 9em;
+	font-weight: bold;
+}
+.content
+{
+	margin-bottom: 5% !important;
+    margin-top: 2% !important;
+}
+#page1 h3 {
+    border-bottom: 1px solid #80808057;
+    width: 50%;
+    /* margin-top: 9px; */
+    padding: 13px;
+    margin-bottom: 3%;
+}
+#page2 h3 {
+    border-bottom: 1px solid #80808057;
+    width: 50%;
+    /* margin-top: 9px; */
+    padding: 13px;
+    margin-bottom: 3%;
+}
+#page3 h3 {
+    border-bottom: 1px solid #80808057;
+    width: 50%;
+    /* margin-top: 9px; */
+    padding: 13px;
+    margin-bottom: 3%;
+}
+
+
+<!---ajax end ----->
