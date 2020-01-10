@@ -122,7 +122,7 @@
         <!-- Start of slider area -->
         <div class="slider-area">
             <div class="slider-active">
-            @include('fe.includes.sub_banner')     
+            @include('fe.includes.sub_banner')  
                 
                
             </div>
@@ -142,7 +142,7 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase">NPs Corner</h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
@@ -200,8 +200,6 @@
 	
   </div>
 
-  
-
 
 
 
@@ -253,8 +251,8 @@
                 <h2 align="center" style="color:#fff;padding-bottom:20px;">JCI PROGRAMS</h2>
                     <div class="col-md-12">
                         <div class="testimonial-all slider-active2">
-                            
                         @include('fe.includes.jci_programe')
+                            
                             
                         </div>
                     </div>
@@ -264,7 +262,22 @@
         
         
         <div id="fixed-social">
-        @include('fe.includes.social_links')
+  <div>
+    <a href="#" class="fixed-facebook" target="_blank"><i class="fa fa-facebook"></i> <span>Facebook</span></a>
+  </div>
+  <div>
+    <a href="#" class="fixed-twitter" target="_blank"><i class="fa fa-twitter"></i> <span>Twitter</span></a>
+  </div>
+  <div>
+    <a href="#" class="fixed-gplus" target="_blank"><i class="fa fa-google"></i> <span>Google+</span></a>
+  </div>
+  <div>
+    <!--<a href="#" class="fixed-linkedin" target="_blank"><i class="fa fa-linkedin"></i> <span>LinkedIn</span></a>
+  </div>
+  <div>-->
+   
+  <a href="#" class="fixed-instagrem" target="_blank"><i class="fa fa-instagram"></i> <span>Instagram</span></a>
+  </div>
 </div>
      
         <!-- Start footer area -->
@@ -301,6 +314,8 @@
     <script src="{{ asset('fe_theme/js/bootstrap.min.js')}}"></script>
     <!--  ajax-mail.js  -->	
     <script src="{{ asset('fe_theme/js/ajax-mail.js')}}"></script>
+    
+    <script src="{{ asset('fe_theme/js/ajaxpage.js')}}"></script>
     <!-- All js plugins included in this file. -->
     <script src="{{ asset('fe_theme/js/plugins.js')}}"></script>
     <script src="{{ asset('fe_theme/js/main.js')}}"></script>

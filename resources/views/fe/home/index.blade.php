@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('fe_theme/css/responsive.css')}}">
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/style-customizer.css')}}">
-    <link href="#" data-style="styles" rel="stylesheet">
+
     
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
