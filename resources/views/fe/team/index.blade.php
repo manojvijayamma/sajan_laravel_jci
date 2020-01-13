@@ -151,43 +151,45 @@
                 </div>
 
 
-                <!-- <div class="row">
+                <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12">
+                      
+                      
+                      <?php if($listData){
+                                    foreach($listData as $val){
+                                        
+                                        if($val->position==1){?>
                       <div class="col-sm-6">
                       <div class="president">
-                      <img src="images/13.png">
-                      <h5>JCI Sen. Anish C. Mathew</h5>
-                      <p>National President, JCI India 2020</p></div>
+                      <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
+                      <h5><?php echo $val->title ?></h5>
+                      <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p></div>
                       </div>
-                     </div></div> -->
+                      <?php } } }?> 
 
-                     <!-- <div class="second">
+
+                     </div></div> 
+
+
+                      <div class="second">
                      <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12">
                     
+
+                     <?php if($listData){
+                                    foreach($listData as $val){
+                                        if($val->position==2){?>
                         <div class="col-sm-3 thir2">
-                        <img src="images/men.png">
-                        <h5>ZZZ ZZZ. ZZZZZZ Z. ZZZZZZZ</h5>
-                        <p>xxxxxxxxx, JCI India 2020</p>
+                        <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
+                        <h5><?php echo $val->title ?></h5>
+                        <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p>
                         </div>
-                        <div class="col-sm-3 thir2">
-                        <img src="images/men.png">
-                        <h5>ZZZ ZZZ. ZZZZZZ Z. ZZZZZZZ</h5>
-                        <p>xxxxxxxxx, JCI India 2020</p>
-                        </div>
-                        <div class="col-sm-3 thir2">
-                        <img src="images/men.png">
-                        <h5>ZZZ ZZZ. ZZZZZZ Z. ZZZZZZZ</h5>
-                        <p>xxxxxxxxx, JCI India 2020</p>
-                        </div>
-                        <div class="col-sm-3 thir2">
-                        <img src="images/men.png">
-                        <h5>ZZZ ZZZ. ZZZZZZ Z. ZZZZZZZ</h5>
-                        <p>xxxxxxxxxx, JCI India 2020</p>
-                        </div>
+
+                        <?php } } }?> 
+
                      </div></div>
                      
-                     </div> -->
+                </div>
                 
                 
                 <div class="third">
@@ -196,13 +198,14 @@
                      
 
                                 <?php if($listData){
-                                    foreach($listData as $val){?>
+                                    foreach($listData as $val){
+                                        if($val->position==3){?>
                                 <div class="col-sm-2 thir3">
-                                <img src="{{asset('uploads/team/'.$val->image)}}">
+                                <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
                                 <h5><?php echo $val->title ?></h5>
                                 <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p>
                                 </div>
-                                <?php } }?>   
+                                <?php } } }?>   
                      
               
                       

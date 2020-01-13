@@ -137,7 +137,9 @@ class ContentController extends AdminBaseController
                 $input['slug_url']=$this->formatSlug($input['title']);
             break;
             case 'S':
-                $input['slug_url']=$this->formatSlug($input['section_url']);
+                $url=explode("/",$this->formatSlug($input['section_url']));
+                $url=array_reverse($url);
+                $input['slug_url']=$this->formatSlug($url[0]);
             break;
         }
         
