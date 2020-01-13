@@ -164,25 +164,22 @@
   <div id="page1"><!-- page 1 -->
 	<h3>PROFILE OF NATIONAL PRESIDENT</h3>
   
-	<p>Welcome to this page.</p>
-
-	<p>It has no images, but it got style.
-		And it has links, to bring you somewhere else&hellip;</p>
+	<?php echo $presidentData->details; ?>
 
 	
   </div><!-- /page1 -->
   
   <div id="page2"><!-- page 2 -->
-	<h3>MESSAGE OF NATIONAL PRESIDENT 2019</h3>
+	<h3>MESSAGE OF NATIONAL PRESIDENT <?php echo date("Y")?> </h3>
 
-	<p>Welcome to this page!</p>
+	<?php echo $presidentData->message; ?>
 
   </div><!-- /page2 -->
   
   <div id="page3"><!-- page 3 -->
 	<h3>NP OFFICIAL VISITS</h3>
 
-	<p>Welcome to the third page.</p>
+	<p>Coming soon</p>
 
 	
 
@@ -190,9 +187,9 @@
   </div><!-- /page3 -->
 
   <div id="page4"><!-- page 4 -->
-	<h1>Links</h1>
+	<h1>NP schedule</h1>
 
-	<p>Welcome to this page!</p>
+	<p>Coming soon</p>
 
 	
 

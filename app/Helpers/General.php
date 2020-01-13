@@ -32,14 +32,17 @@ class General
         return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 
-    public static function url($slug_url,$link_type){
+    public static function url($slug_url=NULL,$link_type=NULL, $link_url=NULL, $section_url=NULL){
         $url="";
         switch($link_type){
             case 'C':
                 $url="content/".$slug_url;
             break;
             case 'S':
-                $url=$slug_url;
+                $url=$section_url;
+            break;
+            default:
+                $url=$link_url;
             break;
         }
 

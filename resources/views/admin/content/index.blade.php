@@ -21,4 +21,25 @@
 <div id="list-wrapper">
     @include('admin.'.app('request')->input('controller').'.list')
 <div>
-               
+
+<script>
+$(".priority").blur(function(){
+    var id=  $(this).attr('data-rowId');
+    var priority=$(this).val();
+    var _token = $("input[name='_token']").val();
+    $.ajax({
+        type: 'POST',        
+        data: {
+            id: id,
+            _method: 'POST',
+            _token :_token,
+            priority:priority
+        },
+        url: "admin/content/priority",
+        success: function (response) {
+           
+        } 
+    });
+
+});
+</script>               

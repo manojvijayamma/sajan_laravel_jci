@@ -30,6 +30,7 @@ class AdminBaseController extends Controller
         $title=str_replace(" ","-",$title);
         $title=str_replace("/","-",$title);
         $title=str_replace("'","-",$title);
+        $title=strtolower($title);
         return $title;
     }
 

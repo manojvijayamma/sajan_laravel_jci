@@ -126,6 +126,8 @@ class TeamController extends AdminBaseController
         
         $this->data['designations']=Designation::where('status',1)->get();
         $this->data['zones']=Zone::where('status',1)->get();
+
+        $this->data['positions']=array("1"=>"In First Row","2"=>"In Second Row","3"=>"In Third Row");
         return view('admin.'.$request->input('controller').'.form', $this->data);
     }
 
@@ -142,7 +144,7 @@ class TeamController extends AdminBaseController
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = 'main_'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/Team');
+            $destinationPath = public_path('/uploads/team');
 
             $img = Image::make($image->getRealPath());
 

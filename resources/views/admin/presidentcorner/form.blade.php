@@ -65,7 +65,10 @@ body {
 
 
 
-            
+             <div class="form-group" >
+                <label for="inputFirstname">Short Description (For showing in home page )</label>    <br>            
+                <textarea id="short_description" name="short_description"  class="form-control">{{$content->short_description}}</textarea>
+             </div> 
 
 
              <div class="form-group" >
@@ -76,9 +79,13 @@ body {
 
 
              <div class="form-group" >
-                <label for="inputFirstname">Short Description (For showing in home page )</label>    <br>            
-                <textarea id="short_description" name="short_description"  class="form-control">{{$content->short_description}}</textarea>
+                <label for="inputFirstname">Message</label>
+                <textarea name="message1" class="summernote">{{$content->message}}</textarea>
+                <textarea id="message" name="message" style="display:none;" >{{$content->message}}</textarea>
              </div> 
+
+
+            
 
 
 
@@ -108,6 +115,7 @@ function validateForm(){
     
     //convert to code
     $('#details').val($('.summernote').summernote('code'));
+    $('#message').val($('.summernote').summernote('code'));
 
     if(title==""){
         errorMessage("Please Enter title");

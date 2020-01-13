@@ -10,6 +10,7 @@
                                             <tr>
                                             <th class="col-sm-1" style="width:3%">#</th>
                                                 <th class="col-sm-6">Title</th>
+                                                
                                                 <th class="col-sm-2">Actions</th>
                                             </tr>
                                         </thead>
@@ -18,9 +19,10 @@
                                         
                                                                         <tr class="list-users">
                                                                             <td>{{ ++$i }}</td>
-                                                                            <td>                                                                            
-                                                                            {{ $row->title }}
-                                                                            </td>                                                                       
+                                                                            <td><div style="float:left;padding-left:0px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $row->priority }}" name="priority" data-rowId="{{$row->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $row->title }}</div>                                                                            
+                                                                                
+                                                                            </td>    
+                                                                            
                                                                             <td>
                                                                                 
                                                                                 <a class="btn <?php echo ($row->status!=1 ? 'btn-danger' : 'btn-success') ?> btn-sm" href="javascript:void(0)" onclick="loadData('<?php echo app('request')->input('controller') ?>','<?php echo $row->id?>/status?page=1','1','GET','list')"><i class="fa fa-check-circle fa-fw"></i> Status</a>
@@ -42,9 +44,9 @@
                                                                             foreach($row->childLevel1 as $sub){?>
                                                                                 <tr class="list-users">
                                                                                     <td>{{ ++$i }}</td>
-                                                                                    <td>                                                                               
-                                                                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $sub->title }}
+                                                                                    <td><div style="float:left;padding-left:50px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $sub->priority }}" name="priority" data-rowId="{{$sub->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $sub->title }}</div>
                                                                                     </td>  
+                                                                                                                                                      
 
                                                                                     <td>                                                                                
                                                                                         <a class="btn <?php echo ($sub->status!=1 ? 'btn-danger' : 'btn-success') ?> btn-sm" href="javascript:void(0)" onclick="loadData('<?php echo app('request')->input('controller') ?>','<?php echo $sub->id?>/status?page=1','1','GET','list')"><i class="fa fa-check-circle fa-fw"></i> Status</a>
@@ -69,7 +71,7 @@
                                                                                     <tr class="list-users">
                                                                                         <td>{{ ++$i }}</td>
                                                                                         <td>                                                                               
-                                                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ $sub2->title }}
+                                                                                        <div style="float:left;padding-left:100px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $sub2->priority }}" name="priority" data-rowId="{{$sub2->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $sub2->title }}</div>
                                                                                         </td>  
 
                                                                                         <td>                                                                                

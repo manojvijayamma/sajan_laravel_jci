@@ -20,6 +20,7 @@ class PresidentCorner extends Authenticatable
         'sub_title',        
         'status',
         'details',
+        'message',
         'short_description',
          'image'  ,
          'logo'          

@@ -26,7 +26,7 @@ class TeamController extends Controller
     }
  
     public function index(Request $request, $id) { 
-        $this->data['content']=Content::where('slug_url','team')->first(); 
+        $this->data['content']=Content::where('slug_url',$id)->first(); 
         $this->data['content']['image_path']="team";
         $this->setMetaData($this->data['content']);  
 

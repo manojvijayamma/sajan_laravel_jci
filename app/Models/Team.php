@@ -13,7 +13,8 @@ class Team extends Model
         'year',
         'priority',
         'identifier',
-        'zone_id'
+        'zone_id',
+        'position'
     ];   
 
 

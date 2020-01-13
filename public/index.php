@@ -5,6 +5,7 @@
 define("SUB_STRING_COUNT","2000");
 define("SECTION_SLUG_HOME","home");
 define("SECTION_SLUG_COURSE","course");
+define("SECTION_SLUG_DOWNLOAD","downloads");
 
 
 define("WIDGET_ABOUT_JCI_INDIA",7);

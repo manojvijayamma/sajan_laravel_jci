@@ -28,7 +28,8 @@ class Content extends Authenticatable
         'slug_url',
         'seo_title',
         'seo_keywords',
-        'seo_description'     
+        'seo_description',
+        'priority'     
     ];
 
     public function childLevel1()

@@ -32,10 +32,7 @@ class ContentController extends AdminBaseController
         if ($request->input('position_id')) {
             $query = $query->where('position_id','=', "{$request->input('position_id')}");
         }
-        $this->data['content']= $query->orderBy('title','DESC')->orderBy('title','ASC')->paginate($pageLimit);
-
-        
-        
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         if($request->input('ajax')){
             return view('admin.'.$request->input('controller').'.'.$request->input('ajax'),$this->data)->with('i', ($request->input('page', 1) - 1) * $pageLimit); 
@@ -177,6 +174,18 @@ class ContentController extends AdminBaseController
         
         
 
+    }
+
+
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = Content::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
+
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
     }
 
 

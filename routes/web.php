@@ -19,7 +19,7 @@ Route::get('/news', 'Fe\NewController@index')->name('index');
 Route::get('/news/{id}', 'Fe\NewController@view')->name('view');
 
 Route::get('/team/{id}', 'Fe\TeamController@index')->name('index');
-Route::get('/download', 'Fe\DownloadController@index')->name('index');
+Route::get('/downloads', 'Fe\DownloadsController@index')->name('index');
 
 Route::get('/faq', 'Fe\FaqController@index')->name('index');
 Route::get('/presidentcorner', 'Fe\PresidentCornerController@index')->name('index');
@@ -162,7 +162,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/content/{id}', 'Admin\ContentController@destroy')->name('content.destroy');
     Route::get('/content/{id}/status', 'Admin\ContentController@status')->name('content.status');
     Route::get('/content/{id}/show', 'Admin\ContentController@show')->name('content.show');
-
+    Route::post('/content/priority', 'Admin\ContentController@priority')->name('content.priority');
 
 
     Route::get('/news', 'Admin\NewsController@index')->name('news.index');

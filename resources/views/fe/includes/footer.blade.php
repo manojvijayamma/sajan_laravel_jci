@@ -5,7 +5,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="footer-text footer-social">
                             <?php if(isset($widgetContents) && isset($widgetContents[WIDGET_CONTACT_US])){
-                                $url=General::url($widgetContents[WIDGET_CONTACT_US]->slug_url, $widgetContents[WIDGET_CONTACT_US]->link_type);?>
+                                $url=General::url($widgetContents[WIDGET_CONTACT_US]->slug_url, $widgetContents[WIDGET_CONTACT_US]->link_type, $widgetContents[WIDGET_CONTACT_US]->link_url, $widgetContents[WIDGET_CONTACT_US]->section_url);?>
                         
                                      <h3><?php echo $widgetContents[WIDGET_CONTACT_US]->title?></h3>
                                     <p><?php echo $widgetContents[WIDGET_CONTACT_US]->short_description?></p>

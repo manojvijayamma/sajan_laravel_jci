@@ -24,6 +24,14 @@
 
 
              <div class="form-group">
+                 <label for="name">
+                     Short Description (If need to show the short intro in the home page):</label>
+                     <textarea class="form-control" type="text"  name="short_description" id="short_description"   >{{$content->short_description}}</textarea>
+
+             </div>  
+
+
+             <div class="form-group">
                 <label for="inputLastname">Main menu hierarchy level</label>
                     <select class="form-control" id="parent_id" name="parent_id" required onchange="updateShowPanel(this.value)"> 
                     <option value="0">Parent Level</option>
@@ -94,12 +102,7 @@
              </div> 
 
 
-             <div class="form-group">
-                 <label for="name">
-                     Short Description (For showing in home page ):</label>
-                     <textarea class="form-control" type="text"  name="short_description" id="short_description"   >{{$content->short_description}}</textarea>
-
-             </div>        
+                   
 
 
              <div class="form-group" id="panel_E" style="display:{{$content->link_type=='E'  ? '' :'none'}}">

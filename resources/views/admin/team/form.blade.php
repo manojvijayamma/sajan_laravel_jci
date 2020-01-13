@@ -17,7 +17,7 @@
              <div class="form-group">
                  <label for="name">
                      Name:</label>
-                     <input class="form-control" type="text"  name="title" id="title"  value="{{$content->name}}"  required autofocus>
+                     <input class="form-control" type="text"  name="title" id="title"  value="{{$content->title}}"  required autofocus>
 
              </div>             
 
@@ -70,6 +70,18 @@
 
 
                
+
+             <div class="form-group" id="panel_show" >
+                <label for="inputLastname">Show At</label>
+                    <select class="form-control" id="position" name="position" required  > 
+                    
+                    @foreach ($positions as $key=>$cat)                        
+                        <option value="{{$key}}" {{ ( $key==$content->position ) ? ' selected' : '' }}>
+                            {{$cat}}
+                        </option>
+                    @endforeach
+                 </select>
+             </div> 
 
 
 

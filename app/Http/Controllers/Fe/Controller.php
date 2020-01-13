@@ -69,7 +69,7 @@ class Controller extends BaseController
         ->where('content_position_relations.position_id', '1')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)
-        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
         ->orderBy('contents.priority','ASC')
         ->orderBy('contents.title','ASC')
         ->get();
@@ -80,7 +80,7 @@ class Controller extends BaseController
         ->where('content_position_relations.position_id', '2')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)
-        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
         ->orderBy('contents.priority','ASC')
         ->orderBy('contents.title','ASC')
         ->get();
@@ -91,7 +91,7 @@ class Controller extends BaseController
         ->where('content_position_relations.position_id', '3')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)
-        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
         ->orderBy('contents.priority','ASC')
         ->orderBy('contents.title','ASC')
         ->get(); 
@@ -102,7 +102,7 @@ class Controller extends BaseController
         ->where('content_position_relations.position_id', '4')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)
-        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url')
+        ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
         ->orderBy('contents.priority','ASC')
         ->orderBy('contents.title','ASC')
         ->get(); 
@@ -139,25 +139,25 @@ class Controller extends BaseController
         }       
        
         if(isset($content['image']) && !empty($content['image'])){
-            $this->data['banner_image']="../uploads/".$content['image_path']."/".$content['image'];
+            $this->data['banner_image']=asset("uploads/".$content['image_path']."/".$content['image']);
         }
 
 
         //defaut hardcode
         if(empty($this->data['seo_title'])){
-            $this->data['seo_title']="BGAS & CSWP Training | API & ISO Training | Blastline Institute";
+            $this->data['seo_title']="jciindia | Be Better";
         }
 
         if(empty($this->data['seo_keywords'])){
-            $this->data['seo_keywords']="BGAS & CSWP Training | API & ISO Training | Blastline Institute";
+            $this->data['seo_keywords']="jciindia | Be Better";
         }
 
         if(empty($this->data['seo_description'])){
-            $this->data['seo_description']="BGAS & CSWP Training | API & ISO Training | Blastline Institute";
+            $this->data['seo_description']="jciindia | Be Better";
         }
         //echo $this->data['banner_image'];
         if(empty($this->data['banner_image'])){
-            $this->data['banner_image']=asset('fe_theme/img/subt-bg.png');
+            $this->data['banner_image']=asset('fe_theme/images/default_banner.jpg');
         }
 
 
