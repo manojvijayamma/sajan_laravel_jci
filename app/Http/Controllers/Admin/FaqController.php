@@ -34,7 +34,7 @@ class FaqController extends AdminBaseController
             $query = $query->where('title','like', "%{$request->input('title')}%");
         }
        
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         
         if($request->input('ajax')){

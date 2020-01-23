@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Zone extends Model
 {
     protected $fillable = [
-        'title','parent_id'
+        'title','parent_id',
+        'priority'
     ];   
 
 

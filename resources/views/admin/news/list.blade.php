@@ -24,7 +24,7 @@
                                         
                                                                         <tr class="list-users">
                                                                             <td>{{ ++$i }}</td>
-                                                                            <td>{{ $row->title }}</td>
+                                                                            <td><div style="float:left;padding-left:0px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $row->priority }}" name="priority" data-rowId="{{$row->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $row->title }}</div> </td>
                                                                            
                                                                                                                                                 
                                                                             <td>
@@ -68,6 +68,28 @@
 gridHeight=$(window).height() - $('.navbar').height() - $('#page-header').height()-49;
 $("#grid-table").css("height", gridHeight);
 </script>
+
+<script>
+$(".priority").blur(function(){
+    var id=  $(this).attr('data-rowId');
+    var priority=$(this).val();
+    var _token = $("input[name='_token']").val();
+    $.ajax({
+        type: 'POST',        
+        data: {
+            id: id,
+            _method: 'POST',
+            _token :_token,
+            priority:priority
+        },
+        url: "admin/news/priority",
+        success: function (response) {
+           
+        } 
+    });
+
+});
+</script>  
 
                
 

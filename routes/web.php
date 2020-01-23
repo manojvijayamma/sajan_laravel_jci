@@ -128,7 +128,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/category/{id}', 'Admin\CategoryController@destroy')->name('category.destroy');
     Route::get('/category/{id}/status', 'Admin\CategoryController@status')->name('category.status');
     Route::get('/category/{id}/show', 'Admin\CategoryController@show')->name('category.show');
-
+    Route::post('/category/priority', 'Admin\CategoryController@priority')->name('category.priority');
 
 
 
@@ -141,6 +141,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/gallery/{id}', 'Admin\GalleryController@destroy')->name('gallery.destroy');
     Route::get('/gallery/{id}/status', 'Admin\GalleryController@status')->name('gallery.status');
     Route::get('/gallery/{id}/show', 'Admin\GalleryController@show')->name('gallery.show');
+    Route::post('/gallery/priority', 'Admin\GalleryController@priority')->name('gallery.priority');
 
 
 
@@ -152,6 +153,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/downloads/{id}', 'Admin\DownloadsController@destroy')->name('downloads.destroy');
     Route::get('/downloads/{id}/status', 'Admin\DownloadsController@status')->name('downloads.status');
     Route::get('/downloads/{id}/show', 'Admin\DownloadsController@show')->name('downloads.show');
+    Route::post('/downloads/priority', 'Admin\DownloadsController@priority')->name('downloads.priority');
 
 
     Route::get('/content', 'Admin\ContentController@index')->name('content.index');
@@ -173,8 +175,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/news/{id}', 'Admin\NewsController@destroy')->name('news.destroy');
     Route::get('/news/{id}/status', 'Admin\NewsController@status')->name('news.status');
     Route::get('/news/{id}/show', 'Admin\NewsController@show')->name('news.show');
-
-
+    Route::post('/news/priority', 'Admin\NewsController@priority')->name('news.priority');
 
 
 
@@ -186,6 +187,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/faq/{id}', 'Admin\FaqController@destroy')->name('faq.destroy');
     Route::get('/faq/{id}/status', 'Admin\FaqController@status')->name('faq.status');
     Route::get('/faq/{id}/show', 'Admin\FaqController@show')->name('faq.show');
+    Route::post('/faq/priority', 'Admin\FaqController@priority')->name('faq.priority');
     
 
 
@@ -197,6 +199,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/event/{id}', 'Admin\EventController@destroy')->name('event.destroy');
     Route::get('/event/{id}/status', 'Admin\EventController@status')->name('event.status');
     Route::get('/event/{id}/show', 'Admin\EventController@show')->name('event.show');
+    Route::post('/event/priority', 'Admin\EventController@priority')->name('event.priority');
 
 
     // Route::get('/zoneevent', 'Admin\ZoneEventController@index')->name('zoneevent.index');
@@ -218,6 +221,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/programe/{id}', 'Admin\ProgrameController@destroy')->name('programe.destroy');
     Route::get('/programe/{id}/status', 'Admin\ProgrameController@status')->name('programe.status');
     Route::get('/programe/{id}/show', 'Admin\ProgrameController@show')->name('programe.show');
+    Route::post('/programe/priority', 'Admin\ProgrameController@priority')->name('programe.priority');
 
 
     Route::get('/team', 'Admin\TeamController@index')->name('team.index');
@@ -228,6 +232,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/team/{id}', 'Admin\TeamController@destroy')->name('team.destroy');
     Route::get('/team/{id}/status', 'Admin\TeamController@status')->name('team.status');
     Route::get('/team/{id}/show', 'Admin\TeamController@show')->name('team.show');
+    Route::post('/team/priority', 'Admin\TeamController@priority')->name('team.priority');
 
 
     Route::get('/zone', 'Admin\ZoneController@index')->name('zone.index');
@@ -238,6 +243,7 @@ Route::prefix('admin')->group(function () {
     Route::delete('/zone/{id}', 'Admin\ZoneController@destroy')->name('zone.destroy');
     Route::get('/zone/{id}/status', 'Admin\ZoneController@status')->name('zone.status');
     Route::get('/zone/{id}/show', 'Admin\ZoneController@show')->name('zone.show');
+    Route::post('/zone/priority', 'Admin\ZoneController@priority')->name('zone.priority');
 
 
     Route::get('/designation', 'Admin\DesignationController@index')->name('designation.index');

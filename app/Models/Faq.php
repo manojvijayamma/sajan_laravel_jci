@@ -20,6 +20,7 @@ class Faq extends Authenticatable
         
         'status',
         'details',
+        'priority'
                
              
     ];

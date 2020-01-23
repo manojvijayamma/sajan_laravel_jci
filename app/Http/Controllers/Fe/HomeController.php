@@ -35,7 +35,7 @@ class HomeController extends Controller
         $this->data['mainBanners']=Banner::where('status',1)->where('position_id','1')->get();  
 
         $this->data['upcomingEvents']=Event::where('status',1)->where('identifier','event')->where('event_date','>=',$curDate)->get();
-        $this->data['zoneData']=Zone::where('status',1)->get();
+        $this->data['zoneData']=DB::table('zones')->join('events', 'events.zone_id', '=', 'zones.id')->where('zones.status',1)->where('events.status',1)->where('events.identifier','zoneevent')->get();
         $this->data['presidentData']=PresidentCorner::find(1);
 
         $this->setMetaData();

@@ -35,7 +35,7 @@ class EventController extends AdminBaseController
             $query = $query->where('identifier','=', $request->input('identifier'));
         }
        
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         
         if($request->input('ajax')){
@@ -126,8 +126,8 @@ class EventController extends AdminBaseController
 
     private function _save($request,$id=0){ 
         
-        $input = $request->all();        
-
+        $input = $request->all();
+        
         $this->validate($request, [
             'title' => 'required', 
         ]);
@@ -138,7 +138,7 @@ class EventController extends AdminBaseController
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = 'main_'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/Event');
+            $destinationPath = public_path('/uploads/event');
 
             $img = Image::make($image->getRealPath());
 
@@ -164,6 +164,17 @@ class EventController extends AdminBaseController
 
     }
 
+
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = Event::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
+
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
+    }
 
 
 

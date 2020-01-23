@@ -26,7 +26,8 @@ class Event extends Authenticatable
         'image',
         'zone_id',
         'identifier',
-        'slug_url'
+        'slug_url',
+        'priority'
                
              
     ];

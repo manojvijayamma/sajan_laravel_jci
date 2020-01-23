@@ -182,7 +182,7 @@
                         <div class="col-sm-3 thir2">
                         <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
                         <h5><?php echo $val->title ?></h5>
-                        <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p>
+                        <p> <?php echo $val->designation_title?></p>
                         </div>
 
                         <?php } } }?> 

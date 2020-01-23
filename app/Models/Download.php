@@ -20,7 +20,8 @@ class Download extends Authenticatable
         'title',
         'parent_id',
         'status',
-        'image'
+        'image',
+        'priority'
     ];
 
   

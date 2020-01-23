@@ -22,7 +22,8 @@ class Programe extends Authenticatable
         'image',       
         'status',
         'details',
-        'slug_url'
+        'slug_url',
+        'priority'
                
              
     ];

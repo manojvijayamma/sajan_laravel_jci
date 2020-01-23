@@ -809,6 +809,7 @@ $(document).on('click','#btn_save',function(event) {
             
             var dataURL = $(this).attr('data-href');
             var pageReload = $(this).attr('data-reload');
+            var showPopup = $(this).attr('data-popup');
             var pkey=$(this).attr('data-pkey');;
             $('#overlay').show();
 
@@ -887,7 +888,12 @@ $(document).on('click','#btn_save',function(event) {
                                 
                                 window.location.hash = window.location.hash.replace('&popup=1&success=1&size='+modalSize,'');
                                 if(!pkey){
-                                    window.location.hash=window.location.hash+"&popup=1&success=1&size="+modalSize;
+                                    if(showPopup==1){
+                                        window.location.hash=window.location.hash+"&popup=1&success=1&size="+modalSize;
+                                    }
+                                    else{
+                                        window.location.hash=window.location.hash+"&success=1";  
+                                    }    
                                  }else{                                 
                                     window.location.hash=window.location.hash+"&success=1";                                
                                 }                                 

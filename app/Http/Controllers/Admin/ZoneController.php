@@ -19,7 +19,7 @@ class ZoneController extends Controller
         $pageLimit=15; 
         
         
-        $this->data['content']=Zone::orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']=Zone::orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         
                
@@ -143,7 +143,16 @@ class ZoneController extends Controller
     }
 
 
-    
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = Zone::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
+
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
+    }
  
 
 }

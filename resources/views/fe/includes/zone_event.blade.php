@@ -3,7 +3,7 @@
     foreach($zoneData as $val){?>
 <div class="col-md-4">
     <div class="single-course">
-        <a href="#"><img src="images/1.jpg" alt="" ></a>
+        <a href="#"><img src="{{asset('uploads/event/'.$val->image)}}" alt=""></a>
         <div class="single-coures-text">
             <h3><a href="#"><?php echo $val->title?></a></h3>
             
