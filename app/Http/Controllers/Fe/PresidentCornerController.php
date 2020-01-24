@@ -38,7 +38,7 @@ class PresidentCornerController extends Controller
         $this->setMetaData($this->data['content']);
         //$this->setMetaData($this->data['content']); 
         
-        $this->data['presidentData']=PresidentCorner::find(1);
+        $this->data['presidentData']=PresidentCorner::where('id','1')->first();
            
         
         return view('fe.president.view',$this->data);

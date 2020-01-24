@@ -32,6 +32,7 @@ class TeamController extends Controller
 
         $query=Team::leftJoin('designations','designations.id','teams.designation_id');
         $query=$query->select('teams.*','designations.title as designation_title');
+       
         if($id){
             $query=$query->where('teams.identifier',$id);
         }

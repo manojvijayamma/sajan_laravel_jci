@@ -75,6 +75,7 @@ class ContentController extends AdminBaseController
     public function update(Request $request, $id)
     {       
         $this->_save($request,$id);  
+        
         return response()->json([
             'success'=>1,
             'text'=>'Successfully updated'
@@ -132,12 +133,14 @@ class ContentController extends AdminBaseController
         
         $input = $request->all();
         
+        
         switch($input['link_type']){
             case 'C':
                 $input['slug_url']=$this->formatSlug($input['title']);
             break;
             case 'S':
-                $url=explode("/",$this->formatSlug($input['section_url']));
+                $url=explode("/",$input['section_url']);
+                
                 $url=array_reverse($url);
                 $input['slug_url']=$this->formatSlug($url[0]);
             break;

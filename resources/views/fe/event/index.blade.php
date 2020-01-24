@@ -127,7 +127,7 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase">Events</h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>

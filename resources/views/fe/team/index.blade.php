@@ -162,7 +162,11 @@
                       <div class="col-sm-6">
                       <div class="president">
                       <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                      <h5><?php echo $val->title ?></h5>
+                      <h5><?php 
+                        if(isset($val->title)){
+                            echo $val->title;
+                        }
+                      ?></h5>
                       <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p></div>
                       </div>
                       <?php } } }?> 
@@ -181,7 +185,10 @@
                                         if($val->position==2){?>
                         <div class="col-sm-3 thir2">
                         <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                        <h5><?php echo $val->title ?></h5>
+                        <h5><?php
+                            if(isset($val->title)){
+                                echo $val->title;
+                            }    ?></h5>
                         <p> <?php echo $val->designation_title?></p>
                         </div>
 
@@ -202,7 +209,10 @@
                                         if($val->position==3){?>
                                 <div class="col-sm-2 thir3">
                                 <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                                <h5><?php echo $val->title ?></h5>
+                                <h5><?php 
+                                if(isset($val->title)){
+                                    echo $val->title;
+                                }    ?></h5>
                                 <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p>
                                 </div>
                                 <?php } } }?>   
