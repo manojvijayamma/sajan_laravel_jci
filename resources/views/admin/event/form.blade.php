@@ -1,3 +1,9 @@
+<style>
+body {
+    overflow:auto;
+}
+</style>
+
 
 <form  id="form_save"  enctype="multipart/form-data">
 <input name="identifier" type="hidden" value="{{app('request')->input('identifier')}}">
@@ -5,10 +11,19 @@
 @if ($content->id > 0)
     <input name="_method" type="hidden" value="PUT">
 @endif 
- <div class="modal-header">
-     <button type="button" class="close" onclick="closePopup('true')">×</button>
-     <h4 class="modal-title"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Event</h4>
- </div>
+
+<div class="row" id="page-header" >
+        <div class="col-lg-12" style="padding:0px;">
+            <h2 class="page-header" style="padding:0px;margin:39px 0px 8px 30px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Events
+                <div style="float:right">
+                 </div>
+            </h2>
+            
+        </div>
+        <!-- /.col-lg-12 -->
+</div>
+
+
  <div class="modal-body">
              <div id="success_message">
                  
@@ -47,7 +62,7 @@
                 <label for="inputLastname">  Image</label>
                 <input type="file" name="image"  id="image" placeholder="">
                 <?php if($content->image){?>
-                    <img src="uploads/event/{{$content->image}}" style="width:70px;">
+                    <img src="{{asset('uploads/event/'.$content->image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>
@@ -64,7 +79,15 @@
                         </option>
                     @endforeach
                  </select>
-             </div>             
+             </div>    
+
+
+
+               <div class="form-group" id="panel_C" >
+                <label for="inputFirstname">Details</label>
+                <textarea name="details1" class="summernote">{{$content->details}}</textarea>
+                <textarea id="details" name="details" style="display:none;" >{{$content->details}}</textarea>
+             </div>          
 
 
 
@@ -79,7 +102,7 @@
  </div>
 
  <div class="modal-footer">
-             <button type="button" class="btn btn-success"  id="btn_save" data-href="{{ url('admin/'.app('request')->input('controller').'/'.$content->id) }}" data-pkey="{{$content->id}}" data-reload="true"><i class="fa fa-save"></i> Save</button>
+             <button type="button" class="btn btn-success"  id="btn_save" data-href="{{ url('admin/'.app('request')->input('controller').'/'.$content->id) }}" data-pkey="{{$content->id}}" data-reload="true" data-popup="0"><i class="fa fa-save"></i> Save</button>
              <button type="reset" class="btn btn-danger" onclick="closePopup('true')" ><i class="fa fa-close"></i> Cancel</button>
  </div>
 
@@ -127,7 +150,19 @@ function updatePanel(id){
     }
 }
 
-</script>    
+</script> 
+
+
+<script type="text/javascript">
+            // When the document is ready
+            $(document).ready(function () {
+                
+                $('.datepicker').datepicker({
+                    format: "dd-mm-yyyy"
+                });  
+            
+            });
+        </script>   
 
 
 

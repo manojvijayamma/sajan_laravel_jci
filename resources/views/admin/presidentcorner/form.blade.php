@@ -80,7 +80,7 @@ body {
 
              <div class="form-group" >
                 <label for="inputFirstname">Message</label>
-                <textarea name="message1" class="summernote">{{$content->message}}</textarea>
+                <textarea name="message1" class="summernote message">{{$content->message}}</textarea>
                 <textarea id="message" name="message" style="display:none;" >{{$content->message}}</textarea>
              </div> 
 
@@ -115,7 +115,7 @@ function validateForm(){
     
     //convert to code
     $('#details').val($('.summernote').summernote('code'));
-    $('#message').val($('.summernote').summernote('code'));
+    $('#message').val($('.message').summernote('code'));
 
     if(title==""){
         errorMessage("Please Enter title");

@@ -38,7 +38,7 @@ class NewsController extends AdminBaseController
             $query = $query->where('title','like', "%{$request->input('title')}%");
         }
        
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         
         if($request->input('ajax')){
@@ -168,5 +168,15 @@ class NewsController extends AdminBaseController
 
 
 
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = News::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
+
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
+    }
 
 } 

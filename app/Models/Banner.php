@@ -21,7 +21,8 @@ class Banner extends Authenticatable
         'position_id',
         'link_url',      
         'status',
-        'image'
+        'image',
+        'priority'
     ];
    
     public function position()

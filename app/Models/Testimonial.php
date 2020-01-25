@@ -20,6 +20,7 @@ class Testimonial extends Authenticatable
         'image',
         'status',
         'details',
+        'priority'
                
              
     ];

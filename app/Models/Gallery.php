@@ -23,6 +23,7 @@ class Gallery extends Model
         'large_image',
         'status',
         'identifier',
-        'video_url'      
+        'video_url'  ,
+        'priority'    
     ];
 }

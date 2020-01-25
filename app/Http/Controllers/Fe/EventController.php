@@ -30,12 +30,12 @@ class EventController extends Controller
         $this->data['content']['image_path']="event";
         $this->setMetaData($this->data['content']);  
 
-        $query=query();        
+        $query=Event::query();        
         if($id){
             $query=$query->where('identifier',$id);
         }
         $this->data['listData']=$query->where('status',1)->orderBy('title')->get();       
-        return view('fe.faq.index',$this->data);
+        return view('fe.event.index',$this->data);
     }
    
 

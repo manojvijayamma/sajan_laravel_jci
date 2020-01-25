@@ -99,7 +99,7 @@ class Controller extends BaseController
 
         $this->data['footerMenu'] = DB::table('contents')
         ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
-        ->where('content_position_relations.position_id', '4')
+        ->where('content_position_relations.position_id', '6')
         ->where('contents.status', '1')
         ->where('contents.parent_id',0)
         ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
@@ -109,7 +109,7 @@ class Controller extends BaseController
 
       
         $this->data['newsUpdates'] = News::where('featured',1)->where('status',1)->get();
-        $this->data['programmeData']=Programe::where('featured',1)->where('status',1)->get();
+        $this->data['programmeData']=Programe::where('status',1)->get();
        
     }
 

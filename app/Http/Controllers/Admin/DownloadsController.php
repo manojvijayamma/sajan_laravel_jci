@@ -25,7 +25,7 @@ class DownloadsController extends Controller
         if ($request->input('position_id')) {
             $query = $query->where('position_id','=', "{$request->input('position_id')}");
         }
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
 
         //$this->data['position'] = DownloadPosition::where('status',1)->get();
          
@@ -149,7 +149,16 @@ class DownloadsController extends Controller
     }
 
 
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = Download::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
 
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
+    }
     
 
 

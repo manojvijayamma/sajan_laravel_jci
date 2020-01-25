@@ -38,7 +38,7 @@ class TeamController extends AdminBaseController
             $query = $query->where('identifier','=', $request->input('identifier'));
         }
        
-        $this->data['content']= $query->orderBy('title','ASC')->paginate($pageLimit);
+        $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
         
         if($request->input('ajax')){
@@ -170,6 +170,18 @@ class TeamController extends AdminBaseController
 
     }
 
+
+
+    public function priority(Request $request){
+        $input = $request->all();
+        $menu = Team::find($input['id']);        
+        $menu->update(array('priority'=>$input['priority']));
+
+        return response()->json([
+            'success'=>1,
+            'text'=>'Successfully updated the priority'
+         ], 200);
+    }
 
 
 
