@@ -176,8 +176,7 @@ Route::prefix('admin')->group(function () {
 
 
 
-
-
+    
     Route::get('/faq', 'Admin\FaqController@index')->name('faq.index');
     Route::get('/faq/create', 'Admin\FaqController@create')->name('faq.create');
     Route::post('/faq', 'Admin\FaqController@store')->name('faq.store');
