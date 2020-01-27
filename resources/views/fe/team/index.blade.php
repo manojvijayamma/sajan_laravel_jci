@@ -136,7 +136,7 @@
         <p>NEWS UPDATE</p>
         </div>
         <div id="content">
-        <marquee><p> @include('fe.includes.news_update')</p></marquee>
+        <marquee> @include('fe.includes.news_update')</marquee>
         </div>
  
 </div>

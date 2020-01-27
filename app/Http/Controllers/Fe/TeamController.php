@@ -33,6 +33,7 @@ class TeamController extends Controller
 
         $query=Team::leftJoin('designations','designations.id','teams.designation_id');
         $query=$query->select('teams.*','designations.title as designation_title');
+        $viewPage="fe.team.index";
        
         if($id){
             switch($id){
@@ -48,16 +49,25 @@ class TeamController extends Controller
                             
                         }
                     }
+
+                    $this->data['listData']=$query->where('teams.status',1)->orderBy('teams.priority')->orderBy('teams.title')->get();       
+                    return view($viewPage,$this->data);
                     
                 break; 
+                case 'national-appointees':                               
+                        return view('fe.team.appointees',$this->data);
+                break;
                 default:
                     $query=$query->where('teams.identifier',$id);
+
+                    $this->data['listData']=$query->where('teams.status',1)->orderBy('teams.priority')->orderBy('teams.title')->get();       
+                    return view('fe.team.index',$this->data);
+
                 break;
             }
             
         }
-        $this->data['listData']=$query->where('teams.status',1)->orderBy('teams.priority')->orderBy('teams.title')->get();       
-        return view('fe.team.index',$this->data);
+        
     }
    
 
