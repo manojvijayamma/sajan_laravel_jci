@@ -25,7 +25,7 @@
                                                                             <td>{{ ++$i }}</td>
                                                                             <td><div style="float:left;padding-left:0px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $row->priority }}" name="priority" data-rowId="{{$row->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $row->title }}</div> </td>
                                                                            
-                                                                            <td><img src="uploads/banner/{{ $row->image }}" style="height:30px;"></td>
+                                                                            <td><img src="{{asset('uploads/download/'.$row->image)}}" style="height:30px;"></td>
                                                                                                                                                        
                                                                             <td>
                                                                                 

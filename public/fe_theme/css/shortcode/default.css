@@ -1,10 +1,4 @@
-/*
-Template Name: Universe - Education Html Template 
-Description: This is html5 template
-Author: DevItem
-Version: 1.0
 
-*/
 /*================================================
 [  Table of contents  ]
 ================================================
@@ -176,8 +170,9 @@ hr.mtb-40 {
     border-top: 0px;
 }
 label {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
+    margin-left: 11%;
     color: #626262;
 }
 *::-moz-selection {
@@ -641,9 +636,23 @@ input {
     box-shadow: none;
     color: #3f3f3f;
     font-size: 14px;
+    padding: 21px;
     height: 32px;
     padding-left: 20px;
-    width: 100%;
+    margin-left: 10%;
+    width: 85%;
+    margin-bottom: 23px;
+}
+.user {
+    margin-left: 38px;
+    width: 85%;
+}
+#submit {
+    margin-left: 44px;
+    background: #0096d5;
+    width: 85%;
+    color: white;
+    padding-top: 3px;
 }
 select {
     width: 100%;
@@ -1688,7 +1697,7 @@ padding-bottom:30px;
 ***********************/
 
 .section-title h1 {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: bold;
     line-height: 30px;
     margin: 20px 0px 22px;
@@ -1771,4 +1780,359 @@ padding-bottom:30px;
     margin-right: 34%;
     rgin-right: 56%;
     width: 50%;
+}
+
+.down {
+    margin-right: 68%;
+    border: 1px solid #80808040;
+    width: 23%;
+    /* padding-bottom: 0px; */
+    padding: 3px;
+	margin-bottom: 3%;
+}
+.dwn {
+margin-bottom: 2%;
+}
+.dwn h5
+{
+	color: #2196F3;
+}
+
+
+.prgm h5 {
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 2%;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #0096d5;
+}
+.prgm p {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    /* color: #555; */
+    font-size: 14px;
+    text-align: justify;
+    line-height: 24px;
+    /* margin-bottom: 15px; */
+    margin-bottom: 20%;
+}
+.login {
+    margin-left: 1%;
+}
+.login h4 {
+    margin-left: -19px;
+    margin-bottom: 6%;
+    margin-top: 0px;
+    height: 60px;
+    padding-top: 2%;
+    padding-left: 45%;
+    paddin-l: 43%;
+    color: white;
+    width: 108%;
+    background: #2196f3d6;
+    font-size: 30px;
+}
+.log
+{
+	border: 1px solid gray;
+    width: 40%;
+    margin-left: 30%;
+}
+
+fieldset {
+    /* border: 1px solid #ccc; */
+    padding: 14px;
+    max-width: 295px;
+    background-color: #fff;
+    /* border-radius: 5px; */
+}
+
+section { padding: 0 15px; }
+
+.CaptchaWrap { position: relative; }
+.CaptchaTxtField {
+    /* border-radius: 5px; */
+    border: 1px solid #ccc;
+    display: block;
+    margin-left: 15px;
+    box-sizing: border-box;
+}
+
+#UserCaptchaCode {
+    padding: 21px 10px;
+    outline: none;
+    font-size: 18px;
+    font-weight: normal;
+    font-family: 'Open Sans', sans-serif;
+    width: 364px;
+}
+#CaptchaImageCode { 
+  text-align:center;
+  margin-top: 15px;
+  padding: 0px 0;
+  width: 300px;
+  overflow: hidden;
+}
+
+.capcode { 
+  font-size: 46px; 
+  display: block; 
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none; 
+  cursor: default;
+  letter-spacing: 1px;
+  color: #ccc;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.ReloadBtn { 
+  background:url('https://cdn3.iconfinder.com/data/icons/basic-interface/100/update-64.png') left top no-repeat;   
+  background-size : 100%;
+  width: 32px; 
+  height: 32px;
+  border: 0px; outline none;
+  position: absolute; 
+  bottom: 30px;
+  left : 310px;
+  outline: none;
+  cursor: pointer; /**/
+}
+.btnSubmit {
+    margin-top: 15px;
+    border: 0px;
+    padding: 4px 20px;
+    /* border-radius: 5px; */
+    font-size: 18px;
+    background-color: #1285c4;
+    color: #fff;
+    cursor: pointer;
+}
+
+.error { 
+  color: red; 
+  font-size: 12px; 
+  display: none; 
+}
+.success {
+  color: green;
+  font-size: 18px;
+  margin-bottom: 15px;
+  display: none;
+}
+.ap {
+    background: bisque;
+    margin-left: -60%;
+    width: 95%;
+    margin-top: 4%;
+    padding: 10px;
+}
+
+.nom {
+    margin-left: 103%;
+    width: 95%;
+    background: bisque;
+    padding: 10px;
+    margin-top: -41px;
+}
+
+
+
+
+
+
+
+
+.main_div
+  {
+  text-align:center;
+  background: #00C492;
+  padding:20px; width: 400px;
+  }
+.inner_div
+  {
+  background: #fff;
+  margin-top:20px;
+  height: 100px;
+  }
+.buttons a
+  {
+  font-size: 16px;
+  }
+.buttons a:hover
+  {
+  cursor:pointer;
+  font-size: 16px;
+  }
+ .mnu {
+    color: white;
+    background-color: #7dc242;
+}
+.mnu1 {
+    color: white;
+background-color: #0096d5!important;
+}
+.buttons {
+    width: 80%;
+    margin-top: 4%;
+    margin-bottom: 34px;
+    margin-left: 25%;
+}
+.buttons a {
+    font-size: 16px;
+    margin-right: 15%;
+    padding: 17px;
+    /* width: 100%; */
+}
+.appin {
+    margin-top: 2%;
+}
+.president {
+    margin-left: 80%;
+    border: 1px solid #80808036;
+    width: 50%;
+    background-color: #cdefaf;
+    border: #5c9f23 solid thin;
+    /* color: #5c9f23; */
+    margin-bottom: 3%;
+    padding: 1px 1px 0px 0px;
+}
+.president img {
+    margin-left: 33%;
+    height: 100px;
+}
+.president h5 {
+    margin-top: 9px;
+    margin-left: 16%;
+}
+.president p {
+    margin-top: -8px;
+    margin-left: 14%;
+}
+.second img {
+    margin-left: 22%;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.thir2 {
+    border: 1px solid #80808029;
+    width: 20%;
+    padding: 10px;
+    margin-left: 48px;
+    background-color: #e2f7cf;
+    border: #5c9f23 solid thin;
+    color: #5c9f23;
+    height: 142px;
+    margin-bottom: 2%;
+}
+.thir2 h5 {
+
+color: #5c9f23 !important;
+}
+.thir22 {
+    border: 1px solid #80808029;
+    width: 20%;
+    padding: 10px;
+    margin-left: 35px;
+   background-color: #d9effa;
+    border: #65bade solid thin;
+   
+   
+   color: #337ab7 !important;
+    height: 142px;
+    margin-bottom: 2%;
+}
+.thir22 h5{
+	color: #337ab7 !important;
+}
+	
+.second p {
+    margin-left: 10%;
+    margin-top: -14px;
+}
+#Menu1 h3 {
+    text-align: center;
+    margin-top: 2%;
+}
+.second
+{
+	margin-left: 2%;
+}
+.second h5 {
+    font-size: 15px;
+    margin-left: 11px;
+}
+.nwsup img
+{
+	width: 95%;
+    margin-bottom: 7%;
+}
+.nwsup h5
+{
+	margin-bottom: 4%;
+}
+.nwsdetails img {
+    width: 85%;
+    margin-bottom: 4%;
+    height: 548px;
+    margin-top: 0%;
+}
+.nwsd
+{
+	margin-top: 4%;
+    color: #0096d5;
+    font-size: 25px;
+}
+.nwsdetails h5
+{
+font-size: 20px;
+    color: #0096d5;
+}
+.nwsdetails p
+{
+		margin-bottom: 2%;
+    margin-top: 3%;
+}
+.nwsup p a
+{
+	color: #0096d5;
+}
+.nwsup p 
+{
+margin-bottom: 3%;
+}
+.vdo h5 {
+    margin-top: 8%;
+    color: #0096d5;
+}
+.vdo
+{
+	margin-bottom: 30%;
+}
+.o-video {
+  width: 100%;
+  height: 0;
+  position: relative;
+  padding-top: 56.25%; /* 9 / 16 * 100 */
+}
+.o-video > iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+.zent h5
+{
+	margin-top: 3%;
+    margin-left: 0%;
+    color: #0096d5;
+}
+.zent p {
+    margin-bottom: 10%;
 }

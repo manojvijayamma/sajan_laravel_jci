@@ -15,12 +15,19 @@
 Route::get('/', 'Fe\HomeController@index')->name('home');
 Route::get('/content/{id}', 'Fe\ContentController@view')->name('view');
 
-Route::get('/news', 'Fe\NewController@index')->name('index');
-Route::get('/news/{id}', 'Fe\NewController@view')->name('view');
+Route::get('/news', 'Fe\NewsController@index')->name('index');
+Route::get('/news/{id}', 'Fe\NewsController@view')->name('news.view');
+
+Route::get('/programs', 'Fe\ProgramsController@index')->name('index');
+Route::get('/programs/{id}', 'Fe\ProgramsController@view')->name('programs.view');
 
 Route::get('/event/{id}', 'Fe\EventController@index')->name('index');
+Route::get('/event/{id}/{eid}', 'Fe\EventController@view')->name('event.details');
+
 Route::get('/team/{id}', 'Fe\TeamController@index')->name('index');
 Route::get('/downloads', 'Fe\DownloadsController@index')->name('index');
+Route::get('/video', 'Fe\VideoController@index')->name('index');
+Route::get('/challenge', 'Fe\ChallengeController@index')->name('index');
 
 Route::get('/faq', 'Fe\FaqController@index')->name('index');
 Route::get('/presidentcorner', 'Fe\PresidentCornerController@index')->name('index');
@@ -213,15 +220,15 @@ Route::prefix('admin')->group(function () {
 
 
 
-    Route::get('/programe', 'Admin\ProgrameController@index')->name('programe.index');
-    Route::get('/programe/create', 'Admin\ProgrameController@create')->name('programe.create');
-    Route::post('/programe', 'Admin\ProgrameController@store')->name('programe.store');
-    Route::get('/programe/{id}/edit', 'Admin\ProgrameController@edit')->name('programe.edit');
-    Route::put('/programe/{id}', 'Admin\ProgrameController@update')->name('programe.update');
-    Route::delete('/programe/{id}', 'Admin\ProgrameController@destroy')->name('programe.destroy');
-    Route::get('/programe/{id}/status', 'Admin\ProgrameController@status')->name('programe.status');
-    Route::get('/programe/{id}/show', 'Admin\ProgrameController@show')->name('programe.show');
-    Route::post('/programe/priority', 'Admin\ProgrameController@priority')->name('programe.priority');
+    Route::get('/programs', 'Admin\ProgramsController@index')->name('programs.index');
+    Route::get('/programs/create', 'Admin\ProgramsController@create')->name('programs.create');
+    Route::post('/programs', 'Admin\ProgramsController@store')->name('programs.store');
+    Route::get('/programs/{id}/edit', 'Admin\ProgramsController@edit')->name('programs.edit');
+    Route::put('/programs/{id}', 'Admin\ProgramsController@update')->name('programs.update');
+    Route::delete('/programs/{id}', 'Admin\ProgramsController@destroy')->name('programs.destroy');
+    Route::get('/programs/{id}/status', 'Admin\ProgramsController@status')->name('programs.status');
+    Route::get('/programs/{id}/show', 'Admin\ProgramsController@show')->name('programs.show');
+    Route::post('/programs/priority', 'Admin\ProgramsController@priority')->name('programs.priority');
 
 
     Route::get('/team', 'Admin\TeamController@index')->name('team.index');
@@ -262,7 +269,29 @@ Route::prefix('admin')->group(function () {
     Route::put('/presidentcorner/{id}', 'Admin\PresidentCornerController@update')->name('presidentcorner.update');
     
 
+    Route::get('/video', 'Admin\VideoController@index')->name('video.index');
+    Route::get('/video/create', 'Admin\VideoController@create')->name('video.create');
+    Route::post('/video', 'Admin\VideoController@store')->name('video.store');
+    Route::get('/video/{id}/edit', 'Admin\VideoController@edit')->name('video.edit');
+    Route::put('/video/{id}', 'Admin\VideoController@update')->name('video.update');
+    Route::delete('/video/{id}', 'Admin\VideoController@destroy')->name('video.destroy');
+    Route::get('/video/{id}/status', 'Admin\VideoController@status')->name('video.status');
+    Route::get('/video/{id}/show', 'Admin\VideoController@show')->name('video.show');
+    Route::post('/video/priority', 'Admin\VideoController@priority')->name('video.priority');
    
+
+
+    Route::get('/challenge', 'Admin\ChallengeController@index')->name('challenge.index');
+    Route::get('/challenge/create', 'Admin\ChallengeController@create')->name('challenge.create');
+    Route::post('/challenge', 'Admin\ChallengeController@store')->name('challenge.store');
+    Route::get('/challenge/{id}/edit', 'Admin\ChallengeController@edit')->name('challenge.edit');
+    Route::put('/challenge/{id}', 'Admin\ChallengeController@update')->name('challenge.update');
+    Route::delete('/challenge/{id}', 'Admin\ChallengeController@destroy')->name('challenge.destroy');
+    Route::get('/challenge/{id}/status', 'Admin\ChallengeController@status')->name('challenge.status');
+    Route::get('/challenge/{id}/show', 'Admin\ChallengeController@show')->name('challenge.show');
+    Route::post('/challenge/priority', 'Admin\ChallengeController@priority')->name('challenge.priority');
+
+
 
 
 });

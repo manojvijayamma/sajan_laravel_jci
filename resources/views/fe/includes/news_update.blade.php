@@ -1,4 +1,4 @@
 <?php if($newsUpdates){
     foreach($newsUpdates as $val){?>
-        <p> <?php echo $val['title']?>...</p>
+        <p> <a href="{{route('news.view',$val->slug_url)}}"><?php echo $val['title']?>...</a</p>
 <?php } }?>

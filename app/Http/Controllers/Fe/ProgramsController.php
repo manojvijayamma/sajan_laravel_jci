@@ -13,7 +13,7 @@ use Hash;
 use Mail;
 use Illuminate\Support\Facades\Auth;
 
-class ProgrameController extends Controller
+class ProgramsController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -26,21 +26,21 @@ class ProgrameController extends Controller
     }
  
     public function index() { 
-        $this->data['content']=Content::where('slug_url',SECTION_SLUG_COURSE)->first(); 
-        $this->data['content']['image_path']="news";
+        $this->data['content']=Content::where('slug_url',"programs")->first(); 
+        $this->data['content']['image_path']="programs";
         $this->setMetaData($this->data['content']);  
 
-        $this->data['listData']=Programe::where('status',1)->orderBy('title')->get();       
+        $this->data['listData']=Programe::where('status',1)->orderBy('priority')->orderBy('title')->get();       
         return view('fe.programe.index',$this->data);
     }
 
     public function view(Request $request, $id) { 
-        $this->data['content']=Content::where('slug_url',SECTION_SLUG_COURSE)->first(); 
-        $this->data['content']['image_path']="news";
+        $this->data['content']=Content::where('slug_url',"programs")->first(); 
+        $this->data['content']['image_path']="programs";
         $this->setMetaData($this->data['content']);  
 
         $this->data['viewData']=Programe::where('slug_url',$id)->first();       
-        return view('fe.programe.index',$this->data);
+        return view('fe.programe.view',$this->data);
     }
    
 

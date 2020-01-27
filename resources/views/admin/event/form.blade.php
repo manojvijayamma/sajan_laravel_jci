@@ -46,7 +46,7 @@ body {
             <div class="form-group">
                 <label for="name">
                     Date:</label>
-                    <input class="form-control datepicker" type="text"  name="event_date" id="event_date"  value="{{date('d-m-Y',strtotime($content->event_date))}}"  required autofocus>
+                    <input class="form-control datepicker" type="text"  name="event_date" id="event_date"  value="{{$content->event_date>'1970-01-01' ? date('d-m-Y',strtotime($content->event_date)): ''}}"  required autofocus>
 
             </div> 
 
@@ -79,7 +79,23 @@ body {
                         </option>
                     @endforeach
                  </select>
-             </div>    
+             </div>   
+
+
+            <div class="form-group">
+                 <label for="name">
+                     Show in home page:</label>
+                     <input class="form-control" type="checkbox"  name="featured" id="featured"  value="1"  <?php echo ($content->featured==1 ? 'checked' : '' )?> style="width:40px;">
+
+             </div> 
+
+
+             <div class="form-group">
+                 <label for="name">
+                     Short Description (for listing page):</label>
+                     <textarea class="form-control" type="text"  name="short_description" id="short_description"   >{{$content->short_description}}</textarea>
+
+             </div>  
 
 
 

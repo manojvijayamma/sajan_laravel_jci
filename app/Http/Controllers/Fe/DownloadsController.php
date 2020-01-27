@@ -30,7 +30,7 @@ class DownloadsController extends Controller
         $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
         
-        $this->data['listData']=Category::where('status','1')->get();       
+        $this->data['listData']=Category::where('status','1')->where('identifier','downloads')->orderBy('priority')->get();       
         return view('fe.download.index',$this->data);
     }
    

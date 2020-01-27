@@ -17,13 +17,15 @@ class Programe extends Authenticatable
      */
     protected $fillable = [
         'title',
+        'image',
         'featured',
         'zone_id',
         'image',       
         'status',
         'details',
         'slug_url',
-        'priority'
+        'priority',
+        'short_description'
                
              
     ];

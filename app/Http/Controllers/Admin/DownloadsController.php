@@ -132,7 +132,7 @@ class DownloadsController extends Controller
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/Download');
+            $destinationPath = public_path('/uploads/download');
             $image->move($destinationPath, $name);
             $input['image'] =$name;
         }    

@@ -134,6 +134,7 @@ class EventController extends AdminBaseController
 
         $input['event_date']=date("Y-m-d",strtotime($input['event_date']));
         $input['slug_url']=$this->formatSlug($input['title']);
+        $input['featured'] = isset($input['featured']) ? $input['featured']  : '0';
             
         if ($request->hasFile('image')) {
             $image = $request->file('image');

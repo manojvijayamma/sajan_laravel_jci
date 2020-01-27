@@ -15,7 +15,7 @@ use File;
 use DB;
 use Image;
 
-class ProgrameController extends AdminBaseController
+class ProgramsController extends AdminBaseController
 
 
 {
@@ -131,12 +131,12 @@ class ProgrameController extends AdminBaseController
             'title' => 'required', 
         ]);
 
-        
+        $input['featured'] = isset($input['featured']) ? $input['featured']  : '0';
         $input['slug_url']=$this->formatSlug($input['title']);    
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $name = 'main_'.time().'.'.$image->getClientOriginalExtension();
-            $destinationPath = public_path('/uploads/Programe');
+            $destinationPath = public_path('/uploads/programs');
 
             $img = Image::make($image->getRealPath());
 

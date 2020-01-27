@@ -1,10 +1,10 @@
 <?php
 if($programmeData){
     foreach($programmeData as $val){?>
-<div class="single-testimonial">
+            <a href="{{route('programs.view', $val->slug_url)}}"><div class="single-testimonial">
                                 <div class="test-img-name">
                                     <div class="test-img">
-                                        <img src="{{asset('uploads/programe/'.$val->image)}}" alt="">
+                                        <img src="{{asset('uploads/programs/'.$val->image)}}" alt="">
                                     </div>
                                     <div class="test-name">
                                         
@@ -13,4 +13,5 @@ if($programmeData){
                                 </div>
                                
                             </div>
+                            </a>
 <?php } }?>

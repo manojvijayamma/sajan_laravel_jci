@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Fe;
 use Illuminate\Http\Request;
 
 use App\User;
+use App\Models\Content;
 
 use DB;
 
@@ -80,6 +81,11 @@ class UserController extends Controller
 
     public function loginForm() {
         //echo Hash::make("9847483390");
+        $this->data['content']=Content::where('slug_url','login')->first();
+        $this->data['title']= $this->data['content']['title'];
+        $this->data['details']= $this->data['content']['details'];
+        $this->data['content']['image_path']="content"; 
+        $this->setMetaData($this->data['content']);
         return view('fe.user.login', $this->data);
     }
 

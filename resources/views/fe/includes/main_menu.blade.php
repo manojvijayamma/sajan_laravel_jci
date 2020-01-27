@@ -63,7 +63,7 @@ if($mainMenu){
                                                                         $subMenu2=DB::table('contents')->where('contents.status', '1')->where('contents.parent_id', $sMenu->id)->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')->get();                   
                                                                         if($subMenu2 && isset($subMenu2) && count($subMenu2)>0){
                                                                         ?>
-                                                                        <li><a href="javascript:void(0);"> <?php echo $sMenu->title?></a>
+                                                                        <li><a href="{{ url($url)}}"> <?php echo $sMenu->title?></a>
                                                                             <ul>
                                                                                 <?php 
                                                                                     foreach($subMenu2 as $sMenu2){

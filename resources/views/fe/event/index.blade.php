@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('fe_theme/css/responsive.css')}}">
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/style-customizer.css')}}">
-    <link href="#" data-style="styles" rel="stylesheet">
+   
     
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
@@ -102,14 +102,11 @@
                 </div>
             </div>
         </div>
-        <!-- mobile-menu-area end -->
-        <!-- End of header area -->
+      
         <!-- Start of slider area -->
         <div class="slider-area">
             <div class="slider-active">
-            @include('fe.includes.sub_banner') 
-                
-               
+            @include('fe.includes.sub_banner')
             </div>
         </div>
         <!-- End of slider area --> 
@@ -119,7 +116,7 @@
         <p>NEWS UPDATE</p>
         </div>
         <div id="content">
-        <marquee><p> @include('fe.includes.news_update')</p></marquee>
+        <marquee>@include('fe.includes.news_update')</marquee>
         </div>
  
 </div>
@@ -127,7 +124,7 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase">Events</h1>
+                    <h1 class="uppercase"><?php echo $content['title']?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
@@ -136,38 +133,33 @@
             <div class="container">
                 
                 <div class="row">
-                    <div class="all-upcoming-event">
-                       
                     
+                    <div class="zent">
 
 
-
-                    <div class="col-md-6 col-sm-12">
-                            <div class="single-upcoming mb-40">
-                                <div class="upcoming-date text-center">
-                                    <div class="date-all">
-                                        <span>22</span>
-                                        <span class="month">October</span>
-                                    </div>
-                                </div>
-                                <div class="single-upcoming-text">
-                                    
-                                    <h3><a href="#">BUSINESS CONFERENCE</a></h3>
-                                    <h4>2020</h4>
-                                    </div>
-                            </div>
-                        </div>
-
-
-       
-                        
-
-
-
-
-                        
-                        
+                    <?php if($listData){
+                                foreach($listData as $val){?>
+                  <a href="{{route('event.details',[$identifier,$val->slug_url])}}">
+                  <div class="col-sm-4">
+                  <img src="{{asset('uploads/event/'.$val->image)}}">
+                  <h5><?php echo $val->title?></h5>
+                  <p><?php echo $val->short_description?></p>  
+                  </div></a>
+                  <?php }} ?>  
+            
+                  
+           
+                  
+               
+                    
+                    
+                    
                     </div>
+                    
+                    
+                    
+                    
+                    
                 </div>
             </div>
         </div>
@@ -176,8 +168,7 @@
                 
                    
                 
-        <!-- End categoris area -->  
-    
+      
         
         
         
@@ -186,18 +177,11 @@
         
         
        </div>
-   </div>
-                  
-                                </div>
+  
                              
                       
                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                   
         
         
        

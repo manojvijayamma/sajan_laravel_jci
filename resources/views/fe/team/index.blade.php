@@ -167,7 +167,7 @@
                             echo $val->title;
                         }
                       ?></h5>
-                      <p><?php echo $val->phone ?>, <?php echo $val->designation_title?></p></div>
+                      <p> <?php echo $val->designation_title?></p></div>
                       </div>
                       <?php } } }?> 
 

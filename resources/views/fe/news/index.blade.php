@@ -4,10 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>News</title>
+    <title>jci india</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
+    <!-- Favicon -->
+<!--    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
+-->    
+    <!-- All css files are included here. -->
+    <!-- Bootstrap fremwork main css -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/bootstrap.min.css')}}">
     <!-- This core.css file contents all plugings css file. -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/core.css')}}">
@@ -19,7 +24,7 @@
     <link rel="stylesheet" href="{{ asset('fe_theme/css/responsive.css')}}">
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/style-customizer.css')}}">
-    <link href="#" data-style="styles" rel="stylesheet">
+   
     
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
@@ -97,14 +102,11 @@
                 </div>
             </div>
         </div>
-        <!-- mobile-menu-area end -->
-        <!-- End of header area -->
+      
         <!-- Start of slider area -->
         <div class="slider-area">
             <div class="slider-active">
-            @include('fe.includes.sub_banner')    
-                
-               
+            @include('fe.includes.sub_banner')
             </div>
         </div>
         <!-- End of slider area --> 
@@ -114,7 +116,7 @@
         <p>NEWS UPDATE</p>
         </div>
         <div id="content">
-        <marquee><p> @include('fe.includes.news_update')</p></marquee>
+        <marquee>@include('fe.includes.news_update')</marquee>
         </div>
  
 </div>
@@ -122,27 +124,54 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase"><?php echo $content->title?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
+                <div class="upcoming-event-area pt-110 pb-70">
+                <div class="container">
+                
                 <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12">                           
-                            <div class="col-sm-10 col-md-8 col-lg-8 news1">
-                            <h5><span class="dot">&#8258;</span>lorem ipsum dolor sit amet, consectetur adipiscing iusmod tempor incididunt ut labore et dolore...</h5>
-                            </div>                   
-                   
-                   
-                     </div>
+                    
+                    <div class="nwsup">
+                    <?php if($listData){
+                        foreach($listData as $val){?>
+
+                  <div class="col-sm-4">
+                  <a href="{{route('news.view',$val->slug_url)}}"> <img src="{{asset('uploads/news/'.$val->image)}}">
+                 <h5><?php echo  $val->title?></h5></a>
+                  
+                  
+                  
+                  </div> 
+                  <?php } }?>
+            
+
+
+                  
+                
+
+                  
+                
+                    
+                    
+                    
                     </div>
+                    
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </div>
                      
                      </div>
                 
                    
                 
-        <!-- End categoris area -->  
-    
+      
         
         
         
@@ -151,19 +180,11 @@
         
         
        </div>
-   </div>
-   </div>
-                  
-                                </div>
+  
                              
                       
                                 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                   
         
         
        

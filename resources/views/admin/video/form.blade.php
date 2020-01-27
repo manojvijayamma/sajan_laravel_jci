@@ -1,12 +1,13 @@
 
 <form  id="form_save"  enctype="multipart/form-data">
+<input name="identifier" type="hidden" value="{{app('request')->input('identifier')}}">
 {{ csrf_field() }}
 @if ($content->id > 0)
     <input name="_method" type="hidden" value="PUT">
 @endif 
  <div class="modal-header">
      <button type="button" class="close" onclick="closePopup('true')">×</button>
-     <h4 class="modal-title"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Zone Event</h4>
+     <h4 class="modal-title"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Video</h4>
  </div>
  <div class="modal-body">
              <div id="success_message">
@@ -16,39 +17,30 @@
              <div class="form-group">
                  <label for="name">
                      Title:</label>
-                     <input class="form-control" type="text"  name="title" id="title"  value="{{$content->title}}"  required autofocus>
+                     
+                     <input type="text" class="form-control"  name="title" id="title"  value="{{$content->title}}" required autofocus />
 
-             </div>  
-             
-             <div class="form-group">
-                    <label for="inputLastname">Image</label>
-                    <input type="file" name="image"  id="image" >
-                    <?php if($content->image){?>
-                        <img src="{{asset('uploads/programe/'.$content->image)}}" style="width:70px;">
-                    <?php } ?>   
+             </div>
 
-             </div> 
-
-
-
-             <div class="form-group" id="panel_show" >
-                <label for="inputLastname">Zone</label>
-                    <select class="form-control" id="zone_id" name="zone_id" required  > 
-                    <option value="">Select</option>
-                    @foreach ($zones as $cat)                        
-                        <option value="{{$cat->id}}" {{ ( $cat->id==$content->zone_id ) ? ' selected' : '' }}>
-                            {{$cat->title}}
-                        </option>
-                    @endforeach
-                 </select>
-             </div> 
 
             
+
+
+
              <div class="form-group" >
-                <label for="inputFirstname">Details</label>
-                <textarea name="details1" class="summernote">{{$content->details}}</textarea>
-                <textarea id="details" name="details" style="display:none;" >{{$content->details}}</textarea>
-             </div> 
+                 <label for="name">
+                     Video Url:</label>
+                     
+                     <textarea class="form-control"  name="video_url" id="video_url"   required autofocus>{{$content->video_url}}</textarea>  
+
+             </div>
+
+               
+
+
+
+            
+             
 
   
 

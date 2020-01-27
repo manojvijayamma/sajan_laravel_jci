@@ -38,7 +38,7 @@
              <label for="inputLastname">Image</label>
              <input type="file" name="image"  id="image" placeholder="Allowed Ips">
              <?php if($content->image){?>
-                 <img src="{{asset('uploads/downloads/'.$content->image)}}" style="width:70px;">
+                 <img src="{{asset('uploads/download/'.$content->image)}}" style="width:70px;">
              <?php } ?>   
 
              </div>
