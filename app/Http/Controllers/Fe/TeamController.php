@@ -28,7 +28,7 @@ class TeamController extends Controller
  
     public function index(Request $request, $id) { 
         $this->data['content']=Content::where('slug_url',$id)->first(); 
-        $this->data['content']['image_path']="team";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $query=Team::leftJoin('designations','designations.id','teams.designation_id');

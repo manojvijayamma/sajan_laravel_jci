@@ -27,7 +27,7 @@ class ProgramsController extends Controller
  
     public function index() { 
         $this->data['content']=Content::where('slug_url',"programs")->first(); 
-        $this->data['content']['image_path']="programs";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $this->data['listData']=Programe::where('status',1)->orderBy('priority')->orderBy('title')->get();       

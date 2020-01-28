@@ -35,11 +35,11 @@ class Controller extends BaseController
         //check home page
         if (Route::getCurrentRoute()->uri() == '/')
         {
-            $ids=array(WIDGET_ABOUT_JCI_INDIA,WIDGET_WHY_JCI_INDIA, WIDGET_FOUNDERS_PERSPECTIVE, WIDGET_JCI_MISSION_VISION, WIDGET_JCI_VALUES, WIDGET_CONTACT_US, WIDGET_NATCON_2018_PROMOTION, WIDGET_SUSTAINABLE_DEVELOPMENT, WIDGET_ONLINE_GD_MRF, WIDGET_FOOD_GRAIN_DISTRIBUTION, WIDGET_ACHIEVEMENTS );
+            $ids=array(WIDGET_ABOUT_JCI_INDIA,WIDGET_WHY_JCI_INDIA, WIDGET_FOUNDERS_PERSPECTIVE, WIDGET_JCI_MISSION_VISION, WIDGET_JCI_VALUES, WIDGET_CONTACT_US );
                   
         }
         else{
-            $ids= array( WIDGET_CONTACT_US, WIDGET_NATCON_2018_PROMOTION, WIDGET_SUSTAINABLE_DEVELOPMENT, WIDGET_ONLINE_GD_MRF, WIDGET_FOOD_GRAIN_DISTRIBUTION);     
+            $ids= array( WIDGET_CONTACT_US);     
         }
 
 
@@ -48,7 +48,7 @@ class Controller extends BaseController
                     ->whereIN('content_position_relations.position_id', $ids)
                     ->where('contents.status', '1')
                     ->where('contents.parent_id',0)
-                    ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.short_description','content_position_relations.position_id','contents.section_url','contents.image')
+                    ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.short_description','content_position_relations.position_id','contents.section_url','contents.image','contents.link_url')
                     ->orderBy('contents.priority','ASC')
                     ->orderBy('contents.title','ASC')
                     ->get(); 
@@ -100,16 +100,15 @@ class Controller extends BaseController
         $this->data['footerMenu'] = DB::table('contents')
         ->join('content_position_relations', 'contents.id', '=', 'content_position_relations.content_id')
         ->where('content_position_relations.position_id', '6')
-        ->where('contents.status', '1')
-        ->where('contents.parent_id',0)
+        ->where('contents.status', '1')        
         ->select('contents.id','contents.title','contents.link_type','contents.slug_url','contents.section_url','contents.link_url')
         ->orderBy('contents.priority','ASC')
         ->orderBy('contents.title','ASC')
         ->get(); 
 
       
-        $this->data['newsUpdates'] = News::where('featured',1)->where('status',1)->get();
-        $this->data['programmeData']=Programe::where('status',1)->where('featured',1)->get();
+        $this->data['newsUpdates'] = News::where('featured',1)->where('status',1)->orderBy('priority')->get();
+        $this->data['programmeData']=Programe::where('status',1)->where('featured',1)->orderBy('priority')->get();
        
     }
 

@@ -59,7 +59,7 @@
                     
                     
                 </div>
-                
+                @include('admin.pagination')
                
 
 

@@ -78,7 +78,7 @@ body {
              </div>             
 
             
-             <div class="form-group" id="panel_show" style="display:{{($content->parent_id==0)  ? '' :'none'}}">
+             <div class="form-group" id="panel_show" style="display:{{($content->parent_id==0)  ? '' :''}}">
                 <label for="inputLastname">Shown on</label>
                     <select class="form-control" id="position_id" name="position_id[]" required multiple="true" style="height:200px;"> 
                     <option value="">Select</option>
@@ -95,10 +95,20 @@ body {
 
          
              <div class="form-group">
-                <label for="inputLastname">Banner Image</label>
+                <label for="inputLastname">Banner Image (Show in corresponding sub page)</label>
                 <input type="file" name="image"  id="image" placeholder="">
                 <?php if($content->image){?>
                     <img src="{{asset('uploads/content/'.$content->image)}}" style="width:70px;">
+                <?php } ?>   
+
+             </div>
+
+
+             <div class="form-group">
+                <label for="inputLastname">Icon Image (Show in home page)</label>
+                <input type="file" name="icon_image"  id="icon_image" placeholder="">
+                <?php if($content->image){?>
+                    <img src="{{asset('uploads/content/'.$content->icon_image)}}" style="width:70px;">
                 <?php } ?>   
 
              </div>
@@ -192,7 +202,7 @@ function validateForm(){
 function updateShowPanel(value){
     $('#panel_show').show();
     if(value>0){
-        $('#panel_show').hide();
+       // $('#panel_show').hide();
     }
 }
 

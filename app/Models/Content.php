@@ -18,6 +18,7 @@ class Content extends Authenticatable
     protected $fillable = [
         'title',
         'image',
+        'icon_image',
         'status',
         'details',
         'short_description',

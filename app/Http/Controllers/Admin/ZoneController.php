@@ -16,7 +16,7 @@ class ZoneController extends Controller
 {
     public function index(Request $request)
     { 
-        $pageLimit=15; 
+        $pageLimit=25; 
         
         
         $this->data['content']=Zone::orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);

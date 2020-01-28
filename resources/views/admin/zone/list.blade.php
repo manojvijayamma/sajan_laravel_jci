@@ -59,13 +59,13 @@
                     
                     
                 </div>
-                
+                @include('admin.pagination')
                
 
 
 <script>
 
-gridHeight=$(window).height() - $('.navbar').height() - $('#page-header').height()-49;
+gridHeight=$(window).height() - $('.navbar').height() - $('#page-header').height()-70;
 $("#grid-table").css("height", gridHeight);
 </script>
 

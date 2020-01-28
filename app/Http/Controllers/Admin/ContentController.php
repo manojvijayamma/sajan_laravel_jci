@@ -156,6 +156,14 @@ class ContentController extends AdminBaseController
             $input['image'] =$name;
         }  
 
+        if ($request->hasFile('icon_image')) {
+            $image = $request->file('icon_image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/content');
+            $image->move($destinationPath, $name);
+            $input['icon_image'] =$name;
+        }  
+
         //try {
                 if($id>0){
                     $menu = Content::find($id);        

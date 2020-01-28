@@ -23,7 +23,7 @@
                                 <h3>Quick Links</h3>
                                 <?php if(isset($footerMenu)){
 					                foreach($footerMenu as $key=>$val){
-                                        $url=General::url($val->slug_url, $val->link_type);?>	
+                                        $url=General::url($val->slug_url, $val->link_type, $val->link_url ,$val->section_url);?>	
                                         <li class="col-md-2 col-sm-6"><a href="{{ url($url)}}"><?php echo $val->title?></a></li>
                                  <?php  }}?>
                             </div>

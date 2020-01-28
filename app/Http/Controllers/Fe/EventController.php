@@ -27,7 +27,7 @@ class EventController extends Controller
  
     public function index(Request $request, $id) { 
         $this->data['content']=Content::where('slug_url',$id)->first(); 
-        $this->data['content']['image_path']="event";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $query=Event::query();   

@@ -27,7 +27,7 @@ class NewsController extends Controller
  
     public function index() { 
         $this->data['content']=Content::where('slug_url',"news")->first(); 
-        $this->data['content']['image_path']="news";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $this->data['listData']=News::where('status',1)->orderBy('priority')->orderBy('title')->get();       
