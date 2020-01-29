@@ -146,12 +146,12 @@ if($menuApp){
                
               
              <div class="buttons">
-  <a href="#" class="mnu" onclick="toggleVisibility('Menu1');"><?php echo $menuApp[0]['title']?></a>
-  <a href="#" class="mnu1" onclick="toggleVisibility('Menu2');"><?php echo $menuApp[1]['title']?></a>
+  <a href="javascript:void(0);" class="mnu" onclick="toggleVisibility('Menu1');"><?php echo $menuApp[0]['title']?></a>
+  <a href="javascript:void(0);" class="mnu1" onclick="toggleVisibility('Menu2');"><?php echo $menuApp[1]['title']?></a>
   
 </div>
  
-  <div id="Menu1">
+  <div id="Menu1" class='tab_item'>
   
 <?php if($committeeData){
     foreach($committeeData as $commD){
@@ -196,30 +196,33 @@ if($menuApp){
                      </div>
                 
 <?php }} ?>
-
+</div>
                 
-               
+                
   
 <!-- menu 1 -->
 
-  <div id="Menu2" style="display: none;">
+  <div id="Menu2" class='tab_item' style="display:none;">
   
     <?php
-        $teamData=Team::where('identifier',$menuApp[1]['query_string'])->get();?>
+        
+        $teamData=Team::where('identifier',$menuApp[1]['query_string'])->get();
+        
     ?>
+    
     <div class="second">
                      <div class="row">
                      <div class="col-lg-12 col-md-12 col-sm-12">
                     
                      <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
-                                        if($teamD->position!=1){?>  
+                                       ?>  
                                         <div class="col-sm-3 thir22">
                                         <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
                                         <h5><?php echo $teamD->title?></h5>
                                         <p><?php echo $teamD->designation_title?></p>
                                         </div>
-                             <?php } } }?> 
+                             <?php  } }?> 
 
                       
                      
@@ -309,28 +312,13 @@ if($menuApp){
     
     
     <script>
-	var divs = ["Menu1", "Menu2", "Menu3", "Menu4"];
-var visibleDivId = null;
+
 function toggleVisibility(divId) {
-  if(visibleDivId === divId) {
-    //visibleDivId = null;
-  } else {
-    visibleDivId = divId;
-  }
-  hideNonVisibleDivs();
+   
+  $('.tab_item').hide();
+  $('#'+divId).show();
 }
-function hideNonVisibleDivs() {
-  var i, divId, div;
-  for(i = 0; i < divs.length; i++) {
-    divId = divs[i];
-    div = document.getElementById(divId);
-    if(visibleDivId === divId) {
-      div.style.display = "block";
-    } else {
-      div.style.display = "none";
-    }
-  }
-}
+
 </script>
     
     

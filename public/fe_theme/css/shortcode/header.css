@@ -108,7 +108,8 @@
   color: #fff;
 }
 .header-top-social > ul {
-  padding-top: 3px;
+    padding-top: 3px;
+    margin-bottom: 3% !important;
 }
 /*header-bottom main-menu */
 
@@ -119,8 +120,10 @@
 .logo img {
     margin-top: 4%;
 }
+
 .menu-area {
     position: relative;
+    margin-top: -20px !important;
 }
 .menu-area nav > ul > li {
     display: inline-block;
@@ -156,7 +159,7 @@
     padding: 15px 0;
     position: absolute;
     text-align: left;
-    top: 100%;
+    top: 70px;
     transition: all 0.3s ease 0s;
     visibility: hidden;
     z-index: -99;
@@ -567,8 +570,8 @@
 }
 .hidden-xs1 {
     margin-left: 380px;
-    margin-top: 15px;
-    margin-bottom: -16px;
+    margin-top: 16px;
+    margin-bottom: 0px;
 }
 .f-right1 ul li a {
     color: #607D8B;
@@ -579,7 +582,7 @@
 	color: #000;
 }
 .f-right1 {
-    margin-left: 26%;
+    margin-left: 23% !important;
     /* margin-bottom: 6%; */
     margin-top: 8px;
 }

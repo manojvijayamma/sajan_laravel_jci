@@ -16,7 +16,7 @@
                            
                             </div>
                             <p>
-                            <?php echo $presidentData->short_description ?>
+                            <?php echo nl2br($presidentData->short_description) ?>
                              </p>
                              <?php if($presidentData->details){?>
                                 <div class="more"><a href="{{url('presidentcorner')}}">More</a></div>

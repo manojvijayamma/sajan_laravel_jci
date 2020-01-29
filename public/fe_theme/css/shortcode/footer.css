@@ -10,6 +10,11 @@ NOTE: This is Footer style file. All footer related style included in this file.
 .footer-logo {
     margin-bottom: 15px;
 }
+.footer-top ptb-110 li
+{
+	    margin-right: 15%;
+    width: 60%;
+}
 .footer-logo-address {
     border-bottom: 1px solid #787878;
     padding-bottom: 20px;

@@ -121,7 +121,7 @@ class TeamController extends AdminBaseController
             $this->data['content'] = new Team();
         }             
        
-        for($i=date('Y'); $i>2015;$i--){
+        for($i=date('Y'); $i>1950;$i--){
             $this->data['years'][]=$i;
         }
         
