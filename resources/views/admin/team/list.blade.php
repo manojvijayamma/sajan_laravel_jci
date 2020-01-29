@@ -10,8 +10,8 @@
                                         <thead>
                                             <tr>
                                             <th class="col-sm-1" style="width:3%">#</th>
-                                                <th class="col-sm-8">Title</th>
-                                                
+                                                <th class="col-sm-6">Title</th>
+                                                <th class="col-sm-2">Image</th>
                                                 
                                                 
                                                
@@ -25,7 +25,7 @@
                                                                         <tr class="list-users">
                                                                             <td>{{ ++$i }}</td>
                                                                             <td><div style="float:left;padding-left:0px"><input type="text" class="form-control priority" style="width:40px;" value="{{ $row->priority }}" name="priority" data-rowId="{{$row->id}}" data-url="<?php echo app('request')->input('controller') ?>"></div><div style="float:left;margin-top:5px;padding-left:5px;">{{ $row->title }}</div> </td>
-                                                                           
+                                                                           <td><img src="{{asset('uploads/team/'.$row->image)}}" style="height:50px;"></td>
                                                                                                                                                 
                                                                             <td>
                                                                                 

@@ -37,7 +37,7 @@ class NewsController extends Controller
 
     public function view(Request $request, $id) { 
         $this->data['content']=Content::where('slug_url',"news")->first(); 
-        $this->data['content']['image_path']="news";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $this->data['viewData']=News::where('slug_url',$id)->first();       

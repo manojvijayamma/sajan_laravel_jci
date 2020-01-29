@@ -36,7 +36,7 @@ class ProgramsController extends Controller
 
     public function view(Request $request, $id) { 
         $this->data['content']=Content::where('slug_url',"programs")->first(); 
-        $this->data['content']['image_path']="programs";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $this->data['viewData']=Programe::where('slug_url',$id)->first();       

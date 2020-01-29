@@ -108,7 +108,7 @@ class Controller extends BaseController
 
       
         $this->data['newsUpdates'] = News::where('featured',1)->where('status',1)->orderBy('priority')->get();
-        $this->data['programmeData']=Programe::where('status',1)->where('featured',1)->orderBy('priority')->get();
+        $this->data['programmeData']=Programe::where('status',1)->where('featured',1)->orderBy('priority','ASC')->get();
        
     }
 

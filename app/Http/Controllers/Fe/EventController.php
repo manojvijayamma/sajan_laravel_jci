@@ -58,7 +58,7 @@ class EventController extends Controller
     public function view(Request $request, $id,$eid) { 
         
         $this->data['content']=Content::where('slug_url',$id)->first(); 
-        $this->data['content']['image_path']="event";
+        $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
         $this->data['viewData']=Event::where('slug_url',$eid)->first();       

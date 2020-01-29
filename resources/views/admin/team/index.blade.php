@@ -1,6 +1,6 @@
 <div class="row" id="page-header" >
         <div class="col-lg-12" style="padding:0px;">
-            <h2 class="page-header" style="padding:0px;margin:28px 0px 8px 0px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Teams
+            <h2 class="page-header" style="padding:0px;margin:28px 0px 8px 0px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Teams - <?php echo $pageTitle ?>
                 <div style="float:right">
                 <a href="javascript:void(0);" data-size="modal-lg" data-href="{{route(app('request')->input('controller').'.create',array('controller'=>app('request')->input('controller'), 'identifier'=>app('request')->input('identifier') ))}}" class="btn btn-sm btn-primary openPopup"><i class="fa fa-edit fa-fw"></i> Add New</a>
                     <a href="javascript:void(0);" onclick="loadData('<?php echo app('request')->input('controller') ?>','','1','get','list','','identifier=<?php echo app('request')->input('identifier') ?>')" class="btn btn-primary btn-sm"><i class="fa fa-table fa-fw"></i>List All</a>
@@ -12,6 +12,7 @@
 </div>
 <div id="searchPanel" class="row searchPanel" >
 <form id="form_search">
+    <input type="hidden" name="identifier" value="<?php echo app('request')->input('identifier')?>">
     <div class="col-sm-3"><input class="form-control form-control-sm" type="text"  name="title"  placeholder="Item Title"  required autofocus></div>
     
    

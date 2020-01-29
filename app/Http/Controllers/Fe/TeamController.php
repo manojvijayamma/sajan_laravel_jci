@@ -38,17 +38,13 @@ class TeamController extends Controller
         if($id){
             switch($id){
                 case 'national-governing-board':
-                    $menuData=Menu::where('category','T')->where('query_string',$id)->first();
-                    if($menuData){
-                        $menuSub=Menu::where('category','T')->where('parent_id',$menuData->id)->get();
-                        if($menuSub){
-                            
-                            foreach($menuSub as $val){                                
-                                $query=$query->whereOr('teams.identifier',$val->query_string);
-                            }
-                            
-                        }
-                    }
+                    
+                    //echo $wherein;
+                    $query=$query->where(function ($q) {
+                        $q->orWhere('teams.identifier', 'national-executive-committee');
+                        $q->orWhere('teams.identifier', 'national-directors');
+                        $q->orWhere('teams.identifier', 'zone-presidents');
+                    });
 
                     $this->data['listData']=$query->where('teams.status',1)->orderBy('teams.priority')->orderBy('teams.title')->get();       
                     return view($viewPage,$this->data);

@@ -40,7 +40,8 @@ class TeamController extends AdminBaseController
        
         $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
-        
+        $this->data['qryStr']="identifier=".$request->input('identifier');
+        $this->data['pageTitle']=ucwords(str_replace("-"," ",$request->input('identifier')));
         if($request->input('ajax')){
             return view('admin.'.$request->input('controller').'.'.$request->input('ajax'),$this->data)->with('i', ($request->input('page', 1) - 1) * $pageLimit); 
         }

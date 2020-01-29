@@ -149,19 +149,25 @@
                 </div>
                
                
+
+
+
+
+
+               
                <!--ajax -->
                
                <nav class="ajnav">
 <ul class="ajpage">
-  <li><a href="#page1">NP PROFILE</a>
-  <li><a href="#page2">NP MESSAGE</a>
-  <li><a href="#page3">NP ROUNDUP</a>
-  <li><a href="#page4">NP SCHEDULE</a>
+  <li><a href="javascript:void(0);showTab('page1')">NP PROFILE</a>
+  <li><a href="javascript:void(0);showTab('page2')">NP MESSAGE</a>
+  <li><a href="javascript:void(0);showTab('page3')">NP ROUNDUP</a>
+  <li><a href="javascript:void(0);showTab('page4')">NP SCHEDULE</a>
 </ul>
 </nav>
 <div class="content">
 
-  <div id="page1"><!-- page 1 -->
+  <div id="page1" class="tab_item" ><!-- page 1 -->
 	<h3>PROFILE OF NATIONAL PRESIDENT</h3>
   
 	<?php echo $presidentData->details; ?>
@@ -169,14 +175,14 @@
 	
   </div><!-- /page1 -->
   
-  <div id="page2"><!-- page 2 -->
+  <div id="page2" class="tab_item" style="display:none;" ><!-- page 2 -->
 	<h3>MESSAGE OF NATIONAL PRESIDENT <?php echo date("Y")?> </h3>
 
 	<?php echo $presidentData->message; ?>
 
   </div><!-- /page2 -->
   
-  <div id="page3"><!-- page 3 -->
+  <div id="page3" class="tab_item" style="display:none;"><!-- page 3 -->
 	<h3>NP OFFICIAL VISITS</h3>
 
 	<p>Coming soon</p>
@@ -186,8 +192,8 @@
 	
   </div><!-- /page3 -->
 
-  <div id="page4"><!-- page 4 -->
-	<h1>NP schedule</h1>
+  <div id="page4" class="tab_item" style="display:none;"><!-- page 4 -->
+	<h3>NP schedule</h3>
 
 	<p>Coming soon</p>
 
@@ -316,6 +322,15 @@
     <!-- All js plugins included in this file. -->
     <script src="{{ asset('fe_theme/js/plugins.js')}}"></script>
     <script src="{{ asset('fe_theme/js/main.js')}}"></script>
+
+    <script>
+    function showTab(id){
+        
+        $('.tab_item').hide();
+        $('#'+id).show();
+    }
+    showTab('page1');
+    </script>
 
 </body>
 

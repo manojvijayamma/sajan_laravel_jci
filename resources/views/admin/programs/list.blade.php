@@ -83,7 +83,7 @@ $(".priority").blur(function(){
             _token :_token,
             priority:priority
         },
-        url: "admin/programe/priority",
+        url: "admin/programs/priority",
         success: function (response) {
            
         } 
