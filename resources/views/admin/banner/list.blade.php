@@ -71,7 +71,7 @@ $("#grid-table").css("height", gridHeight);
 
 
 <script>
-$(".priority").blur(function(){
+$(document).on('blur','.priority',function(event) { 
     var id=  $(this).attr('data-rowId');
     var priority=$(this).val();
     var _token = $("input[name='_token']").val();

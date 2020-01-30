@@ -115,15 +115,18 @@
                 </div>
             </div>
         </div>
+        
         <!-- mobile-menu-area end -->
         <!-- End of header area -->
         <!-- Start of slider area -->
+        <span id="scrolltop" style="margin-top:-200px"></span>
         <div class="slider-area">
             <div class="slider-active">
                     @include('fe.includes.sub_banner')                
                
             </div>
         </div>
+        
         <!-- End of slider area --> 
         <div id="news">
 	
@@ -135,10 +138,12 @@
         </div>
  
 </div>
+
         <!-- start categoris area --> 
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
+                    
                     <h1 class="uppercase"><?php echo $content['title']?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>

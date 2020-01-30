@@ -23,7 +23,9 @@
 <div>
 
 <script>
-$(".priority").blur(function(){
+$(document).on('blur','.priority',function(event) { 
+//$(".priority").blur(function(){
+    $('#overlay').show();
     var id=  $(this).attr('data-rowId');
     var priority=$(this).val();
     var _token = $("input[name='_token']").val();
@@ -37,7 +39,7 @@ $(".priority").blur(function(){
         },
         url: "admin/content/priority",
         success: function (response) {
-           
+           $('#overlay').hide();
         } 
     });
 
