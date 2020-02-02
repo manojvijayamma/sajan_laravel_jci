@@ -244,7 +244,12 @@
     width: 100px;
 }
 .countdown-all img {
-    width: 100%;
+    width: 88%;
+    height: 481px;
+    /* position: absolute; */
+    margin-top: 15%;
+    /* z-index: 9999; */
+    margin-left: 10%;
 }
 .timer span.cdown {
     position: relative;
@@ -326,10 +331,14 @@
     margin-right: 0%;
     font-size: 16px;
     margin-top: 4%;
+    margin-left: 27%;
 }
 .countdown-all h5 {
     color: #fff;
-    margin-left: 5%;
+    margin-left: 21%;
+    /* width: 91%; */
+    font-size: 16px;
+    /* z-index: 999; */
 }
 .abt {
     MARGIN-BOTTOM: 2%;
@@ -339,11 +348,11 @@
 {
 	margin-bottom:5%;
 }
-.more
-{
-float:left;
-width:100%;
-text-align:right;
+.more {
+    float: left;
+    margin-top: 4%;
+    width: 100%;
+    text-align: right;
 }
 .more a {
     color: #fff;
@@ -703,9 +712,9 @@ a.button.extra-small.news-btn span {
     display: inline-block;
     float: left;
 }
-.ptb-110 h3
-{
-color:#fff;
+.ptb-110 h3 {
+    color: #fff;
+   
 }
 .test-img-name {
     display: block;
@@ -723,7 +732,7 @@ color:#fff;
 }
 .test-img > img {
    max-width: 100%;
-   margin-left:2%;
+   margin-left:4%;
 }
 .test-name > h3 {
     color: #fff;
@@ -1987,6 +1996,7 @@ h2.page-title {
     padding-left: 30px;
     padding-top: 18px;
     width: 67%;
+    color: black !important;
 }
 .single-upcoming-text > h3 {
     font-size: 20px;
@@ -1994,6 +2004,10 @@ h2.page-title {
     text-transform: uppercase;
     margin: 15px 0 9px;
     margin-top: 12%;
+    color: #0095d5d9;
+}
+.single-upcoming-text > p {
+color: #48aeda;
 }
 .date-all {
     padding-top: 54px;
@@ -2007,7 +2021,7 @@ h2.page-title {
     overflow: hidden;
 }
 .single-upcoming:hover .date-all > span {
-    color: #0151b0;
+    color: #F44336;
 }
 .news-page-area .published3,
 .published4 {
@@ -2080,8 +2094,8 @@ padding:0px;
 margin-top:0%;
 margin-bottom:20px;
 position:absolute;
-z-index:9999;
-/*background-olor:#FFFFCC;
+/*z-index:9999;
+*//*background-olor:#FFFFCC;
 */float:left;
 }
 #head {
@@ -2120,12 +2134,11 @@ padding:7px 30px 0px 0px;
 .np {
     z-index: 2222;
     position: absolute;
-    margin-left: 69%;
-    margin-top: 47px;
+    margin-left: 71%;
+    margin-top: 188px;
 }
-
 .np img {
-    width: 71%;
+    width: 67%;
     margin-top: 0px;
     border: 3px solid #0096d5;
 }

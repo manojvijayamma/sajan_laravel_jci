@@ -9,7 +9,7 @@ if($mainBanners){
                     <div class="table-cell">
                         <div class="slider-text animated">
                             
-                            <!-- <h2>BE BETTER</h2> -->
+                            <h2>BE BETTER</h2> 
                             <p><?php echo $val['title']?> </p>
                             <?php if(isset($val['link_url'])){?>
                                 <a class="button extra-small mb-20" href="<?php echo $val['link_url']?>">

@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Favicon -->
@@ -115,18 +114,15 @@
                 </div>
             </div>
         </div>
-        
         <!-- mobile-menu-area end -->
         <!-- End of header area -->
         <!-- Start of slider area -->
-        <span id="scrolltop" style="margin-top:-200px"></span>
         <div class="slider-area">
             <div class="slider-active">
                     @include('fe.includes.sub_banner')                
                
             </div>
         </div>
-        
         <!-- End of slider area --> 
         <div id="news">
 	
@@ -138,12 +134,10 @@
         </div>
  
 </div>
-
         <!-- start categoris area --> 
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    
                     <h1 class="uppercase"><?php echo $content['title']?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
@@ -397,3 +391,5 @@
 
 <!-- Mirrored from demo.devitems.com/universe-preview/universe/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Dec 2018 11:55:40 GMT -->
 </html>
+
+@include('fe.includes.common_footer')

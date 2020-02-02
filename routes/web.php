@@ -25,6 +25,9 @@ Route::get('/event/{id}', 'Fe\EventController@index')->name('index');
 Route::get('/event/{id}/{eid}', 'Fe\EventController@view')->name('event.details');
 
 Route::get('/team/{id}', 'Fe\TeamController@index')->name('index');
+Route::get('/team/{id}/{vid}', 'Fe\TeamController@view')->name('team.view');
+
+
 Route::get('/downloads', 'Fe\DownloadsController@index')->name('index');
 Route::get('/video', 'Fe\VideoController@index')->name('index');
 Route::get('/challenge', 'Fe\ChallengeController@index')->name('index');
@@ -292,6 +295,15 @@ Route::prefix('admin')->group(function () {
     Route::post('/challenge/priority', 'Admin\ChallengeController@priority')->name('challenge.priority');
 
 
+    Route::get('/eventGallery', 'Admin\EventgalleryController@index')->name('eventGallery.index');
+    Route::get('/eventGallery/create', 'Admin\EventgalleryController@create')->name('eventGallery.create');
+    Route::post('/eventGallery', 'Admin\EventgalleryController@store')->name('eventGallery.store');
+    Route::get('/eventGallery/{id}/edit', 'Admin\EventgalleryController@edit')->name('eventGallery.edit');
+    Route::put('/eventGallery/{id}', 'Admin\EventgalleryController@update')->name('eventGallery.update');
+    Route::delete('/eventGallery/{id}', 'Admin\EventgalleryController@destroy')->name('eventGallery.destroy');
+    Route::get('/eventGallery/{id}/status', 'Admin\EventgalleryController@status')->name('eventGallery.status');
+    Route::get('/eventGallery/{id}/show', 'Admin\EventgalleryController@show')->name('eventGallery.show');
+    Route::post('/eventGallery/priority', 'Admin\EventgalleryController@priority')->name('eventGallery.priority');
 
 
 });

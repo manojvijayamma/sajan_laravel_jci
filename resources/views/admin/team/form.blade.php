@@ -12,7 +12,19 @@
  <div class="modal-body">
              <div id="success_message">
                  
-             </div>          
+             </div> 
+
+
+              <ul class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#info">Basic Info</a></li>                    
+                    <li><a data-toggle="tab" href="#locations">More Details</a></li>
+                </ul>
+                <br>
+
+
+                <div class="tab-content">
+                        <div id="info" class="tab-pane fade in active">
+
 
              <div class="form-group">
                  <label for="name">
@@ -84,8 +96,78 @@
              </div> 
 
 
+            
+
+
+</div>   
+<!-- id=info -->   
+
+<div id="locations" class="tab-pane fade">
+
+            <div class="form-group">
+                    <div class="col-sm-6">
+                            <label for="name">
+                                Previous Designation:</label>
+                                <select class="form-control" id="previous_designation_id" name="previous_designation_id" required  > 
+                                <option value="">Select</option>
+                                @foreach ($designations as $cat)                        
+                                    <option value="{{$cat->id}}" {{ ( $cat->id==$content->previous_designation_id ) ? ' selected' : '' }}>
+                                        {{$cat->title}}
+                                    </option>
+                                @endforeach
+                            </select>
+
+                    </div>
+                    <div class="col-sm-6">
+                            <label for="name">
+                                Lom:</label>
+                                <input class="form-control" type="text"  name="lom" id="lom"  value="{{$content->lom}}"  required autofocus>
+
+                    </div>
+
+            </div>   
+            
 
             
+
+            <div class="form-group">
+                <div class="col-sm-12">
+                            <label for="name">
+                                Address:</label>
+                                <textarea class="form-control" type="text"  name="address" id="address"   required autofocus>{{$content->address}}</textarea>
+                </div>    
+            </div>   
+            
+
+            <div class="form-group">
+                        <div class="col-sm-6">
+                            <label for="name">
+                                Contact No:</label>
+                                <input class="form-control" type="text"  name="phone" id="phone"  value="{{$content->phone}}"  required autofocus>
+
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="name">
+                                Email:</label>
+                                <input class="form-control" type="text"  name="email" id="email"  value="{{$content->email}}"  required autofocus>
+
+                        </div>
+            
+            </div>   
+            
+  
+            
+
+            <div class="form-group" >
+                <div class="col-sm-12">
+                    <label for="inputFirstname">Details</label>
+                    <textarea name="details1" class="summernote">{{$content->details}}</textarea>
+                    <textarea id="details" name="details" style="display:none;" >{{$content->details}}</textarea>
+                </div>    
+            
+             </div> 
+
+</div>
              
 
   
@@ -126,7 +208,7 @@ function validateForm(){
 </script>
 <script>
 $(document).ready(function() {
-    $('.summernote').summernote({disableResizeEditor: true,height: 250,});
+    $('.summernote').summernote({disableResizeEditor: true,height: 150,});
 });
 
 function updatePanel(id){

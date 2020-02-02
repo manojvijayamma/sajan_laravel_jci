@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Content;
 use App\Models\Event;
+use App\Models\EventGallery;
+use App\Models\Zone;
 
 
 use DB;
@@ -31,7 +33,11 @@ class EventController extends Controller
         $this->setMetaData($this->data['content']);  
 
         $query=Event::query();   
-        $curDate=date("Y-m-d");     
+        $curDate=date("Y-m-d");   
+        $this->data['zoneData']=[]; 
+        $this->data['zone_id']='';  
+        $this->data['zoneTitle']['title']=''; 
+        
         if($id){
             
             switch($id){
@@ -46,7 +52,17 @@ class EventController extends Controller
                 default :                    
                     $this->data['identifier']=$id;
                     $query=$query->where('identifier',$id);
+                     
+                    if(isset($_REQUEST['zone_id'])){  
+                        $this->data['zone_id']=$_REQUEST['zone_id'];  
+                        $this->data['zoneTitle']=Zone::find($_REQUEST['zone_id']);                       
+                        $query=$query->where('zone_id',$_REQUEST['zone_id']);
+                    }
                 break; 
+            }
+
+            if($id=='zoneevent' || $id=='national_events' ){                
+                $this->data['zoneData']=Zone::where('status','1')->orderBy('priority')->get(); 
             }
             
         }
@@ -61,7 +77,11 @@ class EventController extends Controller
         $this->data['content']['image_path']="content";
         $this->setMetaData($this->data['content']);  
 
-        $this->data['viewData']=Event::where('slug_url',$eid)->first();       
+        $this->data['viewData']=Event::where('slug_url',$eid)->first();
+        
+        $this->data['galleryData']=EventGallery::where('parent_id',$this->data['viewData']->id)->get();
+
+
         return view('fe.event.view',$this->data);
     }
    

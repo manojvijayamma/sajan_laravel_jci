@@ -14,7 +14,14 @@ class Team extends Model
         'priority',
         'identifier',
         'zone_id',
-        'position'
+        'position',
+        'previous_designation_id',
+        'lom',
+        'address',
+        'email',
+        'phone',
+        'details'
+
     ];   
 
 

@@ -7,8 +7,7 @@ use App\Models\Zone;
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Favicon -->
@@ -27,10 +26,14 @@ use App\Models\Zone;
     <link rel="stylesheet" href="{{ asset('fe_theme/css/responsive.css')}}">
     <!-- Style customizer (Remove these two lines please) -->
     <link rel="stylesheet" href="{{ asset('fe_theme/css/style-customizer.css')}}">
-   
+    <link rel="stylesheet"  href="{{ asset('fe_theme/css/lightslider.css')}}"/>
     
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+
+
+
 </head>
 
 <body>
@@ -136,12 +139,36 @@ use App\Models\Zone;
                 </div>
                 <div class="upcoming-event-area pt-110 pb-70">
             <div class="container">
-                
+            @include('fe.includes.backbutton')
                 <div class="row">
                     
                     <div class="nwsdetails">
                   <div class="col-sm-8">
-                  <img src="{{asset('uploads/event/'.$viewData->image)}}">
+
+
+
+                  <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
+                    
+                    <?php if(isset($galleryData) && count($galleryData)>0){?>
+                         <li data-thumb="{{asset('uploads/event/'.$viewData->image)}}"> 
+                            <img src="{{asset('uploads/event/'.$viewData->image)}}">
+                         </li>
+                         <?php foreach($galleryData as $val){?>
+                            <li data-thumb="{{asset('uploads/eventgallery/'.$val->image)}}"> 
+                                <img src="{{asset('uploads/eventgallery/'.$val->image)}}">
+                            </li>
+                         <?php } ?>
+
+                    <?php }
+                    else{
+                        ?>
+                        <img src="{{asset('uploads/event/'.$viewData->image)}}">
+                        <?php
+                    } ?>
+                </ul>
+
+
+                  
                   <h5><?php echo $viewData->title?></h5>
 
                   <?php
@@ -258,9 +285,32 @@ use App\Models\Zone;
     <!-- All js plugins included in this file. -->
     <script src="{{ asset('fe_theme/js/plugins.js')}}"></script>
     <script src="{{ asset('fe_theme/js/main.js')}}"></script>
-
+    <script src="{{ asset('fe_theme/js/lightslider.js')}}"></script> 
 </body>
 
 
 <!-- Mirrored from demo.devitems.com/universe-preview/universe/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Dec 2018 11:55:40 GMT -->
 </html>
+
+<script>
+    	 $(document).ready(function() {
+			$("#content-slider").lightSlider({
+                loop:true,
+                keyPress:true
+            });
+            $('#image-gallery').lightSlider({
+                gallery:true,
+                item:1,
+                thumbItem:9,
+                slideMargin: 0,
+                speed:500,
+                auto:true,
+                loop:true,
+                onSliderLoad: function() {
+                    $('#image-gallery').removeClass('cS-hidden');
+                }  
+            });
+		});
+    </script>
+
+@include('fe.includes.common_footer')

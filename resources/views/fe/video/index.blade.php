@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
       
@@ -124,13 +124,14 @@
             <div class="container">
                 <div class="section-title text-center mb-55">
                     <h1 class="uppercase">VIDEO</h1>
+                    
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
                 <div class="upcoming-event-area pt-110 pb-70">
             <div class="container">
-                
+              
                 <div class="row">
                     
                     <div class="vdo">
@@ -253,3 +254,6 @@
 
 
 </html>
+
+
+@include('fe.includes.common_footer')

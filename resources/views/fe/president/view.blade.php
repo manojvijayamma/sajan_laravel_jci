@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Favicon -->
@@ -28,6 +27,13 @@
     
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
+
+    <style>
+        .ajpage li a{margin-left:0px;}
+       .content li{background:  url('public/fe_theme/images/page_next.gif') left 3px no-repeat; padding-left: 14px;
+};
+    </style>   
+
 </head>
 
 <body>
@@ -332,8 +338,11 @@
     showTab('page1');
     </script>
 
+     
 </body>
 
 
 <!-- Mirrored from demo.devitems.com/universe-preview/universe/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Dec 2018 11:55:40 GMT -->
 </html>
+
+@include('fe.includes.common_footer')

@@ -7,8 +7,7 @@ use App\Models\Download;
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
     <!-- Bootstrap fremwork main css -->
@@ -254,3 +253,5 @@ use App\Models\Download;
 
 <!-- Mirrored from demo.devitems.com/universe-preview/universe/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Dec 2018 11:55:40 GMT -->
 </html>
+
+@include('fe.includes.common_footer')

@@ -37,7 +37,23 @@ class EventController extends AdminBaseController
        
         $this->data['content']= $query->orderBy('priority','ASC')->orderBy('title','ASC')->paginate($pageLimit);
         
-        
+        $this->data['moreImages']=0;
+        switch($request->input('identifier')){
+            case 'event':
+                $this->data['pageTitle']="Upcoming & Past Events";
+            break;
+            case 'zoneevent':
+                $this->data['pageTitle']="Zone Events";
+                $this->data['moreImages']=1;
+            break;
+            case 'national_events':
+                $this->data['pageTitle']="National Events ";
+                $this->data['moreImages']=1;
+            break;
+            default:
+                $this->data['pageTitle']=ucwords(str_replace("_"," ",$request->input('identifier')));
+            break;    
+        }
         if($request->input('ajax')){
             return view('admin.'.$request->input('controller').'.'.$request->input('ajax'),$this->data)->with('i', ($request->input('page', 1) - 1) * $pageLimit); 
         }

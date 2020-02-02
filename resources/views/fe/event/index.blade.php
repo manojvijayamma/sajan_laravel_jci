@@ -4,8 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- Favicon -->
@@ -105,7 +104,7 @@
       
         <!-- Start of slider area -->
         <div class="slider-area">
-            <div class="slider-active">
+            <div class="slider-active1">
             @include('fe.includes.sub_banner')
             </div>
         </div>
@@ -123,15 +122,40 @@
         <!-- start categoris area --> 
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
+
+               
+
+           
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase"><?php echo $content['title']?>  <?php echo $zoneTitle['title'] ?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
                 <div class="upcoming-event-area pt-110 pb-70">
             <div class="container">
-                
+           
+            <?php if(isset($zoneData) && count($zoneData)>0){?>
+            <div class="row">
+                <div class="col-sm-4 pull-right">
+                <div class="form-group"  >
+                        <form action="">
+                        <select class="form-control" id="zone_id" name="zone_id" required onchange="this.form.submit()" > 
+                                <option value="">Select a Zone</option>
+                                @foreach ($zoneData as $cat)                        
+                                    <option value="{{$cat->id}}" {{ ( $cat->id==$zone_id ) ? ' selected' : '' }}>
+                                        {{$cat->title}}
+                                    </option>
+                                @endforeach
+                            </select>
+                    </form>
+                </div>
+                </div> 
+            </div> 
+            <?php } ?>
+
+
+
                 <div class="row">
                     
                     <div class="zent">
@@ -235,3 +259,5 @@
 
 <!-- Mirrored from demo.devitems.com/universe-preview/universe/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 31 Dec 2018 11:55:40 GMT -->
 </html>
+
+@include('fe.includes.common_footer')

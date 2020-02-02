@@ -35,7 +35,7 @@ NOTE: This is Slider style file. All Slider related style included in this file.
     background-color: #000;
     height: 100%;
     left: 0;
-    opacity: 0;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     width: 100%;
@@ -52,7 +52,7 @@ NOTE: This is Slider style file. All Slider related style included in this file.
   font-family: "Source Sans Pro",sans-serif;
   font-size: 18px;
   margin: 14px 0 39px;
-  display:none;
+  
 }
 .slider-text > h3 {
   color: #fff;
@@ -205,7 +205,7 @@ h3.tlt7 {
     margin-top: -14px;
     padding: 4px;
     line-height: 1.5;
-    color: #475a63;
+    color: #394950;
     text-align: center;
 }
 .thir3 {
@@ -218,10 +218,10 @@ h3.tlt7 {
     /* background: #673ab759; */
     margin-bottom: 4%;
     /* border: groove; */
-    height: 151px;
+    height: 170px;
     background-color: #dec5f1;
     display: inline-block;
-    background: -webkit-linear-gradient(top, #03a9f430 , #ffeb3b66);
+    background: -webkit-linear-gradient(top, #03a9f45c , #673ab733);
     background: -o-linear-gradient(top, #f6ecff , #dec5f1);
     background: -moz-linear-gradient(top, #f6ecff , #dec5f1);
     background: linear-gradient(top, #f6ecff , #dec5f1);

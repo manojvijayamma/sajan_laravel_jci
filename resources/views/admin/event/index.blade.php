@@ -1,6 +1,6 @@
 <div class="row" id="page-header" >
         <div class="col-lg-12" style="padding:0px;">
-            <h2 class="page-header" style="padding:0px;margin:28px 0px 8px 0px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Event
+            <h2 class="page-header" style="padding:0px;margin:28px 0px 8px 0px;border:0px;font-size:22px;color:#0a3984"><i class="fa fa-table" style="font-size:20px;"></i>&nbsp;Event - <?php echo $pageTitle?>
                 <div style="float:right">
                 <a href="javascript:void(0);" onclick="loadData('<?php echo app('request')->input('controller') ?>','create','1','get','','','identifier=<?php echo app('request')->input('identifier') ?>')"      class="btn btn-sm btn-primary openPopup"><i class="fa fa-edit fa-fw"></i> Add New</a>
                     <a href="javascript:void(0);" onclick="loadData('<?php echo app('request')->input('controller') ?>','','1','get','list','','identifier=<?php echo app('request')->input('identifier') ?>')" class="btn btn-primary btn-sm"><i class="fa fa-table fa-fw"></i>List All</a>

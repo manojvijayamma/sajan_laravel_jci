@@ -65,7 +65,7 @@
                         <div class="col-md-12 text-center">
                             <div class="footer-bottom-text ptb-20">
                                 <p>
-                                    Copyrights ©  <?php echo date("Y")?> jci india | Designed by <a href="http://www.spiderline.in" target="_blank">Spiderline</a>
+                                    Copyrights ©  <?php echo date("Y")?> JCI India | Designed & maintained by <a href="http://www.spiderline.in" target="_blank">Spiderline</a>
                                 </p>
                             </div>
                         </div>
@@ -75,6 +75,10 @@
         </footer>
         
         <script>
-            var elmnt = document.getElementById("scrolltop");
-            elmnt.scrollIntoView(true); 
+           // var elmnt = document.getElementById("scrolltop");
+           // elmnt.scrollIntoView(true); 
+
+
+
+
         </script>

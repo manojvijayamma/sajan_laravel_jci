@@ -15,8 +15,8 @@ if($menuApp){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>jci india</title>
-    <meta name="description" content="">
+    @include('fe.includes.seo')
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
   
@@ -155,7 +155,7 @@ if($menuApp){
   
 <?php if($committeeData){
     foreach($committeeData as $commD){
-        $teamData=Team::where('identifier',$commD->query_string)->get();?>
+        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$commD->query_string)->get();?>
     <h3><?php echo $commD->title?></h3>
    <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 appin">
@@ -164,11 +164,18 @@ if($menuApp){
                                 <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                         if($teamD->position==1){?>
-                                            <div class="president">
+                                            <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="president" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
                                                 <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
                                                 <h5><?php echo $teamD->title?></h5>
-                                                <p><?php echo $teamD->designation_title?></p>
-                                            </div>
+                                                <p><?php echo $teamD->designation_title?>
+                                                
+                                                <?php
+                                                    if(isset($teamD->year)){
+                                                        echo $teamD->year;
+                                                    }    
+                                                ?>
+                      </p>
+                                            </div></a>
                                 <?php } } }?> 
 
                       </div>
@@ -181,11 +188,17 @@ if($menuApp){
                         <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                         if($teamD->position!=1){?>                        
-                                        <div class="col-sm-3 thir2">
+                                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="col-sm-3 thir2" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
                                                 <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
                                                 <h5><?php echo $teamD->title?></h5>
-                                                <p><?php echo $teamD->designation_title?></p>
-                                        </div>
+                                                <p><?php echo $teamD->designation_title?>
+                                                <?php
+                                                    if(isset($teamD->year)){
+                                                        echo $teamD->year;
+                                                    }    
+                                                ?>
+                                                </p>
+                                        </div></a>
                         <?php } } }?> 
 
                        
@@ -206,7 +219,7 @@ if($menuApp){
   
     <?php
         
-        $teamData=Team::where('identifier',$menuApp[1]['query_string'])->get();
+        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$menuApp[1]['query_string'])->get();
         
     ?>
     
@@ -217,11 +230,17 @@ if($menuApp){
                      <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                        ?>  
-                                        <div class="col-sm-3 thir22">
+                                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="col-sm-3 thir22" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})"> 
                                         <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
                                         <h5><?php echo $teamD->title?></h5>
-                                        <p><?php echo $teamD->designation_title?></p>
-                                        </div>
+                                        <p><?php echo $teamD->designation_title?>
+                                        <?php
+                                                    if(isset($teamD->year)){
+                                                        echo $teamD->year;
+                                                    }    
+                                                ?>
+                                                </p>
+                                        </div></a>
                              <?php  } }?> 
 
                       
@@ -344,3 +363,5 @@ function toggleVisibility(divId) {
 
 
 </html>
+
+@include('fe.includes.common_footer')

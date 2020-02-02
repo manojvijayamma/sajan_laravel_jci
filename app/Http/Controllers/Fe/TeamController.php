@@ -34,7 +34,7 @@ class TeamController extends Controller
         $query=Team::leftJoin('designations','designations.id','teams.designation_id');
         $query=$query->select('teams.*','designations.title as designation_title');
         $viewPage="fe.team.index";
-       
+        $this->data['identifier']=$id;
         if($id){
             switch($id){
                 case 'national-governing-board':
@@ -63,11 +63,24 @@ class TeamController extends Controller
             }
             
         }
+
+        
         
     }
    
 
+    public function view(Request $request, $id,$vid) { 
+        $this->data['content']=Content::where('slug_url',$id)->first(); 
+        $this->data['content']['image_path']="content";
+        $this->setMetaData($this->data['content']);  
 
+        $this->data['viewData']=Team::leftJoin('designations as c','c.id','teams.designation_id')
+                ->leftJoin('designations as p','p.id','teams.previous_designation_id')
+                ->select('teams.*','c.title as current_designation','p.title as previous_designation')
+                ->where('teams.id',$vid)->first();       
+        return view('fe.team.view',$this->data);
+    }
+   
 
    
 

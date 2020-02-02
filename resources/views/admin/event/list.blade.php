@@ -31,8 +31,9 @@
                                                                                 
                                                                                 <a class="btn <?php echo ($row->status!=1 ? 'btn-danger' : 'btn-success') ?> btn-sm" href="javascript:void(0)" onclick="loadData('<?php echo app('request')->input('controller') ?>','<?php echo $row->id?>/status?page=<?php echo $content->currentPage()?>','<?php echo $content->currentPage()?>','GET','list','', '&identifier=<?php echo app('request')->input('identifier') ?>')">Status</a>
                                                                                 <a class="btn btn-primary btn-sm " href="javascript:void(0);" onclick="loadData('<?php echo app('request')->input('controller');?>','<?php echo $row->id?>/edit','1','get','','','identifier=<?php echo app('request')->input('identifier') ?>')"    ><i class="fa fa-edit fa-fw"></i> Edit</a>
-                                                                                <!--<a class="btn btn-info btn-sm " href="javascript:void(0);"  onclick="loadData('proGallery','','1','get','index','Y','row_id=<?php echo $row->id ?>')"  ><i class="fa fa-edit fa-fw"></i> More Images</a> -->
-                                                                                
+                                                                                <?php if($moreImages>0){?>
+                                                                                <a class="btn btn-info btn-sm " href="javascript:void(0);"  onclick="loadData('eventGallery','','1','get','index','Y','row_id=<?php echo $row->id ?>&identifier=<?php echo app('request')->input('identifier') ?>')"  ><i class="fa fa-edit fa-fw"></i> More Images</a>
+                                                                                <?php } ?>
                                                                                 <button type="button" id="delete-task-{{ $row->id }}" class="btn btn-danger btn-sm" onclick="doDelete('<?php echo $row->id?>')">
                                                                                         <i class="fa fa-btn fa-trash"></i> Delete
                                                                                     </button>
