@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{ asset('fe_theme/css/style-customizer.css')}}">
     <link href="#" data-style="styles" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Modernizr JS -->
     <script src="{{ asset('fe_theme/js/vendor/modernizr-2.8.3.min.js')}}"></script>
 </head>
@@ -144,15 +145,21 @@
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase"><?php echo $content['title']?> <?php echo $year?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
-
+                <?php if($history){?>
+                <div class="row">
+                @include('fe.includes.team_menu')
+                </div>
+                <?php } ?>
 
                 <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12">
+                      
+
                       
                       
                       <?php if($listData){
@@ -321,3 +328,4 @@
 </html>
 
 @include('fe.includes.common_footer')
+

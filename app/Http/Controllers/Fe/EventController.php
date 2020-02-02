@@ -48,7 +48,18 @@ class EventController extends Controller
                 case 'past_events' :                    
                     $this->data['identifier']='past_events';
                     $query=$query->where('identifier','event')->where('event_date','<',$curDate);
-                break;                 
+                break;  
+                case 'event_calendar' :                    
+                    $this->data['identifier']='Event Calendar';
+                    $this->data['month']=($request->input('m')>0) ? $request->input('m') : date("m");
+                    $year=date("Y");
+                    $query->whereMonth('event_date', '=', $this->data['month']);
+                    $query->whereYear('created_at', '=', $year);
+
+                    $this->data['listData']=$query->where('status',1)->where('identifier','event_calendar')->orderBy('priority')->orderBy('event_date')->get();       
+                    return view('fe.event.calendar',$this->data);
+                break;  
+
                 default :                    
                     $this->data['identifier']=$id;
                     $query=$query->where('identifier',$id);

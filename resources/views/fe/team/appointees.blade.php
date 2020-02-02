@@ -127,7 +127,7 @@ if($menuApp){
         <p>NEWS UPDATE</p>
         </div>
         <div id="content">
-        <marquee> @include('fe.includes.news_update')</marquee>
+        <marquee> </marquee>
         </div>
  
 </div>
@@ -135,13 +135,17 @@ if($menuApp){
         <div class="categoris-area pb-80 pt-110">
             <div class="container">
                 <div class="section-title text-center mb-55">
-                    <h1 class="uppercase"><?php echo $content['title']?></h1>
+                    <h1 class="uppercase"><?php echo $content['title']?> <?php echo $year?></h1>
                     <div class="separator my mtb-15">
                         <i class="icofont icofont-hat-alt"></i>
                     </div>
                 </div>
                
-               
+                <?php if($history){?>
+                <div class="row">
+                @include('fe.includes.team_menu')
+                </div>
+                <?php } ?>
             
                
               
@@ -155,7 +159,7 @@ if($menuApp){
   
 <?php if($committeeData){
     foreach($committeeData as $commD){
-        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$commD->query_string)->get();?>
+        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$commD->query_string)->where('teams.year',$year)->get();?>
     <h3><?php echo $commD->title?></h3>
    <div class="row">
                       <div class="col-lg-12 col-md-12 col-sm-12 appin">
@@ -219,7 +223,7 @@ if($menuApp){
   
     <?php
         
-        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$menuApp[1]['query_string'])->get();
+        $teamData=Team::leftJoin('designations','designations.id','teams.designation_id')->select('teams.*','designations.title as designation_title')->where('teams.identifier',$menuApp[1]['query_string'])->where('teams.year',$year)->get();
         
     ?>
     

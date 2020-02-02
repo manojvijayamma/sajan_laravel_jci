@@ -21,9 +21,11 @@ Route::get('/news/{id}', 'Fe\NewsController@view')->name('news.view');
 Route::get('/programs', 'Fe\ProgramsController@index')->name('index');
 Route::get('/programs/{id}', 'Fe\ProgramsController@view')->name('programs.view');
 
+
 Route::get('/event/{id}', 'Fe\EventController@index')->name('index');
 Route::get('/event/{id}/{eid}', 'Fe\EventController@view')->name('event.details');
 
+Route::get('/team/history/{id}', 'Fe\TeamController@history')->name('index');
 Route::get('/team/{id}', 'Fe\TeamController@index')->name('index');
 Route::get('/team/{id}/{vid}', 'Fe\TeamController@view')->name('team.view');
 
