@@ -158,6 +158,17 @@ class TeamController extends AdminBaseController
 
         }    
 
+
+        if ($request->hasFile('large_image')) {
+            $image = $request->file('large_image');
+            $name = time().'.'.$image->getClientOriginalExtension();
+            $destinationPath = public_path('/uploads/team');
+            $image->move($destinationPath, $name);
+            $input['large_image'] =$name;
+        }   
+
+        
+
         if($id>0){
             $menu = Team::find($id);        
             $menu->update($input);

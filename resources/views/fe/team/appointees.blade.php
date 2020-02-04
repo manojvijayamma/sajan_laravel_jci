@@ -127,7 +127,7 @@ if($menuApp){
         <p>NEWS UPDATE</p>
         </div>
         <div id="content">
-        <marquee> </marquee>
+        <marquee> @include('fe.includes.news_update')</marquee>
         </div>
  
 </div>
@@ -149,11 +149,14 @@ if($menuApp){
             
                
               
-             <div class="buttons">
-  <a href="javascript:void(0);" class="mnu" onclick="toggleVisibility('Menu1');"><?php echo $menuApp[0]['title']?></a>
-  <a href="javascript:void(0);" class="mnu1" onclick="toggleVisibility('Menu2');"><?php echo $menuApp[1]['title']?></a>
-  
-</div>
+                <div class="row">
+                        <div class="col-sm-6">
+                            <a href="javascript:void(0);" class="btn mnu" style="display: block;  width: 100%;" onclick="toggleVisibility('Menu1');"><?php echo $menuApp[0]['title']?></a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="javascript:void(0);" class="btn mnu1" style="display: block;  width: 100%;" onclick="toggleVisibility('Menu2');"><?php echo $menuApp[1]['title']?></a>
+                        </div>     
+                </div>
  
   <div id="Menu1" class='tab_item'>
   
@@ -168,18 +171,18 @@ if($menuApp){
                                 <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                         if($teamD->position==1){?>
-                                            <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="president" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
-                                                <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
-                                                <h5><?php echo $teamD->title?></h5>
+                                            <div class="president" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
+                                                <img src="<?php echo $teamD->image!='' ?  asset('uploads/team/'.$teamD->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                                                <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><h5><?php echo $teamD->title?></h5></a>
                                                 <p><?php echo $teamD->designation_title?>
                                                 
                                                 <?php
-                                                    if(isset($teamD->year)){
+                                                    if(isset($teamD->year) && ($showYear>0)){
                                                         echo $teamD->year;
                                                     }    
                                                 ?>
                       </p>
-                                            </div></a>
+                                            </div>
                                 <?php } } }?> 
 
                       </div>
@@ -192,17 +195,17 @@ if($menuApp){
                         <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                         if($teamD->position!=1){?>                        
-                                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="col-sm-3 thir2" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
-                                                <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
-                                                <h5><?php echo $teamD->title?></h5>
+                                        <div class="col-sm-3 thir2" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
+                                                <img src="<?php echo $teamD->image!='' ?  asset('uploads/team/'.$teamD->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                                                <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><h5><?php echo $teamD->title?></h5></a>
                                                 <p><?php echo $teamD->designation_title?>
                                                 <?php
-                                                    if(isset($teamD->year)){
+                                                    if(isset($teamD->year) && ($showYear>0)){
                                                         echo $teamD->year;
                                                     }    
                                                 ?>
                                                 </p>
-                                        </div></a>
+                                        </div>
                         <?php } } }?> 
 
                        
@@ -234,17 +237,17 @@ if($menuApp){
                      <?php if($teamData){
                                     foreach($teamData as $teamD){                                        
                                        ?>  
-                                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><div class="col-sm-3 thir22" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})"> 
-                                        <img src="{{asset('uploads/team/'.$teamD->image)}}" style="width:150px">
-                                        <h5><?php echo $teamD->title?></h5>
+                                        <div class="col-sm-3 thir22" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})"> 
+                                        <img src="<?php echo $teamD->image!='' ?  asset('uploads/team/'.$teamD->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$teamD->id])}}"><h5><?php echo $teamD->title?></h5></a>
                                         <p><?php echo $teamD->designation_title?>
-                                        <?php
-                                                    if(isset($teamD->year)){
+                                        <?php                                                    
+                                                    if(isset($teamD->year) && ($showYear>0)){
                                                         echo $teamD->year;
                                                     }    
                                                 ?>
                                                 </p>
-                                        </div></a>
+                                        </div>
                              <?php  } }?> 
 
                       

@@ -143,18 +143,18 @@
 
                 
                             <div class="row">
-                                    <h3><?php echo $viewData->title?></h3>
+                                    <h3 style="color:#0096d5"><?php echo $viewData->title?></h3>
                             </div>
                             <div class="row">
                                 
-                                <div class="col-sm-3">
-                                    <img src="{{asset('uploads/team/'.$viewData->image)}}" ><br>
-                                    <?php echo $viewData->title?>
+                                <div class="col-sm-6 pull-center">
+                                    <img src="<?php echo $viewData->large_image!='' ?  asset('uploads/team/'.$viewData->large_image) : asset('fe_theme/images/no_image.png');?>" style="border:1px solid #0096d5;padding:10px;" class="img-responsive"><br>
+                                   
 
                                 </div>
 
 
-                                <div class="col-sm-9">
+                                <div class="col-sm-6">
                                         <?php if(isset($viewData->current_designation)){?>
                                         <div class="row"> 
                                             <div class="col-sm-4">
@@ -227,14 +227,7 @@
                                         </div> 
                                         <?php } ?>
 
-                                        <?php if(isset($viewData->details)){?>    
-                                        <div class="row">                                             
-                                             <div class="col-sm-12">
-                                                <?php echo $viewData->details?>
-                                             </div>  
-                                             
-                                        </div> 
-                                        <?php } ?>
+                                        
 
                                 </div>
                             </div>
@@ -242,7 +235,17 @@
 
             </div>
 
-
+            <?php if(isset($viewData->details)){?>    
+                                        <div class="row">   
+                                        <div class="col-sm-12">
+                                            <b>JCI PROFILE:</b>
+                                             </div>                                          
+                                             <div class="col-sm-12">
+                                                <?php echo $viewData->details?>
+                                             </div>  
+                                             
+                                        </div> 
+                                        <?php } ?>
 
 
 

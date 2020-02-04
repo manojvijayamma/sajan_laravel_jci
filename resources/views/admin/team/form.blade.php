@@ -43,6 +43,16 @@
              </div>
 
 
+             <div class="form-group" id="panel_I" style="display:{{($content->type!='V' )  ? '' :'none'}}">
+                <label for="inputLastname"> Large Image</label>
+                <input type="file" name="large_image"  id="large_image" placeholder="">
+                <?php if($content->large_image){?>
+                    <img src="{{asset('uploads/team/'.$content->large_image)}}" style="width:70px;">
+                <?php } ?>   
+
+             </div>
+
+
              <div class="form-group" id="panel_show" >
                 <label for="inputLastname">Year</label>
                     <select class="form-control" id="year" name="year" required  > 

@@ -20,7 +20,8 @@ class Team extends Model
         'address',
         'email',
         'phone',
-        'details'
+        'details',
+        'large_image'
 
     ];   
 

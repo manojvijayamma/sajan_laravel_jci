@@ -51,6 +51,7 @@ class TeamController extends Controller
         $viewPage="fe.team.index";
         $this->data['identifier']=$id;
         $this->data['activeTab']=$id;
+        $this->data['showYear']='';
         if($id){
             switch($id){
                 case 'national-governing-board':                    
@@ -73,6 +74,7 @@ class TeamController extends Controller
                 break;
 
                 case 'past-national-presidents':  
+                    $this->data['showYear']=1;
                     $query=$query->where('teams.year','<',$this->data['year']);                             
                     $query=$query->where('teams.identifier',$id);
 

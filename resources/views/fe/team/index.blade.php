@@ -166,23 +166,23 @@
                                     foreach($listData as $val){
                                         
                                         if($val->position==1){?>
-                      <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}">
+                      
                           <div class="col-sm-6">
                       <div class="president" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
-                      <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                      <h5><?php 
+                      <img src="<?php echo $val->image!='' ?  asset('uploads/team/'.$val->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                      <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}"><h5><?php 
                         if(isset($val->title)){
                             echo $val->title;
                         }
-                      ?></h5>
+                      ?></h5></a>
                       <p> <?php echo $val->designation_title?>
                       <?php
-                        if(isset($val->year)){
+                        if(isset($val->year) && ($showYear>0)){
                             echo $val->year;
                         }    
                       ?>
                       </p></div>
-                      </div></a>
+                      </div>
                       <?php } } }?> 
 
 
@@ -197,19 +197,19 @@
                      <?php if($listData){
                                     foreach($listData as $val){
                                         if($val->position==2){?>
-                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}"><div class="col-sm-3 thir2" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
-                        <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                        <h5><?php
+                        <div class="col-sm-3 thir2" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
+                        <img src="<?php echo $val->image!='' ?  asset('uploads/team/'.$val->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                        <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}"><h5><?php
                             if(isset($val->title)){
                                 echo $val->title;
-                            }    ?></h5>
+                            }    ?></h5></a>
                         <p> <?php echo $val->designation_title?>
                         <?php
-                        if(isset($val->year)){
+                        if(isset($val->year) && ($showYear>0)){
                             echo $val->year;
                         }    
                       ?></p>
-                        </div></a>
+                        </div>
 
                         <?php } } }?> 
 
@@ -226,19 +226,19 @@
                                 <?php if($listData){
                                     foreach($listData as $val){
                                         if($val->position==3){?>
-                                <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}"><div class="col-sm-2 thir3" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
-                                <img src="{{asset('uploads/team/'.$val->image)}}" style="width:150px">
-                                <h5><?php 
+                                <div class="col-sm-2 thir3" style="background-image:url({{url('public/fe_theme/images/teambg.jpg')}})">
+                                <img src="<?php echo $val->image!='' ?  asset('uploads/team/'.$val->image) : asset('fe_theme/images/no_image.png');?>" style="width:150px">
+                                <a href="{{route('team.view',['id'=>$identifier,'vid'=>$val->id])}}"><h5><?php 
                                 if(isset($val->title)){
                                     echo $val->title;
-                                }    ?></h5>
+                                }    ?></h5></a>
                                 <p> <?php echo $val->designation_title?>
                                             <?php
-                                    if(isset($val->year)){
+                                    if(isset($val->year) && ($showYear>0)){
                                         echo $val->year;
                                     }    
                                 ?></p>
-                                </div></a>
+                                </div>
                                 <?php } } }?>   
                      
               
