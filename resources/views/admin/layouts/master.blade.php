@@ -1,3 +1,6 @@
+<?php
+use App\Models\Menu;
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -121,6 +124,7 @@ body {
     padding:0px;
     margin:0px -15px;
 }
+
 .dropdown:hover .dropdown-menu {display: block;padding-top:0px;margin-top:0px;z-index:999999}
 .dropdown-menu .divider{
     margin:0px;
@@ -131,6 +135,12 @@ body {
 .navbar-top-links .dropdown-menu li a:hover{
     background-color:#22A7F0;
 }
+
+
+
+
+
+
 .searchPanel{
     background-color:#59ABE3;padding:10px;
 }
@@ -143,6 +153,35 @@ body {
     font-size:30px;
    
 }
+
+
+
+
+
+.mysubmenu{
+    position:relative;
+}
+
+.dropdown-menu-sub {
+	margin:0px; padding:0px; display:none; z-index:999;  position:absolute; left:220px; top:0px;  background-color:#fff; min-width:200px;max-width:200px;
+}
+
+.dropdown-menu-sub li{
+    
+    color:#000;border:1px solid #c1c1c1;border-top:0px ;list-style-type:none; padding:10px;margin:0px; font-size:12px;position:relative;background:#fff;  min-width:200px;max-width:200px;font-size:12px;
+}
+
+.mysubmenu:hover  .dropdown-menu-sub{
+    display:block;
+}
+
+
+.mysubmenu li a:hover{
+    background-color:#22A7F0;
+}
+
+
+
 
 </style>
 <div id="overlay" style="display:none;" >
@@ -215,7 +254,7 @@ body {
                                 </a>
                             </li>
                             <li class="divider"></li>
-                            <li>
+                            <limysubmenu>
                                 <a class="text-center" href="#">
                                     <strong>See All Alerts</strong>
                                     <i class="fa fa-angle-right"></i>
@@ -243,7 +282,7 @@ body {
                     </li>
                 </ul>
                 
-                <ul class="nav navbar-nav navbar-right navbar-top-links">
+                <ul class="nav navbar-nav navbar-right navbar-top-links" >
                
                     
 
@@ -255,9 +294,31 @@ body {
                         <ul class="dropdown-menu dropdown-user">
                         
                         <?php if($adminMenuTeam){
-                            foreach($adminMenuTeam as $val){?>
-                            <li><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
-                            </li>
+                            foreach($adminMenuTeam as $val){
+                                $submenu=Menu::where('parent_id',$val->id)->get()->toArray();
+                                ?>
+                            
+                            <?php if(isset($submenu) ){
+                                ?>
+                                <li class="mysubmenu">
+                                    <a href="javascript:void(0);" ><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a>
+                                        <ul class="dropdown-menu-sub">
+                                            <?php foreach($submenu as $subval){?>
+                                                 <li  onclick="loadData('<?php echo $subval['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $subval['query_string']?>')"><?php echo $subval['title']?></li>
+                                            <?php } ?>
+                                            
+                                        </ul>
+                                </li>        
+                                <?
+                            }
+                            else{
+                                ?>
+                                 <li class="mysubmenu"><a href="javascript:void(0);" onclick="loadData('<?php echo $val['admin_url']?>','','1','get','index','Y', 'identifier=<?php echo $val['query_string']?>')"><i class="fa fa-user fa-fw"></i><?php echo $val['title']?></a></li> 
+                                <?php
+                            }
+                            ?>
+                            
+                            
                             <li class="divider"></li>
                         <?php } }?> 
                            

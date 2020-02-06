@@ -68,7 +68,7 @@ class TeamController extends Controller
                     return view($viewPage,$this->data);
                     
                 break; 
-                case 'national-appointees':   
+                case 'national-appointees': 
 
                         return view('fe.team.appointees',$this->data);
                 break;
